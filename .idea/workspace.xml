@@ -19,6 +19,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -41,6 +42,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/practice" />
+>>>>>>> 5788c9ff6a9b314f4e000392f6ab32451bbc178b
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,7 +55,11 @@
       <option name="presentableId" value="Default" />
       <updated>1604830153315</updated>
       <workItem from="1604830155288" duration="3180000" />
+<<<<<<< HEAD
       <workItem from="1605073749513" duration="2751000" />
+=======
+      <workItem from="1605015683005" duration="38000" />
+>>>>>>> 5788c9ff6a9b314f4e000392f6ab32451bbc178b
     </task>
     <servers />
   </component>
@@ -59,10 +67,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604990837063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604990837063" />
+=======
+    <state x="1061" y="269" key="FileChooserDialogImpl" timestamp="1605015717558">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="1061" y="269" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1605015717558" />
+>>>>>>> 5788c9ff6a9b314f4e000392f6ab32451bbc178b
     <state x="1099" y="0" width="651" height="1006" key="dock-window-1" timestamp="1604831192102">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
