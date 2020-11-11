@@ -21,6 +21,13 @@
     <property name="aspect.path.notification.shown" value="true" />
 <<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+=======
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -30,21 +37,29 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+>>>>>>> 651f706a2c2736d9e318c9281fb013cd4086bbc9
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+<<<<<<< HEAD
+      <option name="TEST_OBJECT" value="class" />
+=======
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+>>>>>>> 651f706a2c2736d9e318c9281fb013cd4086bbc9
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+=======
 =======
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/practice" />
 >>>>>>> 5788c9ff6a9b314f4e000392f6ab32451bbc178b
+>>>>>>> 651f706a2c2736d9e318c9281fb013cd4086bbc9
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -59,7 +74,11 @@
       <workItem from="1605073749513" duration="2751000" />
 =======
       <workItem from="1605015683005" duration="38000" />
+<<<<<<< HEAD
+      <workItem from="1605076737584" duration="5154000" />
+=======
 >>>>>>> 5788c9ff6a9b314f4e000392f6ab32451bbc178b
+>>>>>>> 651f706a2c2736d9e318c9281fb013cd4086bbc9
     </task>
     <servers />
   </component>
@@ -82,5 +101,9 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="1099" y="0" width="651" height="1006" key="dock-window-1/0.0.1707.1027@0.0.1707.1027" timestamp="1604831192102" />
+    <state x="937" y="239" key="run.anything.popup" timestamp="1605080537416">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="937" y="239" key="run.anything.popup/0.0.1707.1027@0.0.1707.1027" timestamp="1605080537416" />
   </component>
 </project>
