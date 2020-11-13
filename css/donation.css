@@ -176,3 +176,15 @@ section{
     margin-left: 250px;
     align-items: center;
 }
+.krw{
+    font-family: Leelawadee UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    color: #414141;
+
+    margin-left: 385px;
+
+}
