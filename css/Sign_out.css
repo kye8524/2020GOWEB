@@ -112,7 +112,7 @@
 }
 .password_Box{
     width: 710px;
-    height: 450px;
+    height: 500px;
     padding: 100px 290px 0 0;
     margin: 20px auto 100px auto;
     box-shadow: 4px 5px 10px gray;
@@ -121,12 +121,27 @@
     align-items: flex-end;
     text-align: right;
 }
+.notice_text{
+    width: 400px;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    text-align: left;
+    font-family: Leelawadee UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+
+    color: #FF6534;
+
+}
 .empty_space{
     margin: 15px 0;
 }
 .Button_Set{
     position: relative;
-    top: 60px;
+    top: 30px;
     left: 230px;
 }
 .Cancel_Button{
@@ -145,13 +160,46 @@
     font-weight: bold;
     border: none;
 }
-.Check_Button{
+
+.Out_Button{
     width: 131px;
     height: 60px;
-    margin: 50px 0;
-    background-color: #30558A;
-    color: #FFFFFF;
-    font-size: 20px;
+    left: 1064px;
+    top: 728px;
+
+    background: #3E3E3E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-family: Leelawadee UI;
+    font-style: normal;
     font-weight: bold;
-    border: none;
+    font-size: 20px;
+    line-height: 27px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+.agree{
+    margin-top: 30px;
+}
+.agree_btn{
+    width: 400px;
+    height: 47px;
+    left: 571px;
+    top: 579px;
+
+    background: #414141;
+
+    font-family: Leelawadee UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 28px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
 }
