@@ -1,0 +1,184 @@
+.Section {
+    display : flex;
+    flex-direction: column;
+}
+
+.Banner {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-image: url("../image/Banner.svg");
+    margin-bottom: 30px;
+}
+
+.Banner_content {
+    width : 1000px;
+    margin-top: 160px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Banner_hr {
+    opacity: 70%;
+    width: 100px;
+    height: 5px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.Progress_bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.Banner_hr_progress {
+    opacity: 100%;
+    width: 100px;
+    height: 5px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.GiveCoin {
+    color: #F5D216;
+}
+
+.BlueCoin {
+    color: #30558A;
+}
+
+.Banner_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.Next_btn {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin:60px 0 0 0;
+    text-align: center;
+}
+
+.Left_btn {
+    width: 25px;
+    height: 35px;
+    font-size: 35px;
+    background-color: black;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+}
+
+.Right_btn {
+    width: 25px;
+    height: 35px;
+    font-size: 35px;
+    background-color: black;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+}
+
+.Suggest_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Suggest_title{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-right: 880px;
+}
+
+.List_row_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+    flex-wrap: nowrap;
+}
+
+.List_box {
+    width: 243px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.List_photo {
+    width: 243px;
+    height: 160px;
+    background-color: #727272;
+    margin-bottom: 2px;
+    display: flex;
+}
+
+.List_title {
+    font-size: 13px;
+    display: flex;
+}
+
+.hr {
+    color: #4D4D4D;
+    margin-top: 15px;
+}
+
+.ad {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.GiveCoin_ad{
+    background-image: url("../image/GiveCoin알아보기.svg");
+    width: 1000px;
+    height: 167px;
+    margin: 30px 0;
+}
+
+.Notice {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 30px 0 30px 0;
+}
+
+.Notice_story {
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 100px 50px 0;
+}
+
+.Notice_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.Notice_line{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.Notice_line_btn {
+    background-color: #707070;
+    width: 50px;
+    height: 20px;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 4px;
+    margin-right: 30px;
+}
+
+.Notice_line_title {
+    font-size: 13px;
+}
