@@ -1,0 +1,124 @@
+.Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.Side_nav {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 160px;
+    height: 430px;
+    box-shadow: 3px -3px;
+}
+
+.Side_nav_list{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    height: 61px;
+}
+
+.Side_nav_list_img{
+    background-image: url("");
+    width: 50px;
+    height: 50px;
+}
+
+.Side_nav_list_title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Charity_search_box{
+    display: flex;
+    flex-direction: row;
+    width: 1050px;
+    margin-top: 60px;
+    margin-bottom: 2px;
+}
+
+.Charity_list_box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 1050px;
+}
+
+.Charity_search{
+   width: 700px;
+    height: 25px;
+    margin: 0 15px;
+    border-bottom: #727272;
+    border: none;
+}
+
+.Charity_search_btn{
+    background-color: #4D4D4D;
+    width: 23px;
+    height: 22px;
+}
+
+.Charity_hr{
+    width: 1050px;
+}
+
+.Charity_list_small_box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.Charity_list_small_row_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1050px;
+    margin-top: 50px;
+}
+
+.Charity_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.Charity_list_img{
+    display: flex;
+    width: 330px;
+    height: 230px;
+    background-color: #4D4D4D;
+}
+
+.Charity_list_title_box{
+    width: 330px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.Charity_list_title_t{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.Charity_list_title_l{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.Charity_list_title_h{
+    height: 2px;
+    color: #30558A;
+    width: 330px;
+}
+
+.Pagination {
+    margin-top: 80px;
+}
+
+.Charity_search_m{
+    font-weight: bold;
+    font-size: 18px;
+}
