@@ -2,7 +2,7 @@
 section{
     display: flex;
     flex-direction: column;
-    margin: 30px auto 100px auto;
+    margin: 30px 200px 100px 0;
 }
 .detail{
     font-family: Roboto;
@@ -10,15 +10,13 @@ section{
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    width: 940px;
-    margin-top: 40px;
-    margin-left: 320px;
+    width: 700px;
+    margin: 40px auto 0 auto;
     text-align: left;
 }
 .main{
     display: flex;
-    margin-left: 60px;
-    margin-top: 5px;
+    margin: 0 auto;
 }
 .box{
     width: 940px;
@@ -34,7 +32,6 @@ section{
     left: 54px;
     top: 142px;
     margin-left: 50px;
-
     background: #FFFFFF;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.25);
 }
@@ -81,6 +78,7 @@ section{
 .box_title{
     display: flex;
     margin-top: 17px;
+    justify-content: space-between;
 }
 .title_detail{
     font-family: Roboto;
@@ -119,10 +117,8 @@ section{
 .write_btn{
     width: 72px;
     height: 27px;
-    left: 1152px;
-    top: 160px;
-
-    border: 1.5px solid #30558A;
+    margin: 0 20px 0 0;
+    border: 1px solid #30558A;
     box-sizing: border-box;
 
     font-family: Roboto;
@@ -140,9 +136,9 @@ section{
 .home_btn{
     width: 140px;
     height: 50px;
-    border: 2.06943px solid #707070;
+    border: 2px solid #707070;
     box-sizing: border-box;
-    border-radius: 6.2083px;
+    border-radius: 6px;
 
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -159,20 +155,23 @@ section{
 .box_table{
     margin: 17px auto 50px auto;
 }
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
 .list{
     width: 900px;
-    height: 330px;
 }
 .list_head{
     background: #F8F8F8;
     color: #000000;
-
 }
-.list_head tr{
+tr{
     height: 48px;
 }
-thead{
-    border: #2C2738;
+th{
+    border-top: 1px solid #A7A7A7;
+    border-bottom: 1px solid #A7A7A7;
 }
 .idx{
     width: 40px;
