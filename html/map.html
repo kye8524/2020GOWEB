@@ -8,8 +8,10 @@
     <title>GiveCoin</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/map.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzdSZUL0B2TpECB5XRcyroxcpU-Bk36_U&callback=initialize&region=kr"></script>
+    <script src="../javascript/map.js"></script>
 </head>
-<body>
+<body onload="initialize()">  <!--지도객체 초기화-->
 <header>
     <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
@@ -28,8 +30,8 @@
     <div class="main">
         <div class="sidebar">
             <div class="sidebar_title">공지사항<hr></div>
-            <div class="sidebar_content">기브코인 이야기<hr></div>
-            <div class="sidebar_target">오시는 길</div>
+            <div class="sidebar_content"><a href="Notice_list.html">기브코인 이야기</a><hr></div>
+            <div class="sidebar_target"><a href="map.html">오시는 길</a></div>
         </div>
         <div class="box">
             <div class="box_title">
@@ -43,6 +45,7 @@
                 <strong>기브코인으로 오시는 길</strong><br><br>
                 :공릉동 동일로 232 미래관
             </div>
+            <div id="map_canvas"></div>
             <div class="box_btn">
                 <input type="button" value="홈으로" class="home_btn">
             </div>

@@ -20,7 +20,7 @@ section{
 }
 .box{
     width: 940px;
-    height: 850px;
+    height: 800px;
     margin-left: 20px;
     box-shadow: 4px 5px 10px gray;
     display: flex;
@@ -154,4 +154,9 @@ section{
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
+}
+#map_canvas{
+    width: 660px;
+    height: 460px;
+    margin: 0 auto 50px auto;
 }
