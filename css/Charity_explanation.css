@@ -1,0 +1,31 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 1050px;
+}
+
+.Breadcrumb {
+    font-size: 12px;
+}
+
+.h{
+    width: 1050px;
+    height: 1px;
+    background-color: #767676;
+    margin: 2px 0 10px 0;
+}
+
+.explain_img {
+    width: 400px;
+    height: 400px;
+    background-color: #727272;
+}
+
+.explain_box{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
