@@ -2,9 +2,12 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin: 0 170px 0 0;
 }
 
 .Side_nav {
+    position: sticky;
+    top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
