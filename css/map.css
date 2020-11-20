@@ -20,7 +20,7 @@ section{
 }
 .box{
     width: 940px;
-    height: 550px;
+    height: 850px;
     margin-left: 20px;
     box-shadow: 4px 5px 10px gray;
     display: flex;
@@ -29,8 +29,6 @@ section{
 .sidebar{
     width: 176px;
     height: 177px;
-    left: 54px;
-    top: 142px;
     margin-left: 50px;
     background: #FFFFFF;
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.25);
@@ -48,11 +46,24 @@ section{
     margin-top: 17px;
 }
 .sidebar_title hr{
-    margin: 9px auto 0 auto;
+    margin: 9px auto 25px auto;
     width: 135px;
     height: 0px;
 
     border: 1px solid #30558A;
+}
+.sidebar_target{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    color: #323232;
+    background: #E4EDFF;
 }
 .sidebar_content{
     font-family: Roboto;
@@ -64,34 +75,16 @@ section{
 
     color: #323232;
 }
-.sidebar_target{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-
-    padding-top: 25px;
-
-    color: #323232;
-    background: #E4EDFF;
-}
-.sidebar_target hr{
-    margin: 20px auto 25px auto;
+.sidebar_content hr{
+    margin: 20px auto 0 auto;
     width: 134px;
     height: 0px;
-    left: 75px;
-    top: 250px;
 
     border: 0.5px solid #CECECE;
 }
 .box_title{
-    display: flex;
     margin-top: 17px;
     justify-content: space-between;
-}
-.title_detail{
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
@@ -122,25 +115,6 @@ section{
 
     color: #F5D216;
 }
-.btn{
-    margin-left: 200px;
-}
-.write_btn{
-    width: 72px;
-    height: 27px;
-    margin: 0 20px 0 0;
-    border: 1px solid #30558A;
-    box-sizing: border-box;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    color: #30558A;
-    background-color: #FFFFFF;
-    cursor: pointer;
-}
 .box_btn{
     margin: 10px auto 50px auto;
 }
@@ -163,42 +137,21 @@ section{
     background-color: #FFFFFF;
 
 }
-.box_table{
-    margin: 17px auto 50px auto;
+.box_title hr{
+    width: 900px;
+    height: 0px;
+    margin-top: 15px;
+
+    border: 0.8px solid #A7A7A7;
 }
-table{
-    border-collapse: collapse;
+.map_detail{
+    margin: 55px auto 60px auto;
     text-align: center;
 }
-.list{
-    width: 900px;
-}
-.list_head{
-    background: #F8F8F8;
-    color: #000000;
-}
-tr{
-    height: 48px;
-}
-th{
-    border-top: 1px solid #A7A7A7;
-    border-bottom: 1px solid #A7A7A7;
-}
-.idx{
-    width: 40px;
-    font-family: Yu Gothic UI;
+.map_detail strong{
+    font-family: Roboto;
     font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-}
-.title{
-    width: 550px;
-    font-family: Yu Gothic UI;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
 }
