@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="script" href="../javascript/index.js">
 </head>
 <body>
 <header>
     <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
-    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
-    <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
+    <div class="Header_Charity" onmouseover="show()" onmouseout="hide()"><a href="Charity.html">후원단체보기</a></div>
+    <div class="Header_Notice" onmouseover="show()" onmouseout="hide()"><a href="Notice_list.html">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
         <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
@@ -25,6 +26,20 @@
     </div>
 </header>
 <section class="Section">
+        <div id="menu">
+            <div class="menu_charity">
+                <span class="menu_li">아동/청소년</span>
+                <span class="menu_li">장애인</span>
+                <span class="menu_li">지구촌</span>
+                <span class="menu_li">동물</span>
+                <span class="menu_li">환경</span>
+                <span class="menu_li">기타</span>
+            </div>
+            <div class="menu_givecoin">
+                <span class="menu_li">기브코인 이야기</span>
+                <span class="menu_li">오시는 길</span>
+            </div>
+        </div>
     <div class="Banner">
         <div class="Banner_content">
             <div class="Banner_title">

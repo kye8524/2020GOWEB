@@ -3,6 +3,38 @@
     flex-direction: column;
 }
 
+#menu{
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    flex-direction: row;
+    width: 100%;
+    height: 155px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 15px 300px;
+}
+
+.menu_charity{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 60px;
+}
+
+.menu_li {
+    margin-bottom: 5px;
+}
+
+.menu_givecoin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .Banner {
     width: 100%;
     height: 300px;
