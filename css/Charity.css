@@ -13,7 +13,6 @@
     justify-content: center;
     width: 160px;
     height: 430px;
-    box-shadow: 0px 4px 4px grey;
     margin-top: 90px;
     margin-right: 30px;
 }
@@ -105,11 +104,10 @@
 }
 
 .Charity_search{
-   width: 750px;
+   width: 550px;
     height: 25px;
-    margin: 0 15px;
-    border-bottom: #727272;
-    border: none;
+    margin: 0 15px 0 200px;
+    border-color : #9E9E9E;
 }
 
 .Charity_search_btn{
