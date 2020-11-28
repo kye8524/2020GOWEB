@@ -104,11 +104,10 @@
 }
 
 .Charity_search{
-   width: 750px;
+   width: 550px;
     height: 25px;
-    margin: 0 15px;
+    margin: 0 15px 0 200px;
     border-bottom: #727272;
-    border: none;
 }
 
 .Charity_search_btn{
