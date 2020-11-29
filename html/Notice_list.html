@@ -31,49 +31,47 @@
             <div class="sidebar_target"><a href="Notice_list.html">기브코인 이야기</a><hr></div>
             <div class="sidebar_content"><a href="map.html">오시는 길</a></div>
         </div>
-    <div class="box">
-        <div class="box_title">
-            <div class="title_detail">
-                <span class="give">기브</span>
-                <span class="coin">코인</span>
-                이야기
+        <div class="box">
+            <div class="box_title">
+                <div class="title_detail">
+                    <span class="give">기브</span>
+                    <span class="coin">코인</span>
+                    이야기
+                </div>
+                <div class="btn">
+                    <input type="button" value="글쓰기" class="write_btn">
+                </div>
             </div>
-            <div class="btn">
-                <input type="button" value="글쓰기" class="write_btn">
-            </div>
+                <div class="box_table">
+                    <table class="list">
+                        <thead class="list_head">
+                            <tr>
+                                <th class="idx">번호</th>
+                                <th class="title">제목</th>
+                                <th class="regdate">작성일</th>
+                                <th class="hit">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><%=data.idx%></td>
+                                <td><a href="/notice/read/<%=data.idx%>"><%=data.title%></a></td>
+                                <td><%=data.regdate%></td>
+                                <td><%=data.hit%></td>
+                            </tr>
+                            <tr>
+                                <td><%=data.idx%></td>
+                                <td><a href="/notice/read/<%=data.idx%>"><%=data.title%></a></td>
+                                <td><%=data.regdate%></td>
+                                <td><%=data.hit%></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box_btn">
+                    <input type="button" value="홈으로" class="home_btn">
+                </div>
         </div>
-        <div class="box_table">
-            <table class="list">
-                <thead class="list_head">
-                <tr>
-                    <th class="idx">번호</th>
-                    <th class="title">제목</th>
-                    <th class="regdate">작성일</th>
-                    <th class="hit">조회수</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr>
-                    <td><%=data.idx%></td>
-                    <td><a href="/notice/read/<%=data.idx%>"><%=data.title%></a></td>
-                    <td><%=data.regdate%></td>
-                    <td><%=data.hit%></td>
-                </tr>
-                <tr>
-                    <td><%=data.idx%></td>
-                    <td><a href="/notice/read/<%=data.idx%>"><%=data.title%></a></td>
-                    <td><%=data.regdate%></td>
-                    <td><%=data.hit%></td>
-                </tr>
-                </tbody>
-
-            </table>
-        </div>
-        <div class="box_btn">
-            <input type="button" value="홈으로" class="home_btn">
-        </div>
-    </div>
     </div>
 
 </section>

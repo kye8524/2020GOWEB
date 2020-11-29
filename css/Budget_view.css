@@ -1,15 +1,19 @@
-body {
-    height: 400px;
-    width: 500px;
-    box-shadow: 3px 3px 5px gray;
-}
 
-.section {
+#Budget_section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin: 0 0 0 35px;
+    margin: 351px 0 0 0;
+    height: 380px;
+    width: 450px;
+    box-shadow: 1px 2px 3px gray;
+    box-sizing: border-box;
+    padding : 0 0 30px 10px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    visibility: hidden;
 }
 
 .budget_title{
@@ -71,13 +75,12 @@ body {
 
 .close_btn{
     width: 70px;
-    height: 25px;
+    height: 30px;
     background-color: #A5A5A5;
     color: white;
     font-size: 16px;
     font-weight: bold;
     font-family: IBM Plex Sans;
     text-align: center;
-    padding-top: 5px;
     margin: 10px 0 0 360px;
 }
