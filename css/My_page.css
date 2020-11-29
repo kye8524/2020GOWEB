@@ -4,7 +4,7 @@ section{
 }
 .page_Box{
     width: 1000px;
-    height: 1200px;
+    height: 1000px;
     background-color: white;
     box-shadow: 4px 5px 10px gray;
     margin:  0 auto 300px auto;
@@ -39,8 +39,10 @@ section{
 }
 .Profile_Btn{
     width: 130px;
-    height: 30px;
+    height: 20px;
+    padding: 5px 0;
     margin: 7px 0;
+    font-size: 14px;
     text-align: center;
     border: #C4C4C4 1px solid;
     color: #414141;
@@ -63,7 +65,7 @@ table{
     width: 300px;
     height: 150px;
     border: 1px solid #E5E5E5;
-    font-size: 25px;
+    font-size: 23px;
 }
 .donate_detail span{
     font-size: 48px;
@@ -121,14 +123,14 @@ table{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 525px;
+    width: 600px;
     margin-top: 50px;
 }
 
 .Charity_box {
     display: flex;
     flex-direction: column;
-    margin: 0 10px;
+    margin: 0 10px 0 0;
 }
 
 .Charity_list_img{
