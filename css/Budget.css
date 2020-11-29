@@ -110,6 +110,7 @@ section{
     font-style: normal;
     font-size: 13px;
     font-weight: bold;
+    resize: none;
 }
 .Content{
     width: 670px;
@@ -125,6 +126,7 @@ section{
     font-style: normal;
     font-size: 13px;
     font-weight: bold;
+    resize: none;
 }
 .btn{
     margin-top: 70px;

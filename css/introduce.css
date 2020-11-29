@@ -15,21 +15,7 @@ section{
     line-height: 53px;
     letter-spacing: -0.02em;
 }
-.box {
-    background-color: #4D4D4D;
-    margin: 20px auto;
-    height: 130px;
-    display: flex;
-    align-items: center;
 
-    color: white;
-    font-family: Yu Gothic UI;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 48px;
-    letter-spacing: -0.02em;
-}
 .subtitle{
     display: flex;
     flex-direction: column;
