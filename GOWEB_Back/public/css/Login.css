@@ -1,0 +1,86 @@
+.Login_UpBox{
+    width: 900px;
+    height: 90px;
+    padding: 30px 50px;
+    margin: 50px auto 0 auto;
+    box-shadow: 4px 5px 10px gray;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Login_UpBox>span{
+    font-size: 20px;
+    color: #727272;
+}
+.Login_DownBox{
+    width: 710px;
+    height: 400px;
+    padding: 100px 290px 0 0;
+    margin: 20px auto 100px auto;
+    box-shadow: 4px 5px 10px gray;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+}
+.Input_Login input{
+    width: 400px;
+    height: 50px;
+    background-color: #EEF5FF;
+    border: #9E9E9E 1px solid;
+    margin: 0 0 0 10px;
+}
+.Input_Login span{
+    color: #FF6534;
+}
+.ID{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 35px 0;
+}
+.Password{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.Login_CheckBox{
+    width: 405px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    color: #757575;
+    margin: 10px 0;
+}
+.Login_CheckBox input{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+.Login_Button{
+    width: 405px;
+    height: 60px;
+    background-color: #30558A;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+.auth{
+    width: 305px;
+    color: #30558A;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0 50px;
+}
+.auth a{
+    color: #30558A;
+}
+.auth .line{
+    width: 2px;
+    height: auto;
+    background-color: #757575;
+}

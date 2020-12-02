@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GiveCoin</title>
+    <link rel="stylesheet" href="../../public/css/header.css">
+    <link rel="stylesheet" href="../../public/css/Charity_explanation.css">
+    <link rel="stylesheet" href="../../public/css/Budget_view.css">
+    <script src="../../public/javascript/Charity_explanation.js"></script>
+</head>
+<body>
+<header>
+    <div class="Header_logo"><a href="index.html"><img src="../../public/image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
+    <div class="Header_search">
+        <input type="text" class="Search_text">
+        <img src="../../public/image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='/#'">
+    </div>
+    <div class="Header_Sign">
+        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
+        <div class="LogIn"><a href="Login.html">로그인</a></div>
+    </div>
+</header>
+<section class="Section">
+    <div class="box">
+        <div class="Breadcrumb">후원단체보기 &gt 소외계층어쩌구</div>
+        <hr class="h">
+        <h1>후원단체 소개</h1>
+        <div class="Small_box">
+            <div class="explain_img"></div>
+                <div class="explain_box">
+                    <div class="explain_content">
+                        <div class="explain_row">
+                            <h3>후원단체명</h3>
+                            <h3 class="need_left">우진의국민계좌</h3>
+                        </div>
+                        <div class="explain_row">
+                            <h3>문의 메일</h3>
+                            <h3>rooproop1111@naver.com</h3>
+                        </div>
+                        <div class="hr"></div>
+                        <h3>진행중인 다른 프로젝트</h3>
+                        <h4>
+                            소외계층 청소년에게 닌텐도 스위치를 선물<br>
+                            소외계층 청소년에게 아이패드와 애플워치 제공
+                        </h4>
+                        <div class="hr"></div>
+                            <button class="budget_btn" onclick="show()">예산서보기</button>
+                    </div>
+                    <section id="Budget_section">
+                        <div class="budget_title">예산서 보기</div>
+                        <div class="date_section">
+                            <div class="list_title">날짜</div>
+                            <div class="list_content">2020-11-19</div>
+                        </div>
+                        <div class="account_section">
+                            <div class="list_title_account">거래처</div>
+                            <div class="list_content">재웅인성아카데미</div>
+                        </div>
+                        <div class="expenditure_section">
+                            <div class="list_title">지출</div>
+                            <div class="list_content">720,000</div>
+                        </div>
+                        <div class="content_section">
+                            <div class="list_title">내용</div>
+                            <div class="list_content">
+                                참여인원의 팀 플레이를 위한<br>
+                                배려심, 양보 능력 향상을 위해<br>
+                                주 3일 2시간 씩 진행.
+                            </div>
+                        </div>
+                        <button class="close_btn" onclick="hide()">닫기</button>
+                    </section>
+                </div>
+        </div>
+            <p class="p">행복을 만드는 “어울림"은 소외계층 청소년들에게 후원 물품을 전달하는 일을 하고 있습니다.<br>
+                그 외에도 유튭보기, 롤체, SNS, 등등 헛짓거리를 하고있고,  종강 전까지 할 일이 굉장히 많습니다.<br>
+                GOWEB 팀 모두가 바쁠 예정이지만 모두다 고웹에 진심이기 때문에 고웹 프로젝트를 모두 1순위로
+                두고 있습니다. 하나 둘 셋, 화이팅!
+            </p>
+            <hr class="h">
+            <h1>프로젝트 소개</h1>
+            <h3>고웹을 1순위로!</h3>
+            <p>
+                GOWEB의 팀원들은 모두 고웹 개발을 1순위로 두고 있습니다.<br>
+                만에 하나, 다른 약속들에 고웹을 소홀히 하면 모두가 서운하게 될 것입니다.<br>
+                이렇게 모두가 바쁜 와중에도 열심히 하기 때문에 결과는 무조건 A+이 예상됩니다.
+            </p>
+            <br>
+            <h3>곧 퇴근인데 페이지 완성</h3>
+            <p>
+                원래 개발하기로 했던 페이지들을 완성시켰습니다.<br>
+                아직 두개가 남았지만 학원 가서 할 수 있을 것도 같습니다.<br>
+                안되면 아무것도 없는 내일로 미루면 되는 일!
+            </p>
+            <br>
+            <h3>숨겨진 진실</h3>
+            <p>나 분명히 숨겨진 진실이 있다고 생각해서 제목 이걸로 해야지 했는데..<br>
+            까먹어버렸습니다. 도대체 뭐가 어떻게 된거지!?!!
+            </p>
+            <hr class="h2">
+        <div class="donation_section">
+            <a href="n.html">
+                <button class="donation_btn">후원하기</button>
+            </a>
+        </div>
+    </div>
+</section>
+<footer>
+    <hr>
+    <div class="Up_footer">
+        <div class="Footer_Text"><a href="">회원가입약관</a></div>
+        <div class="Footer_Text"><a href="">서비스이용약관</a></div>
+        <div class="Footer_Text"><a href="">개인정보처리방침</a></div>
+        <div class="Footer_Text"><a href="">공지사항</a></div>
+        <div class="Footer_Text"><a href="">SNS</a></div>
+    </div>
+    <hr>
+    <div class="Down_footer">
+        <div class="Left_footer">
+            <img src="../../public/image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <div class="Customer_Service">기브코인 고객센터</div>
+            <div class="Service_Num">1900-2470</div>
+        </div>
+        <div class="Right_footer">
+            기브코인플랫폼(주) | 팀장 김예은 | 사업자 등록번호 0907 <br>
+            서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
+        </div>
+    </div>
+</footer>
+</body>
+</html>
