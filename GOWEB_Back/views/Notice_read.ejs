@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%= title %></title>
+    <title>GiveCoin</title>
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/Notice.css">
+    <link rel="stylesheet" href="/stylesheets/Notice_read.css">
 </head>
 <body>
 <header>
@@ -24,7 +25,7 @@
     </div>
 </header>
 <section>
-    <div class="detail">GiveCoin > 기브코인이야기</div>
+    <div class="detail">GiveCoin > 기브코인이야기 > 김애웅의 실체</div>
     <div class="main">
         <div class="sidebar">
             <div class="sidebar_title">공지사항<hr></div>
@@ -38,42 +39,39 @@
                     <span class="coin">코인</span>
                     이야기
                 </div>
-                <div class="btn">
-                    <input type="button" value="글쓰기" class="write_btn" onclick="location.href='/notice/write'">
+                <div class="btn_f">
+                    <form action="/notice/update" method="post">
+                    <input type="button" value="수정" class="modify_btn">
+                    </form>
+                </div>
+                <div>
+                    <form action="/notice/delete" method="post">
+                        <input type="hidden" name="idx" value="<%=row.idx%>"/>
+                        <button type="submit" class="delete_btn">삭제</button>
+                    </form>
                 </div>
             </div>
-            <div class="box_table">
-                <table class="list">
-                    <thead class="list_head">
-                    <tr>
-                        <th class="idx">번호</th>
-                        <th class="title">제목</th>
-                        <th class="regdate">작성일</th>
-                        <th class="hit">조회수</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <%
-                    for(var i=0; i<rows.length; i++)
-                    {
-                        var data = rows[i];
-                    %>
-                    <tr>
-                        <td><%=data.idx%></td>
-                        <td><a href="/notice/read/<%=data.idx%>"><%=data.title%></a></td>
-                        <td><%=data.regdate%></td>
-                        <td><%=data.view%></td>
-                    </tr>
-                    <%}%>
-                    </tbody>
-                </table>
+            <div class="content_box">
+                <div class="first_row">
+                    <input type="hidden" name="idx" value="<%=row.idx%>"/>
+                    <div class="title_title">제목</div>
+                    <div class="title_content"><%=row.title%></div>
+                </div>
+                <div class="second_row">
+                    <div class="row_title">작성일</div>
+                    <div class="row_content_f"><%=row.regdate%></div>
+                    <div class="row_title">조회수</div>
+                    <div class="row_content"><%=row.view%></div>
+                </div>
+                <div class="third_row">
+                    <%=row.content%>
+                </div>
             </div>
             <div class="box_btn">
-                <input type="button" value="홈으로" class="home_btn">
+                <input type="button" value="목록으로" class="list_btn">
             </div>
         </div>
     </div>
-
 </section>
 <footer>
     <hr>
@@ -87,7 +85,7 @@
     <hr>
     <div class="Down_footer">
         <div class="Left_footer">
-            <img src="/images/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
             <div class="Customer_Service">기브코인 고객센터</div>
             <div class="Service_Num">1900-2470</div>
         </div>
