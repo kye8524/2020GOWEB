@@ -24,13 +24,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../../AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GOWEB_Front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,6 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606893520193</updated>
       <workItem from="1606893521316" duration="5526000" />
+      <workItem from="1606959593369" duration="3763000" />
+      <workItem from="1607058606394" duration="5665000" />
     </task>
     <servers />
   </component>
@@ -72,29 +75,33 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606960800995">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606960800995" />
     <state x="883" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606894218123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="883" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606894218123" />
-    <state x="933" y="167" key="FileChooserDialogImpl" timestamp="1606896143303">
+    <state x="933" y="167" key="FileChooserDialogImpl" timestamp="1607063183136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="933" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606896143303" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606899050972">
+    <state x="933" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607063183136" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607064803298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606899050972" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606899050972">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607064803298" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607064803298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606899050972" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606899050972">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607064803298" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607064803298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606899050972" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606899050972">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607064803298" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607064803298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606899050972" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607064803298" />
   </component>
 </project>
