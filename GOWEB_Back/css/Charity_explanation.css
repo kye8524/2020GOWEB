@@ -1,0 +1,117 @@
+.Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin-top: 25px;
+}
+
+.Breadcrumb {
+    font-size: 10px;
+}
+
+.h{
+    width: 1000px;
+    height: 0.1px;
+    background-color: #767676;
+    margin: 2px 0 10px 0;
+}
+
+.h2{
+    width: 1000px;
+    height: 0.1px;
+    background-color: #767676;
+    margin: 50px 0 40px 0;
+}
+
+h1 {
+    margin : 10px 0 40px 0;
+}
+
+.explain_img {
+    width: 450px;
+    height: 350px;
+    background-color: #727272;
+}
+
+.Small_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.explain_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.explain_box{
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 1px 2px 3px gray;
+}
+
+.explain_row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 8px 0;
+}
+
+.hr{
+    width: 400px;
+    background-color: #767676;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.need_left{
+    margin-right: 110px;
+}
+
+h4{
+    margin: 4px 20px;
+}
+
+.budget_btn{
+    background-color: #414141;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.p {
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.donation_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.donation_btn {
+    width: 180px;
+    height: 60px;
+    background-color: #30558A;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px 0 50px 0;
+}
+

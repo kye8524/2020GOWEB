@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GiveCoin</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/Project.css">
+</head>
+<body>
+<header>
+    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
+    <div class="Header_search">
+        <input type="text" class="Search_text">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+    </div>
+    <div class="Header_Sign">
+        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
+        <div class="LogIn"><a href="Login.html">로그인</a></div>
+    </div>
+</header>
+<section>
+    <div class="box">
+        <div class="content_box">
+            <div class="title">프로젝트 추가<br><hr></div>
+            <div class="subtitle">
+                프로젝트 이름<br>
+                <input type="text" class="Name">
+            </div>
+            <div class="subtitle">
+                프로젝트 종류<br>
+                <select name="field" id="field">
+                    <option value="">프로젝트 분야 선택</option>
+                    <option value="아동/청소년">아동/청소년</option>
+                    <option value="장애인">장애인</option>
+                    <option value="지구촌">지구촌</option>
+                    <option value="동물">동물</option>
+                    <option value="환경">환경</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+            <div class="subtitle">
+                후원단체 소개<br>
+                <textarea class="Introduce"></textarea>
+            </div>
+            <div class="subtitle">
+                프로젝트 소개<br>
+                <textarea class="Content"></textarea>
+            </div>
+            <div class="btn">
+                <input type="button" value="취소" class="cancle_btn" onclick="location.href='../html/Mypage_Donor.html'" style="cursor: pointer">
+                <input type="button" value="추가" class="complete_btn" onclick="location.href='../html/Budget_regist.html'" style="cursor: pointer">
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <hr>
+    <div class="Up_footer">
+        <div class="Footer_Text"><a href="">회원가입약관</a></div>
+        <div class="Footer_Text"><a href="">서비스이용약관</a></div>
+        <div class="Footer_Text"><a href="">개인정보처리방침</a></div>
+        <div class="Footer_Text"><a href="">공지사항</a></div>
+        <div class="Footer_Text"><a href="">SNS</a></div>
+    </div>
+    <hr>
+    <div class="Down_footer">
+        <div class="Left_footer">
+            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <div class="Customer_Service">기브코인 고객센터</div>
+            <div class="Service_Num">1900-2470</div>
+        </div>
+        <div class="Right_footer">
+            기브코인플랫폼(주) | 팀장 김예은 | 사업자 등록번호 0907 <br>
+            서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
+        </div>
+    </div>
+</footer>
+</body>
+</html>
