@@ -1,0 +1,86 @@
+
+#Budget_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 351px 0 0 0;
+    height: 380px;
+    width: 450px;
+    box-shadow: 1px 2px 3px gray;
+    box-sizing: border-box;
+    padding : 0 0 30px 10px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    visibility: hidden;
+}
+
+.budget_title{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: IBM Plex Sans;
+    margin:30px 0 10px 0;
+}
+
+.date_section{
+    border-top: 1px solid #B4B4B4;
+    background-color: #F2F2F2;
+    width: 430px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.list_title{
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    margin: 10px 100px 0 10px;
+}
+
+.list_content{
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    margin: 10px 0 0 0;
+}
+
+.list_title_account{
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    margin: 10px 80px 0 10px;
+}
+
+.account_section{
+    width: 430px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.expenditure_section{
+    width: 430px;
+    height: 40px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: row;
+}
+
+.content_section{
+    width: 430px;
+    height: 150px;
+    border-bottom: 1px solid #B4B4B4;
+    display: flex;
+    flex-direction: row;
+}
+
+.close_btn{
+    width: 70px;
+    height: 30px;
+    background-color: #A5A5A5;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: IBM Plex Sans;
+    text-align: center;
+    margin: 10px 0 0 360px;
+}

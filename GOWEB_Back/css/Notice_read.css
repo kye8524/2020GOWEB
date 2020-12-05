@@ -1,0 +1,141 @@
+.box{
+    height: 900px;
+}
+
+.btn_f{
+    margin-left: 550px;
+}
+
+.detail {
+    margin-left: 250px;
+}
+
+.modify_btn {
+    width: 71px;
+    height: 27px;
+    margin: 0 20px 0 0;
+    border: 1px solid #30558A;
+    box-sizing: border-box;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #707070;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.delete_btn {
+    width: 71px;
+    height: 27px;
+    margin: 0 20px 0 0;
+    border: 1px solid #30558A;
+    box-sizing: border-box;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #707070;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.list_btn {
+    width: 145px;
+    width: 145px;
+    height: 50px;
+    border: 2px solid #707070;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.5555px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+
+    color: #707070;
+    background-color: #FFFFFF;
+}
+
+.content_box{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 20px;
+}
+
+.first_row{
+    display: flex;
+    flex-direction: row;
+    width : 900px;
+    height: 55px;
+    border-top: 1px solid #B4B4B4;
+}
+
+.title_title {
+    width: 130px;
+    height: 50px;
+    background-color: #F8F8F8;
+    font-family: Yu Gothic UI;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.title_content{
+    font-family: Yu Gothic UI;
+    font-size: 16px;
+    padding: 15px 0 0 40px;
+    box-sizing: border-box;
+}
+
+.second_row{
+    display: flex;
+    flex-direction: row;
+    width : 900px;
+    height: 55px;
+    border-top: 1px solid #B4B4B4;
+}
+
+.row_title{
+    width: 130px;
+    height: 50px;
+    background-color: #F8F8F8;
+    font-family: Yu Gothic UI;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.row_content{
+    font-family: Yu Gothic UI;
+    font-size: 16px;
+    padding: 15px 0 0 40px;
+    box-sizing: border-box;
+}
+
+.row_content_f{
+    font-family: Yu Gothic UI;
+    font-size: 16px;
+    padding: 15px 0 0 40px;
+    box-sizing: border-box;
+    margin-right: 200px;
+}
+
+.third_row{
+    display: flex;
+    flex-direction: row;
+    width : 900px;
+    height: 600px;
+    border-top: 1px solid #B4B4B4;
+    padding: 20px 0 0 20px;
+    box-sizing: border-box;
+}
