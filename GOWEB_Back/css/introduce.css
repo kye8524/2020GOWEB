@@ -1,0 +1,80 @@
+*{margin: 0;}
+section{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    margin-top: 30px;
+
+    font-family: Yu Gothic UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 53px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.subtitle_explain{
+    display: flex;
+    align-items: center;
+}
+.subtitle_title{
+    display: flex;
+    align-items: center;
+
+    font-family: Yu Gothic UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 43px;
+    letter-spacing: -0.02em;
+}
+.subtitle_logo{
+    display: flex;
+    margin-top: 50px;
+}
+.subtitle_text{
+    margin: auto auto;
+
+    font-family: Yu Gothic UI;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 37px;
+    letter-spacing: -0.02em;
+}
+.explain_box{
+    display: flex;
+    flex-direction: column;
+    margin: 0 200px 30px 50px;
+}
+.explain_title{
+    font-family: Yu Gothic UI;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+}
+.explain_text{
+    margin: 10px 0 0 15px;
+
+    font-family: Yu Gothic UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+}
+.explain_img {
+    margin-left: 45px;
+}
+.explain_img2{
+    margin-left: -15px;
+}

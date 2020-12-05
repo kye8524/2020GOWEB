@@ -6,18 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/Notice.css">
-    <link rel="stylesheet" href="/stylesheets/Notice_read.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzdSZUL0B2TpECB5XRcyroxcpU-Bk36_U&callback=initialize&region=kr"></script>
+    <script src="../javascript/map.js"></script>
 </head>
-<body>
+<body onload="initialize()">  <!--지도객체 초기화-->
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="/images/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
     <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="/images/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
         <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
@@ -25,53 +26,32 @@
     </div>
 </header>
 <section>
-    <div class="detail">GiveCoin > 기브코인이야기 > 김애웅의 실체</div>
+    <div class="detail">GiveCoin > GiveCoin 본사로 가는 길</div>
     <div class="main">
         <div class="sidebar">
             <div class="sidebar_title">공지사항<hr></div>
-            <div class="sidebar_target"><a href="Notice_list.html">기브코인 이야기</a><hr></div>
-            <div class="sidebar_content"><a href="map.html">오시는 길</a></div>
+            <div class="sidebar_content"><a href="Notice_list.html">기브코인 이야기</a><hr></div>
+            <div class="sidebar_target"><a href="map.html">오시는 길</a></div>
         </div>
         <div class="box">
             <div class="box_title">
-                <div class="title_detail">
                     <span class="give">기브</span>
                     <span class="coin">코인</span>
                     이야기
-                </div>
-                <div class="btn_f">
-                    <form action="/notice/update" method="post">
-                    <input type="button" value="수정" class="modify_btn">
-                    </form>
-                </div>
-                <div>
-                    <form action="/notice/delete" method="post">
-                        <input type="hidden" name="idx" value="<%=row.idx%>"/>
-                        <button type="submit" class="delete_btn">삭제</button>
-                    </form>
-                </div>
+                <hr>
             </div>
-            <div class="content_box">
-                <div class="first_row">
-                    <input type="hidden" name="idx" value="<%=row.idx%>"/>
-                    <div class="title_title">제목</div>
-                    <div class="title_content"><%=row.title%></div>
-                </div>
-                <div class="second_row">
-                    <div class="row_title">작성일</div>
-                    <div class="row_content_f"><%=row.regdate%></div>
-                    <div class="row_title">조회수</div>
-                    <div class="row_content"><%=row.view%></div>
-                </div>
-                <div class="third_row">
-                    <%=row.content%>
-                </div>
+            <div class="map_detail">
+                <img src="../image/map.svg" alt="위치">
+                <strong>기브코인으로 오시는 길</strong><br><br>
+                :공릉동 동일로 232 미래관
             </div>
+            <div id="map_canvas"></div>
             <div class="box_btn">
-                <input type="button" value="목록으로" class="list_btn">
+                <input type="button" value="홈으로" class="home_btn" onclick="location.href='../html/index.html'">
             </div>
         </div>
     </div>
+
 </section>
 <footer>
     <hr>

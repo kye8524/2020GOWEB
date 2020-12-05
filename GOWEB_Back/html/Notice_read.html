@@ -6,18 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/Notice.css">
-    <link rel="stylesheet" href="/stylesheets/Notice_read.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/Notice.css">
+    <link rel="stylesheet" href="../css/Notice_read.css">
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="/images/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
     <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="/images/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
         <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
@@ -39,32 +39,28 @@
                     <span class="coin">코인</span>
                     이야기
                 </div>
-                <div class="btn_f">
-                    <form action="/notice/update" method="post">
-                    <input type="button" value="수정" class="modify_btn">
-                    </form>
-                </div>
-                <div>
-                    <form action="/notice/delete" method="post">
-                        <input type="hidden" name="idx" value="<%=row.idx%>"/>
-                        <button type="submit" class="delete_btn">삭제</button>
-                    </form>
-                </div>
+                    <div class="btn_f">
+                        <input type="button" value="수정" class="modify_btn">
+                    </div>
+                    <div>
+                        <input type="button" value="삭제" class="delete_btn">
+                    </div>
             </div>
             <div class="content_box">
                 <div class="first_row">
-                    <input type="hidden" name="idx" value="<%=row.idx%>"/>
                     <div class="title_title">제목</div>
-                    <div class="title_content"><%=row.title%></div>
+                    <div class="title_content">기브코인의 역사에 대하여</div>
                 </div>
                 <div class="second_row">
-                    <div class="row_title">작성일</div>
-                    <div class="row_content_f"><%=row.regdate%></div>
-                    <div class="row_title">조회수</div>
-                    <div class="row_content"><%=row.view%></div>
+                        <div class="row_title">작성일</div>
+                        <div class="row_content_f">2020-11-18</div>
+                        <div class="row_title">조회수</div>
+                        <div class="row_content">72</div>
                 </div>
                 <div class="third_row">
-                    <%=row.content%>
+                    기브코인은 1999년 1월 13일 설립되었으며,<br>
+                    김애웅의 훈수와 웅재웅의 잔소리가 더해져 발전을 이루게 되었다.<br>
+                    그렇게 성장한 기브코인은 12월 20일 이길흥 교수님에 의해 A+을 받게 되면서 성공기를 이룬다.
                 </div>
             </div>
             <div class="box_btn">

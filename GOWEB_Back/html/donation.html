@@ -6,19 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/Notice.css">
-    <link rel="stylesheet" href="/stylesheets/Notice_read.css">
-    <link rel="stylesheet" href="/stylesheets/Notice_write.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/donation.css">
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="/images/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
     <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="/images/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
         <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
@@ -26,34 +24,34 @@
     </div>
 </header>
 <section>
-    <div class="detail">GiveCoin > 기브코인이야기 > 김애웅의 실체</div>
-    <div class="main">
-        <div class="box">
-            <div class="box_title">
-                <div class="title_detail">
-                    <span class="give">기브</span>
-                    <span class="coin">코인</span>
-                    이야기
+    <div class="detail">
+        후원단체보기 > 소외계층 청소년 영양제후원 >후원하기 //동적으로 받아와야됨!!!!!
+    </div>
+    <div class="box">
+        <div class="title_box">
+        <div class="title">후원하기</div>
+        <div class="subtitle">기부하는 당신이 아름답습니다</div>
+        </div>
+        <form action="" class="coin_data">
+            <div class="coin_detail">
+                <div class="coin_have">
+                    보유 코인
+                    <div></div>
+                </div>
+                <div class="coin_donate">
+                    기부할 코인
+                    <input type="text">
                 </div>
             </div>
-            <form action="/notice/write" method="post">
-            <div class="content_box">
-                <div class="first_row">
-                    <div class="title_title">제목</div>
-                    <input type="text" name="title" id="title" class="title_input" required>
-                </div>
-                <div class="second_row">
-                    <div class="title_content">내용</div>
-                    <input type="text" name="content" id="content" class="content_input" required>
-                </div>
+            <div>
+                <input type="button" value="충전" class="charge_btn" onclick="location.href='../html/charge.html'" style='cursor:pointer'>
             </div>
-            <div class="box_btn">
-                <input type="button" value="취소" class="list_btn">
-                <button type="submit" class="list_btn2">게시하기</button>
-            </div>
-            </form>
+        </form>
+        <div class="donate_box">
+            <input type="button" value="기부하기" class="donate_btn" onclick="location.href='../html/donation_complete.html'" style='cursor:pointer'>
         </div>
     </div>
+
 </section>
 <footer>
     <hr>
@@ -67,7 +65,7 @@
     <hr>
     <div class="Down_footer">
         <div class="Left_footer">
-            <img src="/images/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
             <div class="Customer_Service">기브코인 고객센터</div>
             <div class="Service_Num">1900-2470</div>
         </div>
