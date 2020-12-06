@@ -54,9 +54,11 @@
                     </thead>
                     <tbody>
                     <%
-                    for(var i=0; i<rows.length; i++)
-                    {
-                        var data = rows[i];
+                    for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
+                    if(i > length){
+                        i++;
+                    }else{
+                        var data = rows[i]
                     %>
                     <tr>
                         <td><%=data.idx%></td>
@@ -64,7 +66,19 @@
                         <td><%=data.regdate%></td>
                         <td><%=data.view%></td>
                     </tr>
-                    <%}%>
+                    <%}}%>
+                    <tr>
+                        <td>
+                            <%
+                            for(var j = 0; j < rows.length / page_num; j++){
+                            %>
+                                [<a href="/notice/Notice_list/<%= j + 1 %>"><%= j + 1 %></a>]
+                            <%
+                            }
+                            %>
+                        </td>
+                    </tr>
+
                     </tbody>
                 </table>
             </div>

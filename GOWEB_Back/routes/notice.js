@@ -13,7 +13,8 @@ router.get('/Notice_list/:page', function(req, res, next) {                     
         "date_format(regdate,'%Y-%m-%d') regdate, view from Notice";
     conn.query(sql, function (err, rows) {                                                   //select된 행을 가져와서 rows 변수에 담는다.오류가 있다면 err에 담는다.
         if (err) console.error("err : " + err);
-        res.render('Notice_list', {title: 'GiveCoin', rows: rows});                               //수행된 sql에 데이터를 list뷰로 랜더링함.
+        res.render('Notice_list', {title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true});        //수행된 sql에 데이터를 list뷰로 랜더링함.
+        console.log(rows.length-1);
     });
 });
 
