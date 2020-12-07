@@ -6,19 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="../javascript/index.js"></script>
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <script src="../public/javascripts/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="index.html"><img src="../public/images/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity" onmouseover="show()" onmouseout="hide()"><a href="Charity.html">후원단체보기</a></div>
     <div class="Header_Notice" onmouseover="show()" onmouseout="hide()"><a href="Notice_list.html">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="../public/images/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
         <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
@@ -26,7 +26,7 @@
     </div>
 </header>
 <section class="Section">
-        <div id="menu">
+        <div id="menu" onmouseover="show()" onmouseout="hide()">
             <div class="menu_charity">
                 <span class="menu_li">아동/청소년</span>
                 <span class="menu_li">장애인</span>
@@ -41,21 +41,23 @@
             </div>
         </div>
     <div class="Banner">
-        <div class="Banner_content">
-            <div class="Banner_title">
-                고급 웹 프로그래밍,<br>
-                <span class="GiveCoin">GiveCoin</span> A+ 예정
-                <div class="Progress_bar">
-                    <div class="Banner_hr_progress"></div>
-                    <div class="Banner_hr"></div>
-                    <div class="Banner_hr"></div>
-                    <div class="Banner_hr"></div>
-                </div>
+        <ul>
+            <li><img src="../public/images/Banner_1.svg" alt="Banner"></li>
+            <li><img src="../public/images/Banner_2.svg" alt="Banner"></li>
+            <li><img src="../public/images/Banner_3.svg" alt="Banner"></li>
+        </ul>
+    </div>
+    <div class="Banner_content">
+        <div class="Banner_title">
+            <div class="Progress_bar">
+                <div class="Banner_hr_progress"></div>
+                <div class="Banner_hr"></div>
+                <div class="Banner_hr"></div>
             </div>
-            <div class="Next_btn">
-                <div class="Left_btn">&lt</div>
-                <div class="Right_btn">&gt</div>
-            </div>
+        </div>
+        <div class="Next_btn">
+            <button class="left_btn"><img src="../public/images/Left_btn.svg"></button>
+            <button class="right_btn"><img src="../public/images/Right_btn.svg"></button>
         </div>
     </div>
     <div class="Suggest_list">
@@ -161,7 +163,7 @@
     <hr>
     <div class="Down_footer">
         <div class="Left_footer">
-            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <img src="../public/images/LOGO.svg" alt="LOGO" class="Footer_logo">
             <div class="Customer_Service">기브코인 고객센터</div>
             <div class="Service_Num">1900-2470</div>
         </div>

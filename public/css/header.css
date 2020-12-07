@@ -16,9 +16,13 @@ header{
 }
 .Header_Charity{
     font-weight: bold;
+    height: 100%;
+    margin-top: 30px;
 }
 .Header_Notice{
     font-weight: bold;
+    height: 100%;
+    margin-top: 30px;
 }
 .Header_search{
     width: 40%;

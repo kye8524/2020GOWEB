@@ -36,25 +36,47 @@
 }
 
 .Banner {
+    overflow: hidden;
     width: 100%;
-    height: 300px;
+    margin: 0 auto 50px auto;
+    position: relative;
+}
+
+.Banner ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    background-image: url("../image/Banner.svg");
-    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+.Banner ul li {
+    display: inline-block;
+}
+
+.Banner button.left_btn {
+    position: absolute;
+}
+
+.Banner button.right_btn {
+    position: absolute;
+}
+
+img {
+    display: block;
+    border: 0;
 }
 
 .Banner_content {
     width : 1000px;
     margin-top: 160px;
     flex-direction: row;
+    position: absolute;
     display: flex;
     justify-content: space-between;
 }
 
 .Banner_hr {
     opacity: 70%;
-    width: 100px;
+    width: 150px;
     height: 5px;
     background-color: white;
     margin-top: 10px;
@@ -63,11 +85,13 @@
 .Progress_bar {
     display: flex;
     flex-direction: row;
+    position: absolute;
+    margin: 110px 0 0 140px;
 }
 
 .Banner_hr_progress {
     opacity: 100%;
-    width: 100px;
+    width: 150px;
     height: 5px;
     background-color: white;
     margin-top: 10px;
@@ -88,31 +112,30 @@
 }
 
 .Next_btn {
-    display: flex;
+    position: absolute;
     flex-direction: row;
+    display: flex;
     color: white;
-    margin:60px 0 0 0;
+    margin:120px 0 0 1050px;
     text-align: center;
 }
 
-.Left_btn {
-    width: 25px;
-    height: 35px;
-    font-size: 35px;
-    background-color: black;
+.left_btn {
+    width: 40px;
+    height: 40px;
     opacity: 0.6;
     display: flex;
     align-items: center;
+    border: 0;
 }
 
-.Right_btn {
-    width: 25px;
-    height: 35px;
-    font-size: 35px;
-    background-color: black;
+.right_btn {
+    width: 40px;
+    height: 40px;
     opacity: 0.6;
     display: flex;
     align-items: center;
+    border: 0;
 }
 
 .Suggest_list{
@@ -168,7 +191,7 @@
     align-items: center;
 }
 .GiveCoin_ad{
-    background-image: url("../image/GiveCoin알아보기.svg");
+    background-image: url("../images/GiveCoin알아보기.svg");
     width: 1000px;
     height: 167px;
     margin: 30px 0;
