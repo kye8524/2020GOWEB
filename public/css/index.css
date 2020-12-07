@@ -1,6 +1,7 @@
 .Section {
     display : flex;
     flex-direction: column;
+    width: 100%;
 }
 
 #menu{
@@ -37,9 +38,9 @@
 
 .Banner {
     overflow: hidden;
-    width: 100%;
     margin: 0 auto 50px auto;
     position: relative;
+    width: 1440px;
 }
 
 .Banner ul {
@@ -74,7 +75,23 @@ img {
     justify-content: space-between;
 }
 
-.Banner_hr {
+#Banner_hr_1 {
+    opacity: 100%;
+    width: 150px;
+    height: 5px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+#Banner_hr_2 {
+    opacity: 70%;
+    width: 150px;
+    height: 5px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+#Banner_hr_3 {
     opacity: 70%;
     width: 150px;
     height: 5px;
@@ -86,15 +103,7 @@ img {
     display: flex;
     flex-direction: row;
     position: absolute;
-    margin: 110px 0 0 140px;
-}
-
-.Banner_hr_progress {
-    opacity: 100%;
-    width: 150px;
-    height: 5px;
-    background-color: white;
-    margin-top: 10px;
+    margin: 100px 0 0 140px;
 }
 
 .GiveCoin {
@@ -123,19 +132,25 @@ img {
 .left_btn {
     width: 40px;
     height: 40px;
-    opacity: 0.6;
     display: flex;
     align-items: center;
     border: 0;
+    margin-right: 8px;
+    padding: 0;
 }
 
 .right_btn {
     width: 40px;
     height: 40px;
-    opacity: 0.6;
     display: flex;
     align-items: center;
     border: 0;
+    padding: 0;
+}
+
+.image_btn {
+    width: 40px;
+    height: 45px;
 }
 
 .Suggest_list{

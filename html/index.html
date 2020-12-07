@@ -8,8 +8,8 @@
     <title>GiveCoin</title>
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/index.css">
-    <script src="../public/javascripts/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </head>
 <body>
 <header>
@@ -50,14 +50,14 @@
     <div class="Banner_content">
         <div class="Banner_title">
             <div class="Progress_bar">
-                <div class="Banner_hr_progress"></div>
-                <div class="Banner_hr"></div>
-                <div class="Banner_hr"></div>
+                <div id="Banner_hr_1"></div>
+                <div id="Banner_hr_2"></div>
+                <div id="Banner_hr_3"></div>
             </div>
         </div>
         <div class="Next_btn">
-            <button class="left_btn"><img src="../public/images/Left_btn.svg"></button>
-            <button class="right_btn"><img src="../public/images/Right_btn.svg"></button>
+            <button class="left_btn"><img src="../public/images/Left_btn.svg" class="image_btn"></button>
+            <button class="right_btn"><img src="../public/images/Right_btn.svg" class="image_btn"></button>
         </div>
     </div>
     <div class="Suggest_list">
@@ -172,6 +172,7 @@
             서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
         </div>
     </div>
+    <script src="../public/javascripts/index.js"></script>
 </footer>
 </body>
 </html>

@@ -16,8 +16,6 @@ function hide() {
         max = container.children().length;
         events();
 
-        console.log('init')
-
         interval = setInterval(next, 3000);
     }
     function events(){
@@ -36,11 +34,11 @@ function hide() {
         animate();
     }
     function animate(){
-        const moveX = current * 1200;
+        const moveX = current * 1440;
         TweenMax.to( container, 0.8, { marginLeft: -moveX, ease: Expo.easeOut });
 
         clearInterval(interval);
         interval = setInterval(next, 3000);
     }
-    $(window).load(init);
+    jQuery(document).ready(init);
 })();
