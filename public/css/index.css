@@ -206,7 +206,7 @@ img {
     align-items: center;
 }
 .GiveCoin_ad{
-    background-image: url("../images/GiveCoin알아보기.svg");
+    background-image: url("public/image/GiveCoin알아보기.svg");
     width: 1000px;
     height: 167px;
     margin: 30px 0;
