@@ -39,27 +39,44 @@
     margin: 16px 0 0 0;
 }
 .Type_Box{
-    width: 200px;
+    width: 215px;
     height: 240px;
     margin: 0 10px;
-    padding: 10px 10px;
-    box-shadow: 4px 5px 10px gray;
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 0 0 5px;
+    justify-content: center;
+    align-items: center;
 }
+
+#donor {
+    border: none;
+    box-shadow: 1px 2px 2px gray;
+}
+
+#charity {
+    border: none;
+    box-shadow: 1px 2px 2px gray;
+}
+
 .Big_Exp{
-    font-size: 16px;
+    font-size: 15px;
     margin: 3px 0 20px 0;
     color: #414141;
+    font-weight: bold;
 }
 .Type_img{
     height: 100px;
-    margin: 15px 0;
+    margin: 10px 0 0 0;
 }
 .Type_Name{
     font-size: 19px;
     margin: 0 0 10px 0;
+    font-weight: bold;
 }
 .Small_Exp{
     font-size: 12px;
@@ -77,12 +94,14 @@
     width: 460px;
     height: 50px;
     border: #9E9E9E 1px solid;
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
 }
 .password_text{
-    width: 400px;
     font-size: 12px;
     margin: 0 0 10px 0;
     text-align: left;
+    width: 460px;
 }
 .Check_Box{
     width: 465px;
@@ -139,7 +158,6 @@
 
     background: #AEAEAE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
     margin: 50px 15px;
     color: #FFFFFF;
     font-size: 20px;
