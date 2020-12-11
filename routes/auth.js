@@ -4,6 +4,8 @@ var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
 var fs = require('fs');
 var path = require('path');
+const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 
@@ -20,8 +22,8 @@ router.post('/register', function(req, res,next) {
     var gender = req.body.gender;
     var phonenum = req.body.phonenum;
     var data = [email,passwd,name,nickname,gender,phonenum];
-    var sql1 = "SELECT * FROM Donor WHERE passwd = ? AND email = ?";
-    var sql2 = "INSERT INTO Donor (email,passwd,name,nickName,gender,phoneNum,signTime,acessToken) VALUES(?,?,?,?,?,?,now(),1)";
+    var sql1 = "SELECT * FROM UserInfo WHERE passwd = ? AND email = ?";
+    var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,signTime,acessToken) VALUES(?,?,?,?,?,?,now(),1)";
     if (true) {
         conn.query(sql1,data, function(error, results, fields) {
             if (error) throw error;

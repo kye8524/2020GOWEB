@@ -3,12 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require('body-parser')
-
-var indexRouter = require('./routes/index');
-var mysqlRouter = require('./routes/mysql');
-var noticeRouter = require('./routes/notice');
-var authRouter = require('./routes/auth');
+const bodyParser = require('body-parser');
+const key = require('./key');
 
 var app = express();
 
@@ -22,8 +18,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.urlencoded({extended : false}));
 
+
+// set the secret key variable for jwt
+app.set('jwt-secret', key.secret);
+
+var indexRouter = require('./routes/index');
+var mysqlRouter = require('./routes/mysql');
+var noticeRouter = require('./routes/notice');
+var authRouter = require('./routes/auth');
 
 app.use('/', indexRouter);
 app.use('/mysql', mysqlRouter);

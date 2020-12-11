@@ -10,7 +10,7 @@ router.get('/list', function(req, res, next) {
 router.get('/Notice_list/:page', function(req, res, next) {                                                //uri를 'list/:page'형태로 받음.board/list/(페이지숫자)형식으로 게시판리스트 노출
     var page = req.params.page;                                                                     //uri변수 'page'로 맴핑된 page값을 req객체로 가져옴 > 페이징개발을 위해 미리 선언함
     var sql = "select idx, title," +                                                                //sql문 수행
-        "date_format(regdate,'%Y-%m-%d') regdate from Notice";
+        "date_format(regdate,'%Y-%m-%d') regdate,view from Notice";
     conn.query(sql, function (err, rows) {                                                   //select된 행을 가져와서 rows 변수에 담는다.오류가 있다면 err에 담는다.
         if (err) console.error("err : " + err);
         res.render('Notice_list', {title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true});        //수행된 sql에 데이터를 list뷰로 랜더링함.
@@ -28,7 +28,7 @@ router.post('/write', function(req,res,next){
     var data = [title,content];
 
 
-    var sql = "insert into Notice(title, content, regdate, view) values(?,?,now(),0)";
+    var sql = "insert into Notice(title, content, regdate) values(?,?,now())";
     conn.query(sql,data, function (err, rows) {
         if (err) console.error("err : " + err);
         res.redirect('/notice/list');
@@ -40,11 +40,15 @@ router.get('/read/:idx',function(req,res,next)
     var idx = req.params.idx;
     var sql = "select idx, title, content," +
         "date_format(regdate,'%Y-%m-%d') regdate,view from Notice where idx=?";
+    var sql2 = "update Notice set view=view+1 where idx=?";
     conn.query(sql,[idx], function(err,row)
     {
         if(err) console.error(err);
         res.render('Notice_read', {row:row[0]});
     });
+    conn.query(sql2,[idx],function (err){
+        if(err) console.error(err);
+    })
 });
 router.post('/update',function(req,res,next)
 {
@@ -67,9 +71,6 @@ router.post('/delete',function(req,res,next)
 {
     var idx = req.body.idx;
     var data = [idx];
-
-    console.log("DELETE DATA : IDX = " + idx);
-
 
     var sql = "delete from Notice where idx=?";
     conn.query(sql,data, function(err,result)
