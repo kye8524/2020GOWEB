@@ -24,15 +24,10 @@ app.use(bodyParser.urlencoded({extended : false}));
 // set the secret key variable for jwt
 app.set('jwt-secret', key.secret);
 
-var indexRouter = require('./routes/index');
-var mysqlRouter = require('./routes/mysql');
-var noticeRouter = require('./routes/notice');
-var authRouter = require('./routes/auth');
-
-app.use('/', indexRouter);
-app.use('/mysql', mysqlRouter);
-app.use('/notice', noticeRouter);
-app.use('/auth', authRouter);
+app.use('/mysql', require('./routes/mysql'));
+app.use('/notice', require('./routes/notice'));
+app.use('/auth', require('./routes/auth'));
+app.use('/api', require('./routes/api'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
