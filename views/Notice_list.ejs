@@ -67,20 +67,18 @@
                         <td><%=data.view%></td>
                     </tr>
                     <%}}%>
-                    <tr>
-                        <td>
-                            <%
-                            for(var j = 0; j < rows.length / page_num; j++){
-                            %>
-                                [<a href="/notice/Notice_list/<%= j + 1 %>"><%= j + 1 %></a>]
-                            <%
-                            }
-                            %>
-                        </td>
-                    </tr>
 
                     </tbody>
                 </table>
+            </div>
+            <div class="page_Num">
+                <%
+                for(var j = 0; j < rows.length / page_num; j++){
+                %>
+                    [<a href="/notice/Notice_list/<%= j + 1 %>"><%= j + 1 %></a>]
+                <%
+                }
+                %>
             </div>
             <div class="box_btn">
                 <input type="button" value="홈으로" class="home_btn">

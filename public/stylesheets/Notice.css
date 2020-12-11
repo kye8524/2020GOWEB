@@ -168,8 +168,8 @@ section{
 }
 
 .box_table{
-    height: 500px;
-    margin: 17px auto 50px auto;
+    height: 350px;
+    margin: 17px auto 0 auto;
 }
 table{
     border-collapse: collapse;
@@ -206,4 +206,9 @@ th{
     font-size: 15px;
     line-height: 24px;
     letter-spacing: -0.02em;
+}
+.page_Num{
+    display: flex;
+    justify-content: center ;
+    margin: 0 0 20px 0;
 }

@@ -41,14 +41,14 @@ router.get('/read/:idx',function(req,res,next)
     var sql = "select idx, title, content," +
         "date_format(regdate,'%Y-%m-%d') regdate,view from Notice where idx=?";
     var sql2 = "update Notice set view=view+1 where idx=?";
+    conn.query(sql2,[idx],function (err){
+        if(err) console.error(err);
+    })
     conn.query(sql,[idx], function(err,row)
     {
         if(err) console.error(err);
         res.render('Notice_read', {row:row[0]});
     });
-    conn.query(sql2,[idx],function (err){
-        if(err) console.error(err);
-    })
 });
 router.post('/update',function(req,res,next)
 {
