@@ -4,3 +4,6 @@ function change_krw() {
     document.getElementById("krw_").innerHTML = kr;
 }
 
+function charge_alert() {
+    alert("결제가 완료되었습니다.");
+}
