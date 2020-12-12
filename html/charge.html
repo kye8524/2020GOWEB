@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/donation.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/donation.css">
 </head>
 <body>
 <header>
@@ -38,12 +38,12 @@
                 </div>
                 <div class="coin_donate">
                     충전할 코인
-                    <input type="text">
+                    <input type="number" id="coin_charge" onkeyup="change_krw()">
                 </div>
             </div>
         </form>
         <div class="krw">
-            0 KRW
+            <span id="krw_">0</span> KRW
         </div>
         <div class="donate_box">
             <input type="button" value="결제하기" class="donate_btn" onclick="location.href='../html/#'" style='cursor:pointer'>
@@ -74,4 +74,5 @@
     </div>
 </footer>
 </body>
+<script src="../public/javascripts/charge.js"></script>
 </html>
