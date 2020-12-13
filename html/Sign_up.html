@@ -33,15 +33,15 @@
     <form action="/auth/register" method="post" onSubmit="return false;">
     <div class="Sign_downBox">
         <div class="Sign_text">
-            <span>*</span><div class="text_name" name="UserType" id="UserType">이용목적</div>
-            <button type="button" class="Type_Box" id="donor" onclick="check_donor(),check_out_charity()">
+            <span>*</span><div class="text_name" id="UserType">이용목적</div>
+            <button type="button" class="Type_Box" id="donor" onclick="check_donor(); check_out_charity();">
                 <div class="Big_Exp">후원할 곳을 찾고 있습니다.</div>
                 <img src="../image/donor.svg" alt="donor" class="Type_img">
                 <div class="Type_Name">기부자</div>
                 <hr>
                 <div class="Small_Exp">기부할 프로젝트를 찾는 기업, 개인</div>
             </button>
-            <button type="button" class="Type_Box" id="charity" onclick="check_charity(),check_out_donor()">
+            <button type="button" class="Type_Box" id="charity" onclick="check_charity(); check_out_donor();">
                 <div class="Big_Exp">기부자를 찾고 있습니다.</div>
                 <img src="../image/charity.svg" alt="charity" class="Type_img">
                 <div class="Type_Name">후원단체</div>
@@ -84,7 +84,7 @@
         </div>
         <div class="password_text" id="password_text">동일한 비밀번호를 입력해주세요.</div>
         <div class="Check_Box">
-            <input type="checkbox" name="check_box">&nbsp&nbsp <a href="">이용약관&nbsp</a>및&nbsp <a href="">개인정보 처리방침</a>에 동의합니다.
+            <input type="checkbox" name="check_box" required>&nbsp&nbsp <a href="">이용약관&nbsp</a>및&nbsp <a href="">개인정보 처리방침</a>에 동의합니다.
         </div>
         <button type="submit" class="SignUp_Button" id="submit" onclick="check_pwd();UserType();doAction();">회원가입</button>
     </div>

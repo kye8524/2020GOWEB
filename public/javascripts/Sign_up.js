@@ -1,4 +1,4 @@
-var pur;
+var pur =0;
 
 function check_donor() {
     document.getElementById("donor").style.border="4px solid #30558A";
@@ -47,6 +47,7 @@ function doAction() {
     req.open("post", "Sign_up.jsp?param="+encodeURI(pur));
     req.setRequestHeader("UserType", "XMLHttpRequest");
     req.send(pur);
+    location.href='../charge';
 }
 
 function createRequest() {
