@@ -4,7 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
-const key = require('./key');
+const cUtil = require('./customUtil');
+var mysql_odbc = require('./database/db_conn')();
+var conn = mysql_odbc.init();
 
 var app = express();
 
@@ -18,16 +20,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.urlencoded({extended : true}));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'content-type, x-access-token'); //1
 
-// set the secret key variable for jwt
-app.set('jwt-secret', key.secret);
+  next();
+});
+app.use(cUtil.tokenMiddleWare);
 
 app.use('/mysql', require('./routes/mysql'));
 app.use('/notice', require('./routes/notice'));
 app.use('/auth', require('./routes/auth'));
-app.use('/api', require('./routes/api'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,5 +50,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+setInterval(function () {
+  conn.query('SELECT 1');
+}, 5000);
 
 module.exports = app;
