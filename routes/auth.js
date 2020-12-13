@@ -68,16 +68,21 @@ function obtainToken(req, res) {
         }
     })
 }
-router.post('/register', function(req, res,next) {
+router.post('/register',function (req,res,next){
     var email = req.body.email;
     var passwd = req.body.passwd;
     var name = req.body.name;
     var nickname = req.body.nickName;
     var gender = req.body.gender;
     var phonenum = req.body.phoneNum;
-    var data = [email,passwd,name,nickname,gender,phonenum];
+    var userType = req.header.UserType;
+    var accesstoken = jwt.sign(req.body.email, Date.now().toString(16), {
+        algorithm: 'HS256'
+    });
+    var data = [email,passwd,name,nickname,gender,phonenum,userType,accesstoken];
     var sql1 = "SELECT * FROM UserInfo WHERE passwd = ? AND email = ?";
-    var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,signTime,accessToken) VALUES(?,?,?,?,?,?,now(),1)";
+    var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
+
     if (true) {
         conn.query(sql1,data, function(error, results, fields) {
             if (error) throw error;

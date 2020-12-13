@@ -7,32 +7,45 @@ var path = require('path');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const cUtil = require('../customUtil');
+var fs = require('fs');
 
 router.get('/', function(req, res, next) {
-    var userSeq=req.params.userSeq;
-    var sql="select totalCoin from userInfo where userSeq=?;";
-    conn.query(sql,userSeq,function (err,results){
-        if(err)console.error('err : ' + err);
-        res.render('/',{result:results});
-        res.sendFile(path.join(__dirname+'/../html/charge.html'));
-    })
+    res.sendFile(path.join(__dirname+'/../html/charge.html'));
 });
+router.post('/', getUserInfo);
 
-router.post('/',function (req,res,next){
-    var userSeq=req.params.userSeq;
-    var charge = req.body.coin_charge;
-    const sql1 = "SELECT userSeq FROM UserInfo WHERE userSeq=?;";
-    conn.query(sql1,userSeq,function (err,rows,field){
-        if(err){
+function getUserInfo(req, res) {
+    let accessToken = req.headers['x-access-token'];
+    conn.query("select userSeq,userType from UserInfo where accessToken = ?", accessToken, function (err, requestUser) {
+        if (err) {
             console.log(err);
-        }
-        else{
-            const sql2="UPDATE userInfo set totalCoin=totalCoin+charge where userSeq=?;";
-            conn.query(sql2,userSeq,function (err){
-                if(err)console.log(err);
-                else res.redirect('/');
+            res.status(400).send("token error");
+        }else {
+            conn.query("select totalCoin from UserInfo where userSeq = ?", userSeq, function (err, userInfos) {
+                if (err) {
+                    console.log(err);
+                    res.status(400).send("query error");
+                } else {
+                    res.status(200).send(userInfos[0]);
+                    fs.readFile('charge.html','utf-8',(error,data)=>{
+                        conn.query("select totalCoin from UserInfo where userSeq = ?",(error,results,fields)=>{
+                            if(error)throw error;
+                            res.send(ejs.render(data,{
+                                data:results
+                            }))
+                        })
+                    })
+                    var chargecoin=req.body.coin_charge;
+                    var totalcoin= req.params.totalcoin;
+                    var data = [totalcoin+chargecoin,userSeq]
+                    conn.query("update UserInfo set totalCoin=? where userSeq=?",data,function(err,result)
+                    {
+                        if(err) console.error(err);
+                        res.redirect('/charge');
+                    })
+                }
             })
         }
     })
-})
+}
 module.exports = router;
