@@ -137,6 +137,7 @@ img {
     border: 0;
     margin-right: 8px;
     padding: 0;
+    outline: 0;
 }
 
 .right_btn {
@@ -146,6 +147,7 @@ img {
     align-items: center;
     border: 0;
     padding: 0;
+    outline: 0;
 }
 
 .image_btn {
