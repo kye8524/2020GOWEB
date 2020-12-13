@@ -34,7 +34,7 @@ app.use(cUtil.tokenMiddleWare);
 app.use('/mysql', require('./routes/mysql'));
 app.use('/notice', require('./routes/notice'));
 app.use('/auth', require('./routes/auth'));
-
+app.use('/charge',require('./routes/charge'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
