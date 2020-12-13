@@ -34,11 +34,11 @@
             <div class="coin_detail">
                 <div class="coin_have">
                     보유 코인
-                    <div></div>
+                    <div><%= result.totalCoin %></div>
                 </div>
                 <div class="coin_donate">
                     충전할 코인
-                    <input type="number" id="coin_charge" onkeyup="change_krw()">
+                    <input type="number" id="coin_charge" name="coin_charge" onkeyup="change_krw()">
                 </div>
             </div>
         </form>
