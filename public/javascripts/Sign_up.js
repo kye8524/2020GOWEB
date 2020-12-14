@@ -25,8 +25,7 @@ function check_out_charity() {
 function check_pwd() {
     var pwd = document.getElementById("pwd").value;
     var pwd2 = document.getElementById("pwd2").value;
-    if(pwd !== pwd2){
-        document.passwd.focus();
+    if(pwd != pwd2){
         alert("동일한 비밀번호를 입력해주세요.");
         return false;
     }else{
@@ -36,7 +35,6 @@ function check_pwd() {
 
 function UserType() {
     if(pur===0){
-        document.UserType.focus();
         alert("이용목적을 선택하여주세요.");
         return false;
     }else{
