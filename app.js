@@ -36,6 +36,7 @@ app.use('/notice', require('./routes/notice'));
 app.use('/auth', require('./routes/auth'));
 app.use('/charge',require('./routes/charge'));
 app.use('/index',require('./routes/index'));
+app.use('/charity',require('./routes/project'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
