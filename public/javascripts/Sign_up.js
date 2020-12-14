@@ -40,7 +40,6 @@ function UserType() {
     }else{
         return true;
     }
-    location.href='/auth/login';
 }
 
 function doAction() {

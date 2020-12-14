@@ -86,8 +86,9 @@ router.post('/register',function (req,res,next){
     if (true) {
         conn.query(sql1,email, function(error, results, fields) {
             if (error) throw error;
-            if (results.length <= 0) {
-                
+            if (results!=0) {
+                res.send(email + ' Already exists!<br><a href="/home">Home</a>');
+            } else {
                 conn.query(sql2, data,
                     function (error, data) {
                         if (error)
@@ -96,9 +97,7 @@ router.post('/register',function (req,res,next){
                             console.log(data);
                     });
                 console.log('regist success');
-
-            } else {
-                res.send(email + ' Already exists!<br><a href="/home">Home</a>');
+                res.redirect('/auth/login');
             }
         });
     } else {
