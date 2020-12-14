@@ -59,6 +59,7 @@ function obtainToken(req, res) {
                                 } else {
                                     console.log("login success");
                                     res.status(200).send(result[0]);
+                                    res.sendFile(path.join(__dirname+'/../html/index.html'));
                                 }
                             })
                         }
@@ -80,7 +81,7 @@ router.post('/register',function (req,res,next){
         algorithm: 'HS256'
     });
     var data = [email,passwd,name,nickname,gender,phonenum,userType,accesstoken];
-    var sql1 = "SELECT * FROM UserInfo WHERE passwd = ? AND email = ?";
+    var sql1 = "SELECT * FROM UserInfo WHERE email = ?";
     var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
 
     if (true) {
@@ -94,9 +95,9 @@ router.post('/register',function (req,res,next){
                         else
                             console.log(data);
                     });
-                res.send(name + ' Registered Successfully!<br><a href="/home">Home</a>');
+                res.sendFile(path.join(__dirname+'/../html/Login.html'));
             } else {
-                res.send(name + ' Already exists!<br><a href="/home">Home</a>');
+                res.redirect('/auth/register');
             }
             res.end();
         });

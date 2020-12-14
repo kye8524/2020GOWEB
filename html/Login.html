@@ -28,27 +28,25 @@
         로그인<br>
         <span>기브코인에 오신 것을 환영합니다.</span>
     </div>
+    <form action="/auth/login" method="post">
     <div class="Login_DownBox">
         <form action="" class="Input_Login">
             <div class="ID">
                 <span>*</span>아이디 또는 이메일
-                <input type="text">
+                <input type="text" name="email" required>
             </div>
             <div class="Password">
                 <span>*</span>비밀번호
-                <input type="password">
+                <input type="password" name="passwd" required>
             </div>
         </form>
-        <div class="Login_CheckBox">
-            <input type="checkbox">로그인 상태 유지
-        </div>
-        <input type="button" value="로그인" class="Login_Button" style='cursor:pointer'>
+        <button type="submit" class="Login_Button" style='cursor:pointer' onclick="location.href='/index'">로그인</button>
         <div class="auth">
-            <a href="">비밀번호 찾기</a>
             <div class="line"></div>
             <a href="">회원가입 하기</a>
         </div>
     </div>
+    </form>
 </section>
 <footer>
     <hr>
