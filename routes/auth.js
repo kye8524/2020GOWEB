@@ -11,7 +11,8 @@ router.get('/register', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/Login.html'));
+    let session = req.session;
+    res.sendFile(path.join(__dirname+'/../html/Login.html'),{session:session});
 });
 router.post('/login', obtainToken);
 
@@ -25,6 +26,10 @@ function obtainToken(req, res) {
         conn.query(sql, [email,passwd], function(error, results, fields) {
             if (error) throw error;
             if (results.length !== 0) {
+                res.cookie("user",req.body.email,{
+                    expires : new Date(Date.now()+900000),
+                    httpOnly:true
+                });
                 res.redirect('/index');
                 res.end();
             } else {
