@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/Project.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 <header>
@@ -32,7 +33,7 @@
             <form action="/charity/add" method="post" enctype="multipart/form-data">
             <div class="subtitle">
                 프로젝트 이름<br>
-                <input type="text" class="Name" name="name" id="name" required>
+                <input type="text" class="Name" name="name" id="projectName" required>
             </div>
             <div class="subtitle">
                 프로젝트 대표이미지<br>
@@ -59,8 +60,8 @@
                 <textarea class="Content" name="content" required></textarea>
             </div>
             <div class="btn">
-                <input type="button" value="취소" class="cancle_btn" onclick="location.href='/mypage'; saveName();" style="cursor: pointer">
-                <button type="submit" class="complete_btn"  style="cursor: pointer">추가</button>
+                <input type="button" value="취소" class="cancle_btn" onclick="location.href='/mypage';" style="cursor: pointer">
+                <button type="submit" class="complete_btn" onclick="setItem()" style="cursor: pointer">추가</button>
             </div>
             </form>
         </div>
@@ -88,6 +89,6 @@
         </div>
     </div>
 </footer>
-<script src="../javascripts/Project_name.js"></script>
+<script src="../javascripts/project_name_set.js"></script>
 </body>
 </html>
