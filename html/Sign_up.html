@@ -30,18 +30,18 @@
         회원가입<br>
         <span>기브코인에 오신 것을 환영합니다.</span>
     </div>
-    <form action="/auth/register" method="post" onsubmit="return check_pwd()&&UserType();">
+    <form id="frm1" method="post" onsubmit="return check_pwd()&&UserType();">
     <div class="Sign_downBox">
         <div class="Sign_text">
             <span>*</span><div class="text_name" id="UserType">이용목적</div>
-            <button type="button" class="Type_Box" id="donor" onclick="check_donor(); check_out_charity();">
+            <button type="button" class="Type_Box" id="donor" onclick="check_donor(this.form); check_out_charity();">
                 <div class="Big_Exp">후원할 곳을 찾고 있습니다.</div>
                 <img src="../image/donor.svg" alt="donor" class="Type_img">
                 <div class="Type_Name">기부자</div>
                 <hr>
                 <div class="Small_Exp">기부할 프로젝트를 찾는 기업, 개인</div>
             </button>
-            <button type="button" class="Type_Box" id="charity" onclick="check_charity(); check_out_donor();">
+            <button type="button" class="Type_Box" id="charity" onclick="check_charity(this.form); check_out_donor();">
                 <div class="Big_Exp">기부자를 찾고 있습니다.</div>
                 <img src="../image/charity.svg" alt="charity" class="Type_img">
                 <div class="Type_Name">후원단체</div>

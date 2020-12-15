@@ -1,15 +1,15 @@
-var pur =0;
+let pur;
 
-function check_donor() {
+function check_donor(frm) {
     document.getElementById("donor").style.border="4px solid #30558A";
     document.getElementById("donor").style.boxShadow="3px 4px 6px gray;";
-    pur = {UserType: "donor"};
+    frm.action="/auth/donor_register";
 }
 
-function check_charity() {
+function check_charity(frm) {
     document.getElementById("charity").style.border="4px solid #30558A";
     document.getElementById("charity").style.boxShadow="3px 4px 6px gray;";
-    pur = {UserType:"charity"};
+    frm.action="/auth/charity_register";
 }
 
 function check_out_donor() {
