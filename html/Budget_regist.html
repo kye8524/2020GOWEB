@@ -27,34 +27,36 @@
     <div class="box">
         <div class="content_box">
             <div class="title">예산서 등록<br><hr></div>
+            <form action="/budget/add" method="post">
             <div class="subtitle">
                 프로젝트 이름<br>
-                <div class="Name"></div>
+                <div class="Name"><%=rows.title%></div>
             </div>
             <div class="budget_info">
             <div class="subtitle">
                 날짜<br>
-                <input type="date" class="Date">
+                <input type="date" class="Date" name="startdate" required>
                 ~
-                <input type="date" class="Date">
+                <input type="date" class="Date" name="enddate" required>
             </div>
             <div class="subtitle_client">
                 거래처<br>
-                <input type="text" class="Client">
+                <input type="text" class="Client" name="client" required>
             </div>
             </div>
             <div class="subtitle">
                 지출<br>
-                <textarea class="Usage"></textarea>
+                <input type="text" class="Usage" name="price" required>
             </div>
             <div class="subtitle">
                 내용<br>
-                <textarea class="Content"></textarea>
+                <textarea class="Content" name="content"></textarea>
             </div>
             <div class="btn">
                 <input type="button" value="취소" class="cancle_btn" onclick="location.href='../html/#'" style="cursor: pointer">
-                <input type="button" value="등록" class="complete_btn" onclick="location.href='../html/Charity_explanation.html'" style="cursor: pointer">
+                <button type="submit" class="complete_btn" onclick="location.href='/charity/read/:idx'" style="cursor: pointer">등록</button>
             </div>
+            </form>
         </div>
     </div>
 </section>
