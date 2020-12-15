@@ -29,7 +29,7 @@ function obtainToken(req, res) {
                 res.end();
             } else {
                 console.log('Incorrect');
-                res.send("Incorrect Username and/or Password!");
+                res.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다.");history.back();</script>');
             }
         });
     } else {
@@ -38,18 +38,54 @@ function obtainToken(req, res) {
     }
 }
 
-router.post('/register',function (req,res,next){
+router.post('/donor_register',function (req,res,next){
     var email = req.body.email;
     var passwd = req.body.passwd;
     var name = req.body.name;
     var nickname = req.body.nickName;
     var gender = req.body.gender;
     var phonenum = req.body.phoneNum;
-    var userType = req.header.UserType;
     var accesstoken = jwt.sign(req.body.email, Date.now().toString(16), {
         algorithm: 'HS256'
     });
-    var data = [email,passwd,name,nickname,gender,phonenum,userType,accesstoken];
+    var data = [email,passwd,name,nickname,gender,phonenum,'donor',accesstoken];
+    var sql1 = "SELECT * FROM UserInfo WHERE email = ?";
+    var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
+
+    if (true) {
+        conn.query(sql1,email, function(error, results, fields) {
+            if (error) throw error;
+            if (results!=0) {
+                res.send(email + ' Already exists!<br><a href="/home">Home</a>');
+            } else {
+                conn.query(sql2, data,
+                    function (error, data) {
+                        if (error)
+                            console.log(error);
+                        else
+                            console.log(data);
+                    });
+                console.log('regist success');
+                res.redirect('/auth/login');
+            }
+        });
+    } else {
+        res.send('Please enter User Information!');
+        res.end();
+    }
+});
+
+router.post('/charity_register',function (req,res,next){
+    var email = req.body.email;
+    var passwd = req.body.passwd;
+    var name = req.body.name;
+    var nickname = req.body.nickName;
+    var gender = req.body.gender;
+    var phonenum = req.body.phoneNum;
+    var accesstoken = jwt.sign(req.body.email, Date.now().toString(16), {
+        algorithm: 'HS256'
+    });
+    var data = [email,passwd,name,nickname,gender,phonenum,'charity',accesstoken];
     var sql1 = "SELECT * FROM UserInfo WHERE email = ?";
     var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
 
