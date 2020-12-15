@@ -29,7 +29,7 @@ function obtainToken(req, res) {
                 res.end();
             } else {
                 console.log('Incorrect');
-                res.send("Incorrect Username and/or Password!");
+                res.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다.");history.back();</script>');
             }
         });
     } else {
