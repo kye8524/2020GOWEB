@@ -4,15 +4,20 @@ var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
 var path = require('path');
 const jwt = require('jsonwebtoken');
+const cookie = require('cookie');
 
 
 router.get('/register', function(req, res, next) {
     res.sendFile(path.join(__dirname+'/../html/Sign_up.html'));
 });
+router.get('/out', function(req, res, next) {
+    res.sendFile(path.join(__dirname+'/../html/Sign_out.html'));
+});
 
 router.get('/login', function(req, res, next) {
-    let session = req.session;
-    res.sendFile(path.join(__dirname+'/../html/Login.html'),{session:session});
+    cookie.getCookie("acessCookie");
+    cookie.setCookie("acessCookie","cookie_value",1,"/");
+    res.sendFile(path.join(__dirname+'/../html/Login.html'),{});
 });
 router.post('/login', obtainToken);
 
@@ -26,10 +31,6 @@ function obtainToken(req, res) {
         conn.query(sql, [email,passwd], function(error, results, fields) {
             if (error) throw error;
             if (results.length !== 0) {
-                res.cookie("user",req.body.email,{
-                    expires : new Date(Date.now()+900000),
-                    httpOnly:true
-                });
                 res.redirect('/index');
                 res.end();
             } else {
@@ -117,5 +118,20 @@ router.post('/charity_register',function (req,res,next){
     }
 });
 
+router.post('/out',function(req,res,next)
+{
+    var email = req.body.email;
+    var passwd = req.body.passwd;
+    var data = [email,passwd];
+
+    var sql1 = "delete from UserInfo where email=?";
+    var sql2= "select totalcoin from UserInfo where email=?";
+    conn.query(sql1,data, function(err,row)
+    {
+        if(err) console.error(err);
+        console.log('delete');
+        res.redirect('/index');
+    });
+});
 
 module.exports = router;

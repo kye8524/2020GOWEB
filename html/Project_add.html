@@ -32,7 +32,7 @@
             <form action="/charity/add" method="post" enctype="multipart/form-data">
             <div class="subtitle">
                 프로젝트 이름<br>
-                <input type="text" class="Name" name="name" id="name" required>
+                <input type="text" class="Name" name="name" id="project_name" required>
             </div>
             <div class="subtitle">
                 프로젝트 대표이미지<br>
@@ -59,8 +59,8 @@
                 <textarea class="Content" name="content" required></textarea>
             </div>
             <div class="btn">
-                <input type="button" value="취소" class="cancle_btn" onclick="location.href='/mypage'; saveName();" style="cursor: pointer">
-                <button type="submit" class="complete_btn"  style="cursor: pointer">추가</button>
+                <input type="button" value="취소" class="cancle_btn" onclick="location.href='/mypage';" style="cursor: pointer">
+                <button type="submit" class="complete_btn"  onclick="saveName()" style="cursor: pointer">추가</button>
             </div>
             </form>
         </div>

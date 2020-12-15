@@ -1,8 +1,8 @@
 var name;
 
 function saveName() {
-    name = document.getElementById("name").value;
-    var name_ = document.getElementById("name_");
-    name_.innerText = name;
+    name = document.getElementById("project_name").value;
+    var name_project = document.getElementById("name_project");
+    name_project.innerText = name;
 }
 
