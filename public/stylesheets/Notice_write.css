@@ -1,10 +1,20 @@
-.detail {
-    margin-left: 135px;
+section{
+    margin: 0;
+}
+.detail_write{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    width: 1000px;
+    margin: 40px auto 5px auto;
+    text-align: left;
 }
 
 .box{
-    margin-left: 135px;
     width: 1000px;
+    margin: 10px 10px 50px 10px;
 }
 
 .title_input{
@@ -13,7 +23,6 @@
     border: 1px none;
     margin: 10px 0 0 20px;
 }
-
 .second_row{
     display: flex;
     flex-direction: row;
@@ -32,7 +41,7 @@
     box-sizing: border-box;
 }
 .content_input{
-    height: 400px;
+    height: 550px;
     width: 800px;
     border: 1px none;
     margin: 10px 0 0 20px;
