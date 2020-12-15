@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add',function (req,res,next){
+    var sql2 = "select title from Project where projectSeq=?"
+    conn.query(sql2,[project])
     var title = req.body.title;
     var startdate = req.body.startdate;
     var enddate = req.body.enddate;

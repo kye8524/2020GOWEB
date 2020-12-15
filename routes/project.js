@@ -45,12 +45,12 @@ router.post('/add', upload.single('file'),function(req,res,next){
     //var image = req.file.path;
     var data = [title,field,intro,title,content];
 
-
-    var sql = "insert into Project(title,field,intro,title,content) values(?,?,?,?,?)";
+    var sql = "insert into Project(title,field,intro,content) values(?,?,?,?)";
     conn.query(sql,data, function (err, rows) {
         if (err) console.error("err : " + err);
         res.status(200)
         console.log('complete')
+        res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
     });
 });
 
