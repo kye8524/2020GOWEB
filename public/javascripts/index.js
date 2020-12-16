@@ -1,3 +1,5 @@
+var pur;
+
 function show() {
     document.getElementById("menu").style.visibility = "visible";
 }
@@ -42,3 +44,22 @@ function hide() {
     }
     jQuery(document).ready(init);
 })();
+
+$.ajax({
+    url : "/index",
+    type : 'GET',
+    data : "UserType",
+    async : false,
+    success : function (res) {
+        pur = res;
+    }
+});
+
+$(document).ready(function () {
+    if(pur === "donor"){
+        $('#mypage').attr("href", "/mypage/donor");
+    }else{
+        $('#mypage').attr("href", "/mypage/charity");
+    }
+    $('#logout').attr("href", "/auth/logout");
+});
