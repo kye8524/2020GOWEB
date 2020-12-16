@@ -10,5 +10,11 @@
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="goweb@localhost" uuid="076f9427-0dcf-4842-8290-4ebbebc005b3">
+      <driver-ref>mysql_aurora</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql:aurora://localhost:3306/goweb</jdbc-url>
+    </data-source>
   </component>
 </project>
