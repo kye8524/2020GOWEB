@@ -33,9 +33,10 @@
 }
 
 .list_title{
+    width: 100px;
     font-size: 16px;
     font-family: IBM Plex Sans;
-    margin: 10px 100px 0 10px;
+    margin: 10px 80px 0 10px;
 }
 
 .list_content{
@@ -47,9 +48,13 @@
 .list_title_account{
     font-size: 16px;
     font-family: IBM Plex Sans;
-    margin: 10px 80px 0 10px;
+    margin: 10px 70px 0 10px;
 }
-
+.list_title_expend{
+    font-size: 16px;
+    font-family: IBM Plex Sans;
+    margin: 10px 88px 0 10px;
+}
 .account_section{
     width: 430px;
     height: 40px;
