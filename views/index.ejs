@@ -1,178 +1,178 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GiveCoin</title>
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/index.css">
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GiveCoin</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </head>
 <body>
 <header>
-  <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
-  <div class="Header_Charity" onmouseover="show()" onmouseout="hide()"><a href="Charity.html">후원단체보기</a></div>
-  <div class="Header_Notice" onmouseover="show()" onmouseout="hide()"><a href="Notice_list.html">공지사항</a></div>
-  <div class="Header_search">
-    <input type="text" class="Search_text">
-    <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
-  </div>
-  <div class="Header_Sign">
-    <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
-    <div class="LogIn"><a href="Login.html">로그인</a></div>
-  </div>
+    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity" onmouseover="show()" onmouseout="hide()"><a href="/charity">후원단체보기</a></div>
+    <div class="Header_Notice" onmouseover="show()" onmouseout="hide()"><a href="/notice/list">공지사항</a></div>
+    <div class="Header_search">
+        <input type="text" class="Search_text">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+    </div>
+    <div class="Header_Sign">
+        <div class="SignUp"><a href="/auth/register"><%=val1%></a></div>
+        <div class="LogIn"><a href="/auth/login"><%=val2%></a></div>
+    </div>
 </header>
 <section class="Section">
-  <div id="menu" onmouseover="show()" onmouseout="hide()">
-    <div class="menu_charity">
-      <span class="menu_li">아동/청소년</span>
-      <span class="menu_li">장애인</span>
-      <span class="menu_li">지구촌</span>
-      <span class="menu_li">동물</span>
-      <span class="menu_li">환경</span>
-      <span class="menu_li">기타</span>
+    <div id="menu" onmouseover="show()" onmouseout="hide()">
+        <div class="menu_charity">
+            <span class="menu_li">아동/청소년</span>
+            <span class="menu_li">장애인</span>
+            <span class="menu_li">지구촌</span>
+            <span class="menu_li">동물</span>
+            <span class="menu_li">환경</span>
+            <span class="menu_li">기타</span>
+        </div>
+        <div class="menu_givecoin">
+            <span class="menu_li">기브코인 이야기</span>
+            <span class="menu_li">오시는 길</span>
+        </div>
     </div>
-    <div class="menu_givecoin">
-      <span class="menu_li">기브코인 이야기</span>
-      <span class="menu_li">오시는 길</span>
+    <div class="Banner">
+        <ul>
+            <li><img src="../image/Banner_1.svg" alt="Banner"></li>
+            <li><img src="../image/Banner_2.svg" alt="Banner"></li>
+            <li><img src="../image/Banner_3.svg" alt="Banner"></li>
+        </ul>
     </div>
-  </div>
-  <div class="Banner">
-    <ul>
-      <li><img src="../image/Banner_1.svg" alt="Banner"></li>
-      <li><img src="../image/Banner_2.svg" alt="Banner"></li>
-      <li><img src="../image/Banner_3.svg" alt="Banner"></li>
-    </ul>
-  </div>
-  <div class="Banner_content">
-    <div class="Banner_title">
-      <div class="Progress_bar">
-        <div id="Banner_hr_1"></div>
-        <div id="Banner_hr_2"></div>
-        <div id="Banner_hr_3"></div>
-      </div>
+    <div class="Banner_content">
+        <div class="Banner_title">
+            <div class="Progress_bar">
+                <div id="Banner_hr_1"></div>
+                <div id="Banner_hr_2"></div>
+                <div id="Banner_hr_3"></div>
+            </div>
+        </div>
+        <div class="Next_btn">
+            <button class="left_btn"><img src="../image/Left_btn.svg" class="image_btn"></button>
+            <button class="right_btn"><img src="../image/Right_btn.svg" class="image_btn"></button>
+        </div>
     </div>
-    <div class="Next_btn">
-      <button class="left_btn"><img src="../image/Left_btn.svg" class="image_btn"></button>
-      <button class="right_btn"><img src="../image/Right_btn.svg" class="image_btn"></button>
+    <div class="Suggest_list">
+        <span class="Suggest_title">추천후원목록</span>
+        <div class="List_row_box">
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="List_row_box">
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+            <a href="../html/Charity_explanation.html">
+                <div class="List_box">
+                    <div class="List_photo"></div>
+                    <div class="List_title">
+                        제목이 들어갈 부분이다.
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-  </div>
-  <div class="Suggest_list">
-    <span class="Suggest_title">추천후원목록</span>
-    <div class="List_row_box">
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
+    <hr class="hr">
+    <div class="ad">
+        <div class="GiveCoin_ad"><a href="/index/introduce"></a></div>
     </div>
-    <div class="List_row_box">
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
+    <hr class="hr">
+    <div class="Notice">
+        <div class="Notice_story"><span class="BlueCoin">기브</span><span class="GiveCoin">코인</span>이야기</div>
+        <div class="Notice_box">
+            <div class="Notice_line">
+                <div class="Notice_line_btn">공지</div>
+                <div class="Notice_line_title">하루종일 인덱스만 잡고 있는게 실환가?</div>
+            </div>
+            <div class="Notice_line">
+                <div class="Notice_line_btn">공지</div>
+                <div class="Notice_line_title">갑자기 css을 못하게 된 사람이 있다?</div>
+            </div>
+            <div class="Notice_line"></div>
         </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
-      <a href="../html/Charity_explanation.html">
-        <div class="List_box">
-          <div class="List_photo"></div>
-          <div class="List_title">
-            제목이 들어갈 부분이다.
-          </div>
-        </div>
-      </a>
     </div>
-  </div>
-  <hr class="hr">
-  <div class="ad">
-    <div class="GiveCoin_ad"></div>
-  </div>
-  <hr class="hr">
-  <div class="Notice">
-    <div class="Notice_story"><span class="BlueCoin">기브</span><span class="GiveCoin">코인</span>이야기</div>
-    <div class="Notice_box">
-      <div class="Notice_line">
-        <div class="Notice_line_btn">공지</div>
-        <div class="Notice_line_title">하루종일 인덱스만 잡고 있는게 실환가?</div>
-      </div>
-      <div class="Notice_line">
-        <div class="Notice_line_btn">공지</div>
-        <div class="Notice_line_title">갑자기 css을 못하게 된 사람이 있다?</div>
-      </div>
-      <div class="Notice_line"></div>
-    </div>
-  </div>
 </section>
 <footer>
-  <hr>
-  <div class="Up_footer">
-    <div class="Footer_Text"><a href="">회원가입약관</a></div>
-    <div class="Footer_Text"><a href="">서비스이용약관</a></div>
-    <div class="Footer_Text"><a href="">개인정보처리방침</a></div>
-    <div class="Footer_Text"><a href="">공지사항</a></div>
-    <div class="Footer_Text"><a href="">SNS</a></div>
-  </div>
-  <hr>
-  <div class="Down_footer">
-    <div class="Left_footer">
-      <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
-      <div class="Customer_Service">기브코인 고객센터</div>
-      <div class="Service_Num">1900-2470</div>
+    <hr>
+    <div class="Up_footer">
+        <div class="Footer_Text"><a href="">회원가입약관</a></div>
+        <div class="Footer_Text"><a href="">서비스이용약관</a></div>
+        <div class="Footer_Text"><a href="">개인정보처리방침</a></div>
+        <div class="Footer_Text"><a href="">공지사항</a></div>
+        <div class="Footer_Text"><a href="">SNS</a></div>
     </div>
-    <div class="Right_footer">
-      기브코인플랫폼(주) | 팀장 김예은 | 사업자 등록번호 0907 <br>
-      서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
+    <hr>
+    <div class="Down_footer">
+        <div class="Left_footer">
+            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <div class="Customer_Service">기브코인 고객센터</div>
+            <div class="Service_Num">1900-2470</div>
+        </div>
+        <div class="Right_footer">
+            기브코인플랫폼(주) | 팀장 김예은 | 사업자 등록번호 0907 <br>
+            서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
+        </div>
     </div>
-  </div>
-  <script src="../javascripts/index.js"></script>
+    <script src="../javascripts/index.js"></script>
 </footer>
 </body>
 </html>
