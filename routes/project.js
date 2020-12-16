@@ -4,6 +4,7 @@ var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
 var path = require('path');
 var multer = require('multer');
+var fs = require('fs');
 
 var storage = multer.diskStorage({
     destination:function (req,file,cb){
@@ -58,13 +59,12 @@ router.get('/read/:seq',function(req,res,next)
 {
     let seq = req.params.seq;
     console.log(seq);
-    var sql="SELECT pro.*, U.name, U.email, B.* FROM Project AS pro JOIN UserInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
+    var sql="SELECT pro.*, U.name, U.email, date_format(B.startdate,'%Y-%m-%d') startdate ,date_format(B.enddate,'%Y-%m-%d') enddate,B.client,B.contents,B.price FROM Project AS pro JOIN UserInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
     conn.query(sql,[seq],function (err,row){
     if(err) console.error(err);
     console.log(row);
     res.render('Charity_explanation', {row:row[0]});
 });
-
 });
 
 module.exports=router;
