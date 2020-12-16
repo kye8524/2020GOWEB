@@ -41,6 +41,7 @@
 
 .Charity_search_box{
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     width: 1050px;
     margin-top: 60px;

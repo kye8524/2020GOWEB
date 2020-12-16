@@ -5,7 +5,7 @@ var conn = mysql_odbc.init();
 var path = require('path');
 
 router.get('/', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/index.html'));
+    res.render('index');
 });
 
 module.exports=router;

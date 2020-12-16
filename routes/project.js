@@ -20,7 +20,9 @@ var upload = multer({storage:storage});
 router.get('/',function (req,res,next){
     res.redirect('/charity/list/1');
 });
-
+router.get('/list',function (req,res,next){
+    res.redirect('/charity/list/1');
+});
 router.get('/list/:page', function(req, res, next) {                                                //uri를 'list/:page'형태로 받음.board/list/(페이지숫자)형식으로 게시판리스트 노출
     var page = req.params.page;
     var sql = "select title,image from Project";
