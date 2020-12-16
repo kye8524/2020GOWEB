@@ -47,4 +47,7 @@ function getUserInfo(req, res) {
         }
     })
 }
+router.get('/donation',function (req,res,next){
+    res.render('donation');
+})
 module.exports = router;

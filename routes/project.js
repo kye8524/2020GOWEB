@@ -9,7 +9,7 @@ var fs = require('fs');
 var storage = multer.diskStorage({
     destination:function (req,file,cb){
         console.log('이미지파일')
-        cb(null,'uploads/images')
+        cb(null,'public/image')
     },
     filename:function (req,file,cb){
         cb(null,Date.now()+'-'+file.originalname)
@@ -41,26 +41,21 @@ router.post('/add', upload.single('file'),function(req,res,next){
     console.log(upload)
     console.log(upload.storage.getFilename)
 
-    var userInfo = req.userInfo;
-    if(userInfo){
-        let userSeq = userInfo.userSeq;
         var title = req.body.name;
         var field = req.body.field;
         var intro = req.body.intro;
         var content = req.body.content;
         var image = req.file.path;
-        var data = [title,field,intro,content,userSeq,image];
+        image=image.replace('public','');
+        var data = [title,field,intro,content,image];
 
-        var sql = "insert into Project(title,field,intro,content, userSeq,image) values(?,?,?,?,?,?)";
+        var sql = "insert into Project(title,field,intro,content,image) values(?,?,?,?,?)";
         conn.query(sql,data, function (err, rows) {
             if (err) console.error("err : " + err);
             res.status(200)
             console.log('complete')
             res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
         });
-    }else{
-        res.status(403).send({"msg": "토큰이 만료되었습니다."})
-    }
 
 });
 
@@ -68,12 +63,15 @@ router.get('/read/:seq',function(req,res,next)
 {
     let seq = req.params.seq;
     console.log(seq);
+    var sql_img="select image from project where projectSeq=?"
     var sql="SELECT pro.*, U.name, U.email, date_format(B.startdate,'%Y-%m-%d') startdate ,date_format(B.enddate,'%Y-%m-%d') enddate,B.client,B.contents,B.price FROM Project AS pro JOIN UserInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
     conn.query(sql,[seq],function (err,row){
     if(err) console.error(err);
     console.log(row);
-    res.render('Charity_explanation', {row:row[0]});
-});
+    conn.query(sql_img,row[0].projectSeq,function (err,result){
+        res.render('Charity_explanation', {row:row[0],imgR:result[0]});
+    })
+    });
 });
 
 module.exports=router;
