@@ -36,7 +36,7 @@ util.isDelivered = function(arr){
 
 util.checkAuth = function(req, res){
     var token = req.headers['x-access-token'];
-    this.connection.query("select * from UserInfo where accessToken = ?", token, function(err, userInfos){
+    conn.query("select * from UserInfo where accessToken = ?", token, function(err, userInfos){
         if(err){
             res.send(500)
         }

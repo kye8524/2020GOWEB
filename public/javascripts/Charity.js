@@ -4,8 +4,8 @@ $(document).ready(function() {
     var floatPosition = parseInt($(".Side_nav").css('top'));
 
     $(window).scroll(function() {
-        // 현재 스크롤 위치를 가져옴
-        var scrollTop = $(window).scrollTop();
+
+        var scrollTop = ($(window).scrollTop())/3;
         var newPosition = scrollTop + floatPosition + "px";
 
 

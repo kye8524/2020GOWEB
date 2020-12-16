@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/donation.css">
 </head>
 <body>
 <header>
@@ -19,33 +19,37 @@
         <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
+        <div class="SignUp"><a href="auth/register">회원가입</a></div>
         <div class="LogIn"><a href="Login.html">로그인</a></div>
     </div>
 </header>
 <section>
-    <div class="Login_UpBox">
-        로그인<br>
-        <span>기브코인에 오신 것을 환영합니다.</span>
-    </div>
-    <form action="/auth/login" method="post">
-    <div class="Login_DownBox">
-        <form action="" class="Input_Login">
-            <div class="ID">
-                <span>*</span>이메일
-                <input type="text" name="email" required>
+    <div class="detail"></div>
+    <div class="box">
+        <div class="title_box">
+            <div class="title">충전하기</div>
+            <div class="subtitle">기부하는 당신이 아름답습니다</div>
+        </div>
+        <form action="/charge" class="coin_data">
+            <div class="coin_detail">
+                <div class="coin_have">
+                    보유 코인
+                    <div></div>
+                </div>
+                <div class="coin_donate">
+                    충전할 코인
+                    <input type="number" id="coin_charge" name="coin_charge" onkeyup="change_krw()">
+                </div>
             </div>
-            <div class="Password">
-                <span>*</span>비밀번호
-                <input type="password" name="passwd" required>
-            </div>
-            <button type="submit" class="Login_Button" style='cursor:pointer' onclick="location.href='/index'">로그인</button>
         </form>
-        <div class="auth">
-            <a href="">회원가입 하기</a>
+        <div class="krw">
+            <span id="krw_">0</span> KRW
+        </div>
+        <div class="donate_box">
+            <input type="button" value="결제하기" class="donate_btn" onclick="location.href='../html/#'; charge_alert()" style='cursor:pointer'>
         </div>
     </div>
-    </form>
+
 </section>
 <footer>
     <hr>
@@ -70,4 +74,5 @@
     </div>
 </footer>
 </body>
+<script src="../javascripts/charge.js"></script>
 </html>

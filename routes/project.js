@@ -25,7 +25,7 @@ router.get('/list/:page', function(req, res, next) {                            
     var sql = "select title,image from Project";
     conn.query(sql, function (err, rows) {
         if (err) console.error("err : " + err);
-        res.sendFile(path.join(__dirname+'/../html/Charity.html'),{rows: rows, page:page, length:rows.length-1, page_num:5, pass:true});
+        res.render('Charity', {rows: rows, field:page, length:rows.length-1, page_num:5, pass:true})
         console.log(rows.length-1);
     });
 });
@@ -38,27 +38,20 @@ router.post('/add', upload.single('file'),function(req,res,next){
     console.log(upload)
     console.log(upload.storage.getFilename)
 
-    var userInfo = req.userInfo;
-    if(userInfo){
-        let userSeq = userInfo.userSeq;
         var title = req.body.name;
         var field = req.body.field;
         var intro = req.body.intro;
         var content = req.body.content;
-        //var image = req.file.path;
-        var data = [title,field,intro,content,userSeq];
+        var image = req.file.path;
+        var data = [title,field,intro,content,image];
 
-        var sql = "insert into Project(title,field,intro,content, userSeq) values(?,?,?,?,?)";
+        var sql = "insert into Project(title,field,intro,content,image) values(?,?,?,?,?)";
         conn.query(sql,data, function (err, rows) {
             if (err) console.error("err : " + err);
             res.status(200)
             console.log('complete')
             res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
         });
-    }else{
-        res.status(403).send({"msg": "토큰이 만료되었습니다."})
-    }
-
 });
 
 router.get('/read/:seq',function(req,res,next)
@@ -69,8 +62,7 @@ router.get('/read/:seq',function(req,res,next)
     conn.query(sql,[seq],function (err,row){
     if(err) console.error(err);
     console.log(row);
-    res.render('Charity_explanation', {row:row[0]})
-    //res.sendFile(path.join(__dirname+'/../html/Charity_explanation.html'),{row:row[0]});
+    res.render('Charity_explanation', {row:row[0]});
 });
 
 });

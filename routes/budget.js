@@ -16,12 +16,18 @@ router.post('/add',function (req,res,next){
     var client = req.body.client;
     var price = req.body.price;
     var content = req.body.content;
-    var data=[title,startdate,enddate,client,price,content];
-    var sql = "insert into Budget(title,startdate,enddate,client,price,contents) values(?,?,?,?,?,?)";
-    conn.query(sql,data, function (err, rows) {
+    var sql2 = "insert into Budget(title,startdate,enddate,client,price,contents,projectSeq) values(?,?,?,?,?,?,?)";
+    var sql1 = "select projectSeq from Project where title=?"
+    conn.query(sql1,[title],function (err,result){
         if (err) console.error("err : " + err);
-        console.log(rows);
-        res.redirect('/charity/read/'+rows.insertId);
-    });
+        var parsedResult = JSON.parse(JSON.stringify(result));
+        var proseq = parsedResult[0].projectSeq;
+        var data=[title,startdate,enddate,client,price,content,proseq];
+        conn.query(sql2,data, function (err, rows) {
+            if (err) console.error("err : " + err);
+            console.log(rows);
+            res.redirect('/charity/read/'+rows.insertId);
+        });
+    })
 })
 module.exports=router;

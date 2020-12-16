@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/Charity_explanation.css">
     <link rel="stylesheet" href="/css/Budget_view.css">
-    <script src="../javascript/Charity_explanation.js"></script>
+
 </head>
 <body>
 <header>
@@ -43,13 +43,13 @@
                         </div>
                         <div class="hr"></div>
                         <div class="hr"></div>
-                            <button class="budget_btn" onclick="show()">예산서보기</button>
+                            <button type="button" class="budget_btn" onclick="show()">예산서보기</button>
                     </div>
                     <section id="Budget_section">
                         <div class="budget_title">예산서 보기</div>
                         <div class="date_section">
                             <div class="list_title">날짜</div>
-                            <div class="list_content"><%=row.startdate%>~<%=rows.enddate%></div>
+                            <div class="list_content"><%=row.startdate%>~<%=row.enddate%></div>
                         </div>
                         <div class="account_section">
                             <div class="list_title_account">거래처</div>
@@ -108,4 +108,13 @@
     </div>
 </footer>
 </body>
+<script>
+    function show() {
+        document.getElementById("Budget_section").style.visibility = "visible";
+    }
+
+    function hide() {
+        document.getElementById("Budget_section").style.visibility = "hidden";
+    }
+</script>
 </html>

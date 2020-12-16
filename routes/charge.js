@@ -9,10 +9,9 @@ const crypto = require('crypto');
 const cUtil = require('../customUtil');
 var fs = require('fs');
 
-router.get('/', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/charge.html'));
+router.get('/', function (req,res,next) {
+    res.render('charge');
 });
-router.post('/', getUserInfo);
 
 function getUserInfo(req, res) {
     let accessToken = req.headers['x-access-token'];
