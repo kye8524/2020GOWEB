@@ -7,6 +7,7 @@ var path = require('path');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const cUtil = require('../customUtil');
+const session = require('express-session');
 
 
 router.get('/register', function(req, res, next) {
@@ -18,11 +19,17 @@ router.get('/out', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/Login.html'),{});
+    let session = req.session;
+    res.sendFile(path.join(__dirname+'/../html/Login.html'),{session:session});
 });
 router.post('/login', obtainToken2);
 
-
+router.get('/logout',function (req,res,next){
+    req.session.destroy();
+    res.clearCookie('goweb');
+    res.send('<script type="text/javascript">alert("로그아웃 하시겠습니까?");history.back();</script>');
+    res.redirect("/auth/login")
+})
 
 router.post('/donor_register2',function (req,res,next) {
     let array = {
@@ -147,7 +154,7 @@ router.post('/charity_register2',function (req,res,next) {
     })
 })
 
-router.post('/out',function(req,res,next)
+router.post('/signout',function(req,res,next)
 {
     var passwd = req.body.passwd;
     var data = [email,passwd];
@@ -205,6 +212,10 @@ function obtainToken2(req, res) {
                                     res.status(400).send("token error");
                                 } else {
                                     console.log("login success");
+                                    res.cookie("user", result.email , {
+                                        expires: new Date(Date.now() + 900000),
+                                        httpOnly: true
+                                    });
                                     res.redirect('/index');
                                 }
                             })

@@ -2,11 +2,11 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const session = require('express-session');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
 const cUtil = require('./customUtil');
 var mysql_odbc = require('./database/db_conn')();
-const session = require('express-session');
 var conn = mysql_odbc.init();
 
 var app = express();
@@ -18,13 +18,9 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json());
-app.use(cUtil.tokenMiddleWare);
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(cookieParser('gowebgivecoin'));
 app.use(session({
-  key: 'sid',
+  key: 'goweb',
   secret: 'goweb',
   resave: false,
   saveUninitialized: true,
@@ -32,6 +28,10 @@ app.use(session({
     maxAge: 24000 * 60 * 60 // 쿠키 유효기간 24시간
   }
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(cUtil.tokenMiddleWare);
+app.use(bodyParser.urlencoded({extended : true}));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
