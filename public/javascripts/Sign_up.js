@@ -3,13 +3,13 @@ let pur;
 function check_donor(frm) {
     document.getElementById("donor").style.border="4px solid #30558A";
     document.getElementById("donor").style.boxShadow="3px 4px 6px gray;";
-    frm.action="/auth/donor_register";
+    frm.action="/auth/donor_register2";
 }
 
 function check_charity(frm) {
     document.getElementById("charity").style.border="4px solid #30558A";
     document.getElementById("charity").style.boxShadow="3px 4px 6px gray;";
-    frm.action="/auth/charity_register";
+    frm.action="/auth/charity_register2";
 }
 
 function check_out_donor() {

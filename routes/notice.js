@@ -3,6 +3,7 @@ var router = express.Router();
 var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
 var path= require('path');
+
 router.get('/list', function(req, res, next) {
     res.redirect('/notice/Notice_list/1')
 });

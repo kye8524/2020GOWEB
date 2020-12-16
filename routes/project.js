@@ -39,20 +39,27 @@ router.post('/add', upload.single('file'),function(req,res,next){
     console.log(upload)
     console.log(upload.storage.getFilename)
 
+    var userInfo = req.userInfo;
+    if(userInfo){
+        let userSeq = userInfo.userSeq;
         var title = req.body.name;
         var field = req.body.field;
         var intro = req.body.intro;
         var content = req.body.content;
         var image = req.file.path;
-        var data = [title,field,intro,content,image];
+        var data = [title,field,intro,content,userSeq,image];
 
-        var sql = "insert into Project(title,field,intro,content,image) values(?,?,?,?,?)";
+        var sql = "insert into Project(title,field,intro,content, userSeq,image) values(?,?,?,?,?,?)";
         conn.query(sql,data, function (err, rows) {
             if (err) console.error("err : " + err);
             res.status(200)
             console.log('complete')
             res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
         });
+    }else{
+        res.status(403).send({"msg": "토큰이 만료되었습니다."})
+    }
+
 });
 
 router.get('/read/:seq',function(req,res,next)
