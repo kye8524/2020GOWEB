@@ -7,16 +7,6 @@ var session = require('express-session');
 var pur;
 
 
-$.ajax({
-    url : "/auth/index",
-    type : 'GET',
-    data : "UserType",
-    async : false,
-    success : function (res) {
-        pur = res;
-    }
-});
-
 router.get('/', function(req, res, next) {
     if(req.cookies){
         console.log('cookie exist'+req.cookies);

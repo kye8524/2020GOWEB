@@ -220,15 +220,10 @@ function obtainToken2(req, res) {
                                     const token = jwt.sign({
                                         id,
                                     }, process.env.JWT_SECRET, {
-                                        expiresIn: '1440m', // 1분
+                                        expiresIn: '1440m', // 24h
                                         issuer: '토큰발급자',
                                     });
-                                    res.cookie("user", result.email , {
-                                        expires: new Date(Date.now() + 900000),
-                                        httpOnly: true
-                                    });
-                                    res.redirect('/index');
-                                    return res.json({
+                                     res.json({
                                         code: 200,
                                         message: '토큰이 발급되었습니다.',
                                         token,
