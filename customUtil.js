@@ -1,10 +1,12 @@
 var util= {};
-
+var mysql_odbc = require('./database/db_conn')();
+const session = require('express-session');
+var conn = mysql_odbc.init();
 
 util.tokenMiddleWare = function(req, res, next){
     var token = req.headers['x-access-token'];
     if(token){
-        util.connection.query("select * from UserInfo where accessToken = ?", token, function (err ,userInfo) {
+        conn.query("select * from UserInfo where accessToken = ?", token, function (err ,userInfo) {
             if(err){
                 console.log(err);
                 next();

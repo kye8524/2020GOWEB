@@ -38,31 +38,41 @@ router.post('/add', upload.single('file'),function(req,res,next){
     console.log(upload)
     console.log(upload.storage.getFilename)
 
-    var title = req.body.name;
-    var field = req.body.field;
-    var intro = req.body.intro;
-    var content = req.body.content;
-    //var image = req.file.path;
-    var data = [title,field,intro,title,content];
+    var userInfo = req.userInfo;
+    if(userInfo){
+        let userSeq = userInfo.userSeq;
+        var title = req.body.name;
+        var field = req.body.field;
+        var intro = req.body.intro;
+        var content = req.body.content;
+        //var image = req.file.path;
+        var data = [title,field,intro,content,userSeq];
 
-    var sql = "insert into Project(title,field,intro,content) values(?,?,?,?)";
-    conn.query(sql,data, function (err, rows) {
-        if (err) console.error("err : " + err);
-        res.status(200)
-        console.log('complete')
-        res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
-    });
+        var sql = "insert into Project(title,field,intro,content, userSeq) values(?,?,?,?,?)";
+        conn.query(sql,data, function (err, rows) {
+            if (err) console.error("err : " + err);
+            res.status(200)
+            console.log('complete')
+            res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
+        });
+    }else{
+        res.status(403).send({"msg": "토큰이 만료되었습니다."})
+    }
+
 });
 
-router.get('/read/:idx',function(req,res,next)
+router.get('/read/:seq',function(req,res,next)
 {
-    var idx = req.params.title;
-    var sql = "select title, field,intro, content from Project where title=?";
-    conn.query(sql,[idx], function(err,row)
-    {
-        if(err) console.error(err);
-        res.sendFile(path.join(__dirname+'/../html/Charity_explanation.html'),{rows: row[0]});
-    });
+    let seq = req.params.seq;
+    console.log(seq);
+    var sql="SELECT pro.*, U.name, U.email, B.* FROM Project AS pro JOIN UserInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
+    conn.query(sql,[seq],function (err,row){
+    if(err) console.error(err);
+    console.log(row);
+    res.render('Charity_explanation', {row:row[0]})
+    //res.sendFile(path.join(__dirname+'/../html/Charity_explanation.html'),{row:row[0]});
+});
+
 });
 
 module.exports=router;

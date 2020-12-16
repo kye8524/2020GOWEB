@@ -65,6 +65,7 @@ section{
     font-style: normal;
     font-size: 13px;
     font-weight: bold;
+    resize: none;
 }
 .Date{
     width: 150px;

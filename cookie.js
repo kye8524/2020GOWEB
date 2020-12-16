@@ -1,5 +1,4 @@
 var cookie= {};
-
 cookie.setCookie=function (cookieName, cookieValue, cookieExpire, cookiePath, cookieDomain, cookieSecure){
     var cookieText=escape(cookieName)+'='+escape(cookieValue);
     cookieText+=(cookieExpire ? '; EXPIRES='+cookieExpire.toUTCString() : '');

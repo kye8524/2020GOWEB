@@ -10,8 +10,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add',function (req,res,next){
-    var sql2 = "select title from Project where projectSeq=?"
-    conn.query(sql2,[project])
     var title = req.body.title;
     var startdate = req.body.startdate;
     var enddate = req.body.enddate;
@@ -19,10 +17,11 @@ router.post('/add',function (req,res,next){
     var price = req.body.price;
     var content = req.body.content;
     var data=[title,startdate,enddate,client,price,content];
-    var sql = "insert into Budget(title,startdate,enddate,client,price,content) values(?,?,?,?,?,?)";
+    var sql = "insert into Budget(title,startdate,enddate,client,price,contents) values(?,?,?,?,?,?)";
     conn.query(sql,data, function (err, rows) {
         if (err) console.error("err : " + err);
-        res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'),{title:title});
+        console.log(rows);
+        res.redirect('/charity/read/'+rows.insertId);
     });
 })
 module.exports=router;

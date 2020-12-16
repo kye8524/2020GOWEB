@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+app.use(cUtil.tokenMiddleWare);
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(session({
   key: 'sid',
@@ -38,7 +39,6 @@ app.use((req, res, next) => {
 
   next();
 });
-app.use(cUtil.tokenMiddleWare);
 
 app.use('/mysql', require('./routes/mysql'));
 app.use('/notice', require('./routes/notice'));

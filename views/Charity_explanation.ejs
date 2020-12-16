@@ -31,53 +31,53 @@
         <h1>후원단체 소개</h1>
         <div class="Small_box">
             <div class="explain_img"></div>
-                <div class="explain_box">
-                    <div class="explain_content">
-                        <div class="explain_row">
-                            <h3>후원단체명</h3>
-                            <h3 class="need_left"><%=row.name%></h3>
-                        </div>
-                        <div class="explain_row">
-                            <h3>문의 메일</h3>
-                            <h3><%=row.email%></h3>
-                        </div>
-                        <div class="hr"></div>
-                        <div class="hr"></div>
-                            <button class="budget_btn" onclick="show()">예산서보기</button>
+            <div class="explain_box">
+                <div class="explain_content">
+                    <div class="explain_row">
+                        <h3>후원단체명</h3>
+                        <h3 class="need_left"><%=row.name%></h3>
                     </div>
-                    <section id="Budget_section">
-                        <div class="budget_title">예산서 보기</div>
-                        <div class="date_section">
-                            <div class="list_title">날짜</div>
-                            <div class="list_content"><%=row.startdate%>~<%=rows.enddate%></div>
-                        </div>
-                        <div class="account_section">
-                            <div class="list_title_account">거래처</div>
-                            <div class="list_content"><%=row.client%></div>
-                        </div>
-                        <div class="expenditure_section">
-                            <div class="list_title">지출</div>
-                            <div class="list_content"><%=row.price%></div>
-                        </div>
-                        <div class="content_section">
-                            <div class="list_title">내용</div>
-                            <div class="list_content">
-                                <%=row.content%>
-                            </div>
-                        </div>
-                        <button class="close_btn" onclick="hide()">닫기</button>
-                    </section>
+                    <div class="explain_row">
+                        <h3>문의 메일</h3>
+                        <h3><%=row.email%></h3>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="hr"></div>
+                    <button class="budget_btn" onclick="show()">예산서보기</button>
                 </div>
+                <section id="Budget_section">
+                    <div class="budget_title">예산서 보기</div>
+                    <div class="date_section">
+                        <div class="list_title">날짜</div>
+                        <div class="list_content"><%=row.startdate%>~<%=row.enddate%></div>
+                    </div>
+                    <div class="account_section">
+                        <div class="list_title_account">거래처</div>
+                        <div class="list_content"><%=row.client%></div>
+                    </div>
+                    <div class="expenditure_section">
+                        <div class="list_title">지출</div>
+                        <div class="list_content"><%=row.price%></div>
+                    </div>
+                    <div class="content_section">
+                        <div class="list_title">내용</div>
+                        <div class="list_content">
+                            <%=row.content%>
+                        </div>
+                    </div>
+                    <button class="close_btn" onclick="hide()">닫기</button>
+                </section>
+            </div>
         </div>
-            <p class="p"><%=row.intro%>
-            </p>
-            <hr class="h">
-            <h1>프로젝트 소개</h1>
-            <h3 id="project_Name"></h3>
-            <p>
-                <%=row.content%>
-            </p>
-            <hr class="h2">
+        <p class="p"><%=row.intro%>
+        </p>
+        <hr class="h">
+        <h1>프로젝트 소개</h1>
+        <h3 id="project_Name"></h3>
+        <p>
+            <%=row.content%>
+        </p>
+        <hr class="h2">
         <div class="donation_section">
             <a href="../html/donation.html">
                 <button class="donation_btn">후원하기</button>

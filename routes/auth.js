@@ -39,7 +39,7 @@ function obtainToken(req, res) {
             }
         });
     } else {
-        res.send('Please enter Username and Password!');
+        res.send('<script type="text/javascript">alert("아이디/비밀번호를 입력해주세요.");history.back();</script>');
         res.end();
     }
 }
@@ -58,11 +58,10 @@ router.post('/donor_register',function (req,res,next){
     var sql1 = "SELECT * FROM UserInfo WHERE email = ?";
     var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
 
-    if (true) {
-        conn.query(sql1,email, function(error, results, fields) {
+    conn.query(sql1,email, function(error, results, fields) {
             if (error) throw error;
             if (results!=0) {
-                res.send(email + ' Already exists!<br><a href="/home">Home</a>');
+                res.send('<script type="text/javascript">alert("이미 존재하는 계정입니다.");history.back();</script>');
             } else {
                 conn.query(sql2, data,
                     function (error, data) {
@@ -75,10 +74,6 @@ router.post('/donor_register',function (req,res,next){
                 res.redirect('/auth/login');
             }
         });
-    } else {
-        res.send('Please enter User Information!');
-        res.end();
-    }
 });
 
 router.post('/charity_register',function (req,res,next){
@@ -95,11 +90,10 @@ router.post('/charity_register',function (req,res,next){
     var sql1 = "SELECT * FROM UserInfo WHERE email = ?";
     var sql2 = "INSERT INTO UserInfo (email,passwd,name,nickName,gender,phoneNum,userType,accessToken,signTime) VALUES(?,?,?,?,?,?,?,?,now())";
 
-    if (true) {
         conn.query(sql1,email, function(error, results, fields) {
             if (error) throw error;
             if (results!=0) {
-                res.send(email + ' Already exists!<br><a href="/home">Home</a>');
+                res.send('<script type="text/javascript">alert("이미 존재하는 계정입니다.");history.back();</script>');
             } else {
                 conn.query(sql2, data,
                     function (error, data) {
@@ -112,10 +106,6 @@ router.post('/charity_register',function (req,res,next){
                 res.redirect('/auth/login');
             }
         });
-    } else {
-        res.send('Please enter User Information!');
-        res.end();
-    }
 });
 
 router.post('/out',function(req,res,next)
