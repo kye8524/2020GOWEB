@@ -37,7 +37,10 @@ h1 {
     width: 450px;
     height: 350px;
 }
-
+.explain_img img{
+    width: 450px;
+    height: 350px;
+}
 .Small_box {
     display: flex;
     flex-direction: row;
