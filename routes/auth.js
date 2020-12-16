@@ -7,6 +7,8 @@ var path = require('path');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const cUtil = require('../customUtil');
+require('dotenv').config();
+const { verifyToken } = require('../middlewares');
 const session = require('express-session');
 
 
@@ -212,11 +214,25 @@ function obtainToken2(req, res) {
                                     res.status(400).send("token error");
                                 } else {
                                     console.log("login success");
+                                    const id = result.email;
+
+                                    // jwt.sign() 메소드: 토큰 발급
+                                    const token = jwt.sign({
+                                        id,
+                                    }, process.env.JWT_SECRET, {
+                                        expiresIn: '1440m', // 1분
+                                        issuer: '토큰발급자',
+                                    });
                                     res.cookie("user", result.email , {
                                         expires: new Date(Date.now() + 900000),
                                         httpOnly: true
                                     });
                                     res.redirect('/index');
+                                    return res.json({
+                                        code: 200,
+                                        message: '토큰이 발급되었습니다.',
+                                        token,
+                                    });
                                 }
                             })
                         }

@@ -23,12 +23,6 @@ util.tokenMiddleWare = function(req, res, next){
         next();
     }
 };
-
-util.getCookie=function (req,res,next){
-    var expiryDate = new Date( Date.now() + 60 * 60 * 1000 * 24 * 7); // 24 hour 7일
-    res.cookie('loginObj', loginObj, { expires: expiryDate, httpOnly: true, signed:true });
-
-}
 util.isDelivered = function(arr){
     isDelivered = true;
     for (var i = 0; i < arr.length; i++) {
