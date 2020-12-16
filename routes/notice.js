@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
-
+var path= require('path');
 router.get('/list', function(req, res, next) {
     res.redirect('/notice/Notice_list/1')
 });
@@ -80,5 +80,8 @@ router.post('/delete',function(req,res,next)
     });
 });
 
+router.get('/map',function(req,res,next){
+    res.sendFile(path.join(__dirname+'/../html/map.html'));
+})
 
 module.exports = router;
