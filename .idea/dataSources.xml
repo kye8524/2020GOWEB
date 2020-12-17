@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="goweb@localhost" uuid="903f6a15-2224-4137-9f42-24161d4da2dd">
       <driver-ref>mysql_aurora</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql:aurora://localhost:3306/goweb</jdbc-url>
+=======
+    <data-source source="LOCAL" name="goweb" uuid="c5dc1e13-416c-46a2-a835-583fccefc13a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/GoWeb</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+>>>>>>> ac9e770325e3ec132e72e65d94436083555b7bfd
     </data-source>
   </component>
 </project>
