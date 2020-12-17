@@ -30,10 +30,16 @@ router.get('/list/:page', function(req, res, next) {                            
     conn.query(sql, function (err, rows) {
         if (err) console.error("err : " + err);
         if(req.cookies.accessToken){
-            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,val1:'마이메이지',val2:'로그아웃'});
+            var userinfo = req.userInfo;
+            if(userinfo){
+                let userType=userinfo.userType;
+                userType='/mypage/'+userType;
+                console.log(userType);
+                res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이메이지',val2:'로그아웃'});
+            }
         }else {
             console.log('cookie none');
-            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,val1:'회원가입',val2:'로그인'});
+            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }
         console.log(rows.length-1);
     });
@@ -41,10 +47,16 @@ router.get('/list/:page', function(req, res, next) {                            
 });
 router.get('/add', function (req,res,next) {
     if(req.cookies.accessToken){
-        res.render('Project_add',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Project_add',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Project_add',{val1:'회원가입',val2:'로그인'});
+        res.render('Project_add',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
@@ -89,11 +101,16 @@ router.get('/read/:seq',function(req,res,next)
     console.log(row);
     conn.query(sql_img,[seq],function (err,result){
         if(req.cookies.accessToken){
-            console.log("cookie exist");
-            res.render('Charity_explanation',{row:row[0],imgR:result[0],val1:'마이메이지',val2:'로그아웃'});
+            var userinfo = req.userInfo;
+            if(userinfo){
+                let userType=userinfo.userType;
+                userType='/mypage/'+userType;
+                console.log(userType);
+                res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이메이지',val2:'로그아웃'});
+            }
         }else {
             console.log('cookie none');
-            res.render('Charity_explanation',{row:row[0],imgR:result[0],val1:'회원가입',val2:'로그인'});
+            res.render('Charity_explanation',{row:row[0],imgR:result[0],link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }
     })
     });

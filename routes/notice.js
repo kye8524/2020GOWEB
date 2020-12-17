@@ -15,10 +15,16 @@ router.get('/Notice_list/:page', function(req, res, next) {                     
     conn.query(sql, function (err, rows) {                                                   //select된 행을 가져와서 rows 변수에 담는다.오류가 있다면 err에 담는다.
         if (err) console.error("err : " + err);
         if(req.cookies.accessToken){
-            res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,val1:'마이메이지',val2:'로그아웃'});
+            var userinfo = req.userInfo;
+            if(userinfo){
+                let userType=userinfo.userType;
+                userType='/mypage/'+userType;
+                console.log(userType);
+                res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이메이지',val2:'로그아웃'});
+            }
         }else {
             console.log('cookie none');
-            res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,val1:'회원가입',val2:'로그인'});
+            res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }
         console.log(rows.length-1);
     });
@@ -26,10 +32,16 @@ router.get('/Notice_list/:page', function(req, res, next) {                     
 
 router.get('/write', function (req,res,next) {
     if(req.cookies.accessToken){
-        res.render('Notice_write',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Notice_write',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Notice_write',{val1:'회원가입',val2:'로그인'});
+        res.render('Notice_write',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
@@ -59,10 +71,16 @@ router.get('/read/:idx',function(req,res,next)
     {
         if(err) console.error(err);
         if(req.cookies.accessToken){
-            res.render('Notice_read',{row:row[0],val1:'마이메이지',val2:'로그아웃'});
+            var userinfo = req.userInfo;
+            if(userinfo){
+                let userType=userinfo.userType;
+                userType='/mypage/'+userType;
+                console.log(userType);
+                res.render('Notice_read',{row:row[0],link:userType,val1:'마이메이지',val2:'로그아웃'});
+            }
         }else {
             console.log('cookie none');
-            res.render('Notice_read',{row:row[0],val1:'회원가입',val2:'로그인'});
+            res.render('Notice_read',{row:row[0],link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }
     });
 });
@@ -98,10 +116,16 @@ router.post('/delete',function(req,res,next)
 
 router.get('/map',function(req,res,next){
     if(req.cookies.accessToken){
-        res.render('map',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('map',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('map',{val1:'회원가입',val2:'로그인'});
+        res.render('map',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 })
 

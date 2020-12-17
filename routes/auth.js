@@ -13,10 +13,16 @@ const session = require('express-session');
 
 router.get('/register', function(req, res, next) {
     if(req.cookies.accessToken){
-        res.render('Sign_up',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Sign_up',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Sign_up',{val1:'회원가입',val2:'로그인'});
+        res.render('Sign_up',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
@@ -30,19 +36,33 @@ router.get('/signout', function(req, res, next) {
                 if(err) console.log('error'+err);
                 res.render('Sign_out',{val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
             })
+=======
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Sign_out',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+>>>>>>> 9ffc2cc685ba46ca209e0341532df8281b4bfd62
         }
     }else {
         console.log('cookie none');
-        res.render('Sign_out',{val1:'회원가입',val2:'로그인'});
+        res.render('Sign_out',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
 router.get('/login', function(req, res, next) {
     if(req.cookies.accessToken){
-        res.render('Login',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Login',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Login',{val1:'회원가입',val2:'로그인'});
+        res.render('Login',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 router.post('/login', obtainToken2);

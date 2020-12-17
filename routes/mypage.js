@@ -11,18 +11,30 @@ var fs = require('fs');
 
 router.get('/donor',function (req,res,next){
     if(req.cookies.accessToken){
-        res.render('Mypage_Donor',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Mypage_Donor',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Mypage_Donor',{val1:'회원가입',val2:'로그인'});
+        res.render('Mypage_Donor',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 })
 router.get('/charity',function (req,res,next){
     if(req.cookies.accessToken){
-        res.render('Mypage_charity',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Mypage_charity',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Mypage_charity',{val1:'회원가입',val2:'로그인'});
+        res.render('Mypage_charity',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 })
 
