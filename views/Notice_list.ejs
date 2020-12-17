@@ -11,16 +11,16 @@
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="/image/LOGO.svg" alt="logo"></a></div>
-    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
-    <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
+    <div class="Header_logo"><a href="/index"><img src="/image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
         <img src="/image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
-        <div class="LogIn"><a href="Login.html">로그인</a></div>
+        <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
+        <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
     </div>
 </header>
 <section>
@@ -28,8 +28,8 @@
     <div class="main">
         <div class="sidebar">
             <div class="sidebar_title">공지사항<hr></div>
-            <div class="sidebar_target"><a href="../list">기브코인 이야기</a><hr></div>
-            <div class="sidebar_content"><a href="../map">오시는 길</a></div>
+            <div class="sidebar_target"><a href="/notice/list">기브코인 이야기</a><hr></div>
+            <div class="sidebar_content"><a href="/notice/map">오시는 길</a></div>
         </div>
         <div class="box">
             <div class="box_title">
@@ -81,7 +81,7 @@
                 %>
             </div>
             <div class="box_btn">
-                <input type="button" value="홈으로" class="home_btn">
+                <input type="button" value="홈으로" class="home_btn" onclick="location.href='/index'">
             </div>
         </div>
     </div>

@@ -11,16 +11,16 @@
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
-    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
-    <div class="Header_Notice"><a href="Notice.html">공지사항</a></div>
+    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
         <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
-        <div class="LogIn"><a href="Login.html">로그인</a></div>
+        <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
+        <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
     </div>
 </header>
 <section>
@@ -28,8 +28,8 @@
         <div class="Profile">
             <div class="Profile_Img">재웅</div>
             <div class="Profile_Name"><span>윤재웅</span>님</div>
-            <a href="index.html" class="Profile_Btn">로그아웃</a>
-            <a href="Sign_out.html" class="Profile_Btn">탈퇴</a>
+            <a href="/index" class="Profile_Btn">로그아웃</a>
+            <a href="/auth/signout" class="Profile_Btn">탈퇴</a>
         </div>
         <div class="Content">
             <div class="Content_title">나의 프로젝트</div>
@@ -40,7 +40,7 @@
                         <td class="donate_detail">받은 코인 <br><span>0</span>코인</td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="charge_btn"><a href="Project_add.html">내 프로젝트 추가하기</a></td>
+                        <td colspan="2" class="charge_btn"><a href="/project/add">내 프로젝트 추가하기</a></td>
                     </tr>
                 </table>
             </div>
