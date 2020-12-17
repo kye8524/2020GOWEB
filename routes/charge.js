@@ -14,10 +14,7 @@ router.get('/', function (req,res,next) {
         var userInfo = req.userInfo;
         if(userInfo){
             let userSeq = userInfo.userSeq;
-<<<<<<< HEAD
-=======
             let coinAvailable = userInfo.coinAvailable;
->>>>>>> ac9e770325e3ec132e72e65d94436083555b7bfd
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
