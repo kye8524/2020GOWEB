@@ -1,10 +1,10 @@
 var util= {};
 var mysql_odbc = require('./database/db_conn')();
 var conn = mysql_odbc.init();
-var cookie = require('cookie-parser');
 
 util.tokenMiddleWare = function(req, res, next){
-    var token = req.header('accessToken');
+    var token = req.cookies.accessToken;
+    console.log(token);
     if(token){
         conn.query("select * from UserInfo where accessToken = ?", token, function (err ,userInfo) {
             if(err){
