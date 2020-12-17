@@ -11,16 +11,16 @@
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="index.html"><img src="../image/LOGO.svg" alt="logo"></a></div>
-    <div class="Header_Charity"><a href="Charity.html">후원단체보기</a></div>
-    <div class="Header_Notice"><a href="Notice_list.html">공지사항</a></div>
+    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
         <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-        <div class="SignUp"><a href="Sign_up.html">회원가입</a></div>
-        <div class="LogIn"><a href="Login.html">로그인</a></div>
+         <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
+         <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
     </div>
 </header>
 <section>
@@ -44,11 +44,11 @@
                 </div>
             </div>
             <div>
-                <input type="button" value="충전" class="charge_btn" onclick="location.href='../html/charge.html'" style='cursor:pointer'>
+                <input type="button" value="충전" class="charge_btn" onclick="location.href='/charge'" style='cursor:pointer'>
             </div>
         </form>
         <div class="donate_box">
-            <input type="button" value="기부하기" class="donate_btn" onclick="location.href='../html/donation_complete.html'" style='cursor:pointer'>
+            <input type="button" value="기부하기" class="donate_btn" onclick="location.href='/donation/complete'" style='cursor:pointer'>
         </div>
     </div>
 
