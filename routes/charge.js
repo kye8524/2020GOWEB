@@ -98,10 +98,16 @@ router.post('/donation/:seq',function (req,res,next){
             userType='/mypage/'+userType;
             console.log(userType);
             var sql = "update userInfo set coinAvailable=?,donateCoin=?,donateNum=donateNum+1 where userSeq=?";
+            var sql2 ="insert into activity(projectSeq, donaterSeq) VALUES (?,?)";
             conn.query(sql,[coin_available,coin_donate,userSeq],function (err,rows){
                 if(err) console.log('error'+err);
                 console.log("donate update success");
-                res.redirect('/charge/complete');
+                conn.query(sql2,[seq,userSeq],function (err,row){
+                    if(err) console.log('error'+err);
+                    console.log("activity insert success");
+                    res.redirect('/charge/complete');
+                })
+
             })
         }else {
             console.log('cookie none');
