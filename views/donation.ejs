@@ -37,14 +37,12 @@
                 <div class="coin_have">
                     보유 코인
                     <div><%=coinAvailable%></div>
+                    <input type="button" value="충전" class="charge_btn" onclick="location.href='/charge'" style='cursor:pointer'>
                 </div>
                 <div class="coin_donate">
                     기부할 코인
                     <input type="text" name="donate_coin" id="donateCoin" required>
                 </div>
-            </div>
-            <div>
-                <input type="button" value="충전" class="charge_btn" onclick="location.href='/charge'" style='cursor:pointer'>
             </div>
             <button type="submit" class="donate_btn" onclick="setItem1  (); location.href='/donation/complete';" style='cursor:pointer'>기부하기</button>
         </form>

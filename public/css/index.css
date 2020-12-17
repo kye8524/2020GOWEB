@@ -166,18 +166,20 @@ img {
 }
 
 .Suggest_title{
+    width: 1000px;
+    margin: 0 auto;
     font-weight: bold;
-    margin-bottom: 10px;
     font-size: 20px;
-    margin-right: 880px;
 }
 
 .List_row_box {
-    display: flex;
+    display: inline-block;
     width: 1000px;
     flex-wrap: nowrap;
 }
-
+.List_row_box a{
+    display: inline-block;
+}
 .List_box {
     width: 243px;
     height: 200px;
