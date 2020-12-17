@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 0 60px 0 150px;
+    margin: 0 75px 0 180px;
 }
 
 .menu_li {
@@ -174,8 +174,6 @@ img {
 
 .List_row_box {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 1000px;
     flex-wrap: nowrap;
 }
@@ -194,7 +192,10 @@ img {
     margin-bottom: 2px;
     display: flex;
 }
-
+.List_photo img{
+    width: 243px;
+    height: 160px;
+}
 .List_title {
     font-size: 13px;
     display: flex;

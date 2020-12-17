@@ -29,16 +29,16 @@
     <div id="menu" onmouseover="show()" onmouseout="hide()">
         <div class="menumenu">
             <div class="menu_charity">
-                <span class="menu_li">아동/청소년</span>
-                <span class="menu_li">장애인</span>
-                <span class="menu_li">지구촌</span>
-                <span class="menu_li">동물</span>
-                <span class="menu_li">환경</span>
-                <span class="menu_li">기타</span>
+                <span class="menu_li"><a href="/charity/list/아동">아동</a></span>
+                <span class="menu_li"><a href="/charity/list/장애인">장애인</a></span>
+                <span class="menu_li"><a href="/charity/list/지구촌">지구촌</a></span>
+                <span class="menu_li"><a href="/charity/list/동물">동물</a></span>
+                <span class="menu_li"><a href="/charity/list/환경">환경</a></span>
+                <span class="menu_li"><a href="/charity/list/기타">기타</a></span>
             </div>
             <div class="menu_givecoin">
-                <span class="menu_li">기브코인 이야기</span>
-                <span class="menu_li">오시는 길</span>
+                <span class="menu_li"><a href="/index/introduce">기브코인 이야기</a></span>
+                <span class="menu_li"><a href="/notice/map">오시는 길</a></span>
             </div>
         </div>
 
@@ -66,72 +66,16 @@
     <div class="Suggest_list">
         <span class="Suggest_title">추천후원목록</span>
         <div class="List_row_box">
+            <%for(var i=0;i<length;i++){%>
             <a href="../html/Charity_explanation.html">
                 <div class="List_box">
-                    <div class="List_photo"></div>
+                    <div class="List_photo"><img src="<%= projects[i].image%>" alt=""></div>
                     <div class="List_title">
-                        제목이 들어갈 부분이다.
+                        <%= projects[i].title%>
                     </div>
                 </div>
             </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="List_row_box">
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
-            <a href="../html/Charity_explanation.html">
-                <div class="List_box">
-                    <div class="List_photo"></div>
-                    <div class="List_title">
-                        제목이 들어갈 부분이다.
-                    </div>
-                </div>
-            </a>
+                <%}%>
         </div>
     </div>
     <hr class="hr">
