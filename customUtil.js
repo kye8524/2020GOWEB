@@ -4,7 +4,7 @@ var conn = mysql_odbc.init();
 var cookie = require('cookie-parser');
 
 util.tokenMiddleWare = function(req, res, next){
-    var token = req.headers['x-access-token'];
+    var token = req.header('accessToken');
     if(token){
         conn.query("select * from UserInfo where accessToken = ?", token, function (err ,userInfo) {
             if(err){
@@ -34,7 +34,7 @@ util.isDelivered = function(arr){
 };
 
 util.checkAuth = function(req, res){
-    var token = req.headers['x-access-token'];
+    var token = req.headers['accessToken'];
     conn.query("select * from UserInfo where accessToken = ?", token, function(err, userInfos){
         if(err){
             res.send(500)

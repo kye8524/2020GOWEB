@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 var logger = require('morgan');
 const bodyParser = require('body-parser');
 const cUtil = require('./customUtil');
@@ -18,15 +19,12 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('gowebgivecoin'));
+app.use(cookieParser());
 app.use(session({
-  key: 'goweb',
-  secret: 'goweb',
+  secret: 'accessToken',
   resave: false,
   saveUninitialized: true,
-  cookie: {
-    maxAge: 24000 * 60 * 60 // 쿠키 유효기간 24시간
-  }
+  store : new FileStore()
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -35,7 +33,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'content-type, x-access-token'); //1
+  res.header('Access-Control-Allow-Headers', 'content-type, accessToken'); //1
 
   next();
 });

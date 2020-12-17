@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const cUtil = require('../customUtil');
 require('dotenv').config();
-const { verifyToken } = require('../middlewares');
 const session = require('express-session');
 
 
@@ -28,9 +27,8 @@ router.post('/login', obtainToken2);
 
 router.get('/logout',function (req,res,next){
     req.session.destroy();
-    res.clearCookie('goweb');
-    res.send('<script type="text/javascript">alert("로그아웃 하시겠습니까?");history.back();</script>');
-    res.redirect("/auth/login")
+    res.clearCookie('accessToken');
+    res.redirect('/auth/login')
 })
 
 router.post('/donor_register2',function (req,res,next) {
@@ -214,20 +212,11 @@ function obtainToken2(req, res) {
                                     res.status(400).send("token error");
                                 } else {
                                     console.log("login success");
-                                    const id = result.email;
-
-                                    // jwt.sign() 메소드: 토큰 발급
-                                    const token = jwt.sign({
-                                        id,
-                                    }, process.env.JWT_SECRET, {
-                                        expiresIn: '1440m', // 24h
-                                        issuer: '토큰발급자',
+                                    res.cookie('accessToken',result[0].accessToken,{
+                                        expires :new Date(Date.now()+900000),
+                                        httpOnly:true
                                     });
-                                     res.json({
-                                        code: 200,
-                                        message: '토큰이 발급되었습니다.',
-                                        token,
-                                    });
+                                    res.redirect('/index');
                                 }
                             })
                         }
