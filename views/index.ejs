@@ -142,15 +142,13 @@
     <div class="Notice">
         <div class="Notice_story"><span class="BlueCoin">기브</span><span class="GiveCoin">코인</span>이야기</div>
         <div class="Notice_box">
+            <% for(var i=0;i<2;i++){ %>
             <div class="Notice_line">
                 <div class="Notice_line_btn">공지</div>
-                <div class="Notice_line_title">하루종일 인덱스만 잡고 있는게 실환가?</div>
+                <div class="Notice_line_title"><%= rows[i].title%></div>
+
             </div>
-            <div class="Notice_line">
-                <div class="Notice_line_btn">공지</div>
-                <div class="Notice_line_title">갑자기 css을 못하게 된 사람이 있다?</div>
-            </div>
-            <div class="Notice_line"></div>
+                <%}%>
         </div>
     </div>
 </section>
