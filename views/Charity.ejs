@@ -27,31 +27,31 @@
 <section class="Section">
     <div class="Side_nav">
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">전체</div>
+            <div class="Side_nav_list_title"><a href="1">전체</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">아동/청소년</div>
+            <div class="Side_nav_list_title"><a href="아동">아동</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">장애인</div>
+            <div class="Side_nav_list_title"><a href="장애인">장애인</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">지구촌</div>
+            <div class="Side_nav_list_title"><a href="지구촌">지구촌</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">동물</div>
+            <div class="Side_nav_list_title"><a href="동물">동물</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">환경</div>
+            <div class="Side_nav_list_title"><a href="환경">환경</a></div>
         </div>
         <div class="Side_list_bar"></div>
         <div class="Side_nav_list">
-            <div class="Side_nav_list_title">기타</div>
+            <div class="Side_nav_list_title"><a href="기타">기타</a></div>
         </div>
     </div>
     <div class="Charity_list_box">
@@ -68,84 +68,17 @@
         </div>
         <hr class="Charity_hr">
         <div class="Charity_list_small_box">
+            <% for(var i=0;i<length;i++){%>
             <div class="Charity_box">
-                <div class="Charity_list_img"></div>
+                <div class="Charity_list_img"><img src="<%= rows[i].image%>" alt="picture"></div>
                 <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
+                    <span class="Charity_list_title_t"><%= rows[i].title%></span>
+                    <span class="Charity_list_title_l"><%= rows[i].field%></span>
                     <div class="Charity_list_title_h"></div>
                 </div>
             </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
-            <div class="Charity_box">
-                <div class="Charity_list_img"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t">제목입니다</span>
-                    <span class="Charity_list_title_l">목록</span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
-            </div>
+            <%}%>
         </div>
-        <ul class="Pagination">
-            <li><a href="">1</a> </li>
-            <li><a href="">2</a> </li>
-            <li><a href="">3</a> </li>
-        </ul>
     </div>
 </section>
 <footer>

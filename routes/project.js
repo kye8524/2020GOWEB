@@ -24,24 +24,23 @@ router.get('/',function (req,res,next){
 router.get('/list',function (req,res,next){
     res.redirect('/charity/list/1');
 });
-router.get('/list/:page', function(req, res, next) {                                                //uri를 'list/:page'형태로 받음.board/list/(페이지숫자)형식으로 게시판리스트 노출
-    var page = req.params.page;
-    var sql = "select title,image from Project";
-    conn.query(sql, function (err, rows) {
+router.get('/list/:field', function(req, res, next) {                                                //uri를 'list/:page'형태로 받음.board/list/(페이지숫자)형식으로 게시판리스트 노출
+    var field = req.params.field;
+    if(field==1)var sql = "select * from Project";
+    else var sql = "select * from Project where field=?";
+    conn.query(sql,field, function (err, rows) {
         if (err) console.error("err : " + err);
         if(req.cookies.accessToken){
             var userinfo = req.userInfo;
             if(userinfo){
                 let userType=userinfo.userType;
                 userType='/mypage/'+userType;
-                console.log(userType);
-                res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Charity',{rows: rows, field:field, length:rows.length,link:userType,val1:'마이메이지',val2:'로그아웃'});
             }
         }else {
             console.log('cookie none');
-            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,link:'/auth/register',val1:'회원가입',val2:'로그인'});
+            res.render('Charity',{rows: rows, field:field, length:rows.length,link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }
-        console.log(rows.length-1);
     });
 
 });
