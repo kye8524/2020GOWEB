@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="GoWeb" uuid="44ae5334-415c-404b-abd0-4d94cca6a573">
+    <data-source source="LOCAL" name="goweb" uuid="c5dc1e13-416c-46a2-a835-583fccefc13a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/GoWeb</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
-=======
-    <data-source source="LOCAL" name="goweb@localhost" uuid="94aa534d-ffa1-4506-8d3c-54a1653685bd">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/goweb</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
->>>>>>> 6bf71da43b932f35c8105831bb82890480b7760d
       </driver-properties>
     </data-source>
   </component>

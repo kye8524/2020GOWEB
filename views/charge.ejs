@@ -31,24 +31,25 @@
             <div class="title">충전하기</div>
             <div class="subtitle">기부하는 당신이 아름답습니다</div>
         </div>
-        <form action="/charge" class="coin_data">
+        <form action="/charge" class="coin_data" method="post">
             <div class="coin_detail">
                 <div class="coin_have">
                     보유 코인
-                    <div><%=rows.coinAvailable%></div>
+                    <div><%=coinAvailable%></div>
                 </div>
                 <div class="coin_donate">
                     충전할 코인
-                    <input type="number" id="coin_charge" name="coin_charge" onkeyup="change_krw()">
+                    <input type="number" id="coin_charge" name="coin_charge" onkeyup="change_krw()" required>
                 </div>
             </div>
-        </form>
+
         <div class="krw">
             <span id="krw_">0</span> KRW
         </div>
         <div class="donate_box">
-            <button type="submit" class="donate_btn" onclick="location.href='/donation'; charge_alert()" style='cursor:pointer'>결제하기</button>
-    </div>
+            <button type="submit" class="donate_btn" onclick="location.href='/index';charge_alert()" style='cursor:pointer'>결제하기</button>
+        </div>
+        </form>
 
 </section>
 <footer>

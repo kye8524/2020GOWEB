@@ -14,19 +14,38 @@ router.get('/', function (req,res,next) {
         var userInfo = req.userInfo;
         if(userInfo){
             let userSeq = userInfo.userSeq;
-            let userType=userinfo.userType;
+            let coinAvailable = userInfo.coinAvailable;
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            var sql = "select * from UserInfo where userSeq=?";
-            conn.query(sql,[userSeq],function (err,rows){
-                if(err) console.log('error'+err);
-                res.render('charge',{link:userType,val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
-            })
+            res.render('charge',{link:userType,val1:'마이메이지',val2:'로그아웃',coinAvailable:coinAvailable});
     }else {
         console.log('cookie none');
-        res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인',rows:rows[0]});
+        res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }}
 });
+router.post('/',function (req,res,next){
+    if(req.cookies.accessToken){
+        var userInfo = req.userInfo;
+        let coin = parseInt(req.body.coin_charge);
+        if(userInfo){
+            let userSeq = userInfo.userSeq;
+            let coinAvailable = parseInt(userInfo.coinAvailable,10);
+            let tocoin = coinAvailable+coin;
+            let userType=userInfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            var sql = "update UserInfo set coinAvailable=? where userSeq=?";
+            conn.query(sql,[tocoin,userSeq],function (err,rows){
+                if(err) console.log('error'+err);
+                console.log("update success");
+                res.redirect('/index');
+            })
+        }else {
+            console.log('cookie none');
+            res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
+        }}
+})
 router.get('/donation',function (req,res,next){
     if(req.cookies.accessToken){
         var userinfo = req.userInfo;
