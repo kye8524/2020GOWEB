@@ -30,17 +30,12 @@ router.get('/out', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-    let session = req.session;
-<<<<<<< HEAD
-    res.sendFile(path.join(__dirname+'/../html/Login.html'),);
-=======
     if(req.cookies.accessToken){
-        res.render('Login',{session:session,val1:'마이메이지',val2:'로그아웃'});
+        res.render('Login',{val1:'마이메이지',val2:'로그아웃'});
     }else {
         console.log('cookie none');
-        res.render('Login',{session:session,val1:'회원가입',val2:'로그인'});
+        res.render('Login',{val1:'회원가입',val2:'로그인'});
     }
->>>>>>> dd19aaff9b92d71598cd4078fa411913c560990f
 });
 router.post('/login', obtainToken2);
 

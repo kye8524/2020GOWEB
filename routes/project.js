@@ -87,6 +87,7 @@ router.get('/read/:seq',function(req,res,next)
     console.log(row);
     conn.query(sql_img,[seq],function (err,result){
         if(req.cookies.accessToken){
+            console.log("cookie exist");
             res.render('Charity_explanation',{row:row[0],imgR:result[0],val1:'마이메이지',val2:'로그아웃'});
         }else {
             console.log('cookie none');
