@@ -79,11 +79,11 @@
             <%=row.content%>
         </p>
         <hr class="h2">
+        <form action=<%="/charity/read/"+seq%> method="post">
         <div class="donation_section">
-            <a href="/donation">
-                <button class="donation_btn">후원하기</button>
-            </a>
+                <button type="submit" class="donation_btn">후원하기</button>
         </div>
+        </form>
     </div>
 </section>
 <footer>
