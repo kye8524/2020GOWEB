@@ -30,17 +30,16 @@
         <span>기존의 회원 정보와 코인은 모두 영구 삭제됩니다.</span>
     </div>
     <div class="password_Box">
-        <form action="/auth/out" method="post">
+        <form action="/auth/signout" method="post">
             <div class="Sign_text">
                 <span>*</span><div class="text_name">남은 코인</div>
-                <div class="Sign_input"><%=row.totalcoin%></div>
+                <div class="Sign_input"><%=rows.coinAvailable%></div>
             </div>
             <div class="notice_text">회원 탈퇴시,남은 코인은 모두 사라집니다.</div>
             <div class="empty_space"></div>
             <div class="Sign_text">
-                <span>*</span><div class="text_name" name="passwd">비밀번호 확인</div>
-                <input type="hidden" name="email" value="<%=row.email%>"/>
-                <input type="text" class="Sign_input">
+                <span>*</span><div class="text_name">비밀번호 확인</div>
+                <input type="password" name="passwd" class="Sign_input" required>
             </div>
             <div class="password_text">알맞은 비밀번호를 입력해주세요.</div>
             <div class="agree">
