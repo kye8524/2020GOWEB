@@ -144,12 +144,12 @@ section{
     line-height: 74px;
     letter-spacing: -0.09em;
     margin: auto 5px auto 0;
+    display: flex;
+    flex-direction: row;
 
     text-shadow: 0px 3.10051px 3.10051px rgba(0, 0, 0, 0.25);
 }
-.donate_complete span{
-    color: #F5D216;
-}
+
 .coin_remain{
     font-family: Leelawadee UI;
     font-style: normal;
@@ -194,4 +194,9 @@ section{
     text-align: right;
     margin: 0 0 0 400px;
 
+}
+
+#donateCoin_ {
+    font-size: 70px;
+    color : #F5D216;
 }
