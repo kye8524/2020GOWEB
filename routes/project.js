@@ -29,12 +29,23 @@ router.get('/list/:page', function(req, res, next) {                            
     var sql = "select title,image from Project";
     conn.query(sql, function (err, rows) {
         if (err) console.error("err : " + err);
-        res.render('Charity', {rows: rows, field:page, length:rows.length-1, page_num:5, pass:true})
+        if(req.cookies.accessToken){
+            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,val1:'마이메이지',val2:'로그아웃'});
+        }else {
+            console.log('cookie none');
+            res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,val1:'회원가입',val2:'로그인'});
+        }
         console.log(rows.length-1);
     });
+
 });
 router.get('/add', function (req,res,next) {
-    res.sendFile(path.join(__dirname+'/../html/Project_add.html'));
+    if(req.cookies.accessToken){
+        res.render('Project_add',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Project_add',{val1:'회원가입',val2:'로그인'});
+    }
 });
 
 router.post('/add', upload.single('file'),function(req,res,next){
@@ -75,7 +86,12 @@ router.get('/read/:seq',function(req,res,next)
     if(err) console.error(err);
     console.log(row);
     conn.query(sql_img,[seq],function (err,result){
-        res.render('Charity_explanation', {row:row[0],imgR:result[0]});
+        if(req.cookies.accessToken){
+            res.render('Charity_explanation',{row:row[0],imgR:result[0],val1:'마이메이지',val2:'로그아웃'});
+        }else {
+            console.log('cookie none');
+            res.render('Charity_explanation',{row:row[0],imgR:result[0],val1:'회원가입',val2:'로그인'});
+        }
     })
     });
 });

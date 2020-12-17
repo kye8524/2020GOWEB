@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/introduce.css">
+    <title>GiveCoin</title>
+</head>
+<body>
+<header>
+    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
+    <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
+    <div class="Header_search">
+        <input type="text" class="Search_text">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+    </div>
+    <div class="Header_Sign">
+        <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
+        <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
+    </div>
+</header>
+<section>
+    <div class="title"><strong>서비스 소개</strong></div>
+    <hr>
+    <div class="subtitle">
+        <div class="subtitle_title"><img src="../image/intro_check.svg" alt="check">기브코인이란?</div>
+        <div class="subtitle_explain">
+            <div class="subtitle_logo"><img src="../image/구조.svg" alt="서비스구조"></div>
+            <div class="subtitle_text"><strong>기브코인(GiveCoin)</strong>은<br>기부자와 복지단체를 이어주는<br>클라우드 기부 서비스 플랫폼입니다.</div>
+        </div>
+    </div>
+    <hr>
+    <div class="subtitle">
+        <div class="subtitle_title"><img src="../image/intro_check.svg" alt="check">왜 기브코인인가?</div>
+        <div class="subtitle_explain">
+            <div class="explain_box">
+                <div class="explain_title">투명하다</div>
+                <div class="explain_text">복지단체의 예산서와 영수증 보기를 통해<br>코인 사용 현환을 확인할 수 있습니다.</div>
+            </div>
+            <div class="explain_img"><img src="../image/투명하다.svg" alt="투명하다"></div>
+        </div>
+        <div class="subtitle_explain">
+            <div class="explain_box">
+                <div class="explain_title">편리하다</div>
+                <div class="explain_text">코인을 충전하여 여러 기부 프로젝트에 나눠서<br>기부할 수 있습니다.</div>
+            </div>
+            <div class="explain_img"><img src="../image/편리하다.svg" alt="편리하다"></div>
+        </div>
+        <div class="subtitle_explain">
+            <div class="explain_box">
+                <div class="explain_title">접근성이 좋다</div>
+                <div class="explain_text">종류별로 정리된 기부 프로젝트를 보고<br>자신이 원하는 단체를 손쉽게 찾아 기부할 수 있습니다.</div>
+            </div>
+            <div class="explain_img2"><img src="../image/접근성.svg" alt="접근성이 좋다"></div>
+        </div>
+    </div>
+</section>
+<footer>
+    <hr>
+    <div class="Up_footer">
+        <div class="Footer_Text"><a href="">회원가입약관</a></div>
+        <div class="Footer_Text"><a href="">서비스이용약관</a></div>
+        <div class="Footer_Text"><a href="">개인정보처리방침</a></div>
+        <div class="Footer_Text"><a href="">공지사항</a></div>
+        <div class="Footer_Text"><a href="">SNS</a></div>
+    </div>
+    <hr>
+    <div class="Down_footer">
+        <div class="Left_footer">
+            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <div class="Customer_Service">기브코인 고객센터</div>
+            <div class="Service_Num">1900-2470</div>
+        </div>
+        <div class="Right_footer">
+            기브코인플랫폼(주) | 팀장 김예은 | 사업자 등록번호 0907 <br>
+            서울시 노원구 공릉로 232  서울과학기술대학교 미래관 3층
+        </div>
+    </div>
+</footer>
+</body>
+</html>

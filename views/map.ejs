@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzdSZUL0B2TpECB5XRcyroxcpU-Bk36_U&callback=initialize&region=kr"></script>
+    <script src="../javascripts/map.js"></script>
 </head>
-<body>
+<body onload="initialize()">  <!--지도객체 초기화-->
 <header>
     <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
@@ -19,33 +21,37 @@
         <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-        <div class="SignUp"><a href="/auth/register">회원가입</a></div>
-        <div class="LogIn"><a href="/auth/login">로그인</a></div>
+        <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
+        <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
     </div>
 </header>
 <section>
-    <div class="Login_UpBox">
-        로그인<br>
-        <span>기브코인에 오신 것을 환영합니다.</span>
-    </div>
-    <form action="/auth/login" method="post">
-        <div class="Login_DownBox">
-            <form action="" class="Input_Login">
-                <div class="ID">
-                    <span>*</span>이메일
-                    <input type="text" name="email" required>
-                </div>
-                <div class="Password">
-                    <span>*</span>비밀번호
-                    <input type="password" name="passwd" required>
-                </div>
-                <button type="submit" class="Login_Button" style='cursor:pointer' onclick="location.href='/index'">로그인</button>
-            </form>
-            <div class="auth">
-                <a href="/auth/register">회원가입 하기</a>
+    <div class="detail">GiveCoin > GiveCoin 본사로 가는 길</div>
+    <div class="main">
+        <div class="sidebar">
+            <div class="sidebar_title">공지사항<hr></div>
+            <div class="sidebar_content"><a href="/notice/list">기브코인 이야기</a><hr></div>
+            <div class="sidebar_target"><a href="/notice/map">오시는 길</a></div>
+        </div>
+        <div class="box">
+            <div class="box_title">
+                <span class="give">기브</span>
+                <span class="coin">코인</span>
+                이야기
+                <hr>
+            </div>
+            <div class="map_detail">
+                <img src="../image/map.svg" alt="위치">
+                <strong>기브코인으로 오시는 길</strong><br><br>
+                :공릉동 동일로 232 미래관
+            </div>
+            <div id="map_canvas"></div>
+            <div class="box_btn">
+                <input type="button" value="홈으로" class="home_btn" onclick="location.href='/index'">
             </div>
         </div>
-    </form>
+    </div>
+
 </section>
 <footer>
     <hr>

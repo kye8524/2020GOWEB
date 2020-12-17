@@ -6,7 +6,12 @@ var path = require('path');
 var multer = require('multer');
 
 router.get('/', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
+    if(req.cookies.accessToken){
+        res.render('Budget_regist',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Budget_regist',{val1:'회원가입',val2:'로그인'});
+    }
 });
 
 router.post('/add',function (req,res,next){

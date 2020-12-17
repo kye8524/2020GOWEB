@@ -10,10 +10,20 @@ const cUtil = require('../customUtil');
 var fs = require('fs');
 
 router.get('/donor',function (req,res,next){
-    res.render('Mypage_Donor');
+    if(req.cookies.accessToken){
+        res.render('Mypage_Donor',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Mypage_Donor',{val1:'회원가입',val2:'로그인'});
+    }
 })
 router.get('/charity',function (req,res,next){
-    res.render('Mypage_charity');
+    if(req.cookies.accessToken){
+        res.render('Mypage_charity',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Mypage_charity',{val1:'회원가입',val2:'로그인'});
+    }
 })
 
 module.exports = router;
