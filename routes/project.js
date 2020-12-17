@@ -61,7 +61,9 @@ router.post('/add', upload.single('file'),function(req,res,next){
         var intro = req.body.intro;
         var content = req.body.content;
         var image = req.file.path;
+        image=image.replace('public','');
         var data = [title,field,intro,content,userSeq,image];
+
 
         var sql = "insert into Project(title,field,intro,content, userSeq,image) values(?,?,?,?,?,?)";
         conn.query(sql,data, function (err, rows) {
