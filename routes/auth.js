@@ -31,23 +31,18 @@ router.get('/signout', function(req, res, next) {
         var userInfo = req.userInfo;
         if(userInfo){
             let userSeq = userInfo.userSeq;
-            var sql = "select * from UserInfo where userSeq=?";
-            conn.query(sql,[userSeq],function (err,rows){
-                if(err) console.log('error'+err);
-                res.render('Sign_out',{val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
-            })
-=======
-        var userinfo = req.userInfo;
-        if(userinfo){
             let userType=userinfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Sign_out',{link:userType,val1:'마이메이지',val2:'로그아웃'});
->>>>>>> 9ffc2cc685ba46ca209e0341532df8281b4bfd62
+            var sql = "select * from UserInfo where userSeq=?";
+            conn.query(sql,[userSeq],function (err,rows){
+                if(err) console.log('error'+err);
+                res.render('Sign_out',{link:userType,val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
+            })
         }
     }else {
         console.log('cookie none');
-        res.render('Sign_out',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
+        res.render('Sign_out',{link:'/auth/register',val1:'회원가입',val2:'로그인',rows:rows[0]});
     }
 });
 
