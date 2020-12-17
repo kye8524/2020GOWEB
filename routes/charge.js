@@ -46,11 +46,14 @@ router.post('/',function (req,res,next){
             res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
         }}
 })
-router.get('/donation',function (req,res,next){
+router.get('/donation/:seq',function (req,res,next){
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        let seq = req.params.seq;
+        console.log(seq);
+        var userInfo = req.userInfo;
+        let coinAvailable = parseInt(userInfo.coinAvailable,10);
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('donation',{link:userType,val1:'마이메이지',val2:'로그아웃'});

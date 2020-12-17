@@ -78,6 +78,10 @@ router.post('/add', upload.single('file'),function(req,res,next){
 
 
         var sql = "insert into Project(title,field,intro,content, userSeq,image) values(?,?,?,?,?,?)";
+        var sql2 = "update UserInfo set projectNum=projectNum+1 where userSeq=?";
+        conn.query(sql2,[userSeq],function (err){
+            if(err) console.error(err);
+        })
         conn.query(sql,data, function (err, rows) {
             if (err) console.error("err : " + err);
             res.status(200)
@@ -106,15 +110,18 @@ router.get('/read/:seq',function(req,res,next)
                 let userType=userinfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
-                res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이메이지',val2:'로그아웃',seq:seq});
             }
         }else {
             console.log('cookie none');
-            res.render('Charity_explanation',{row:row[0],imgR:result[0],link:'/auth/register',val1:'회원가입',val2:'로그인'});
+            res.render('Charity_explanation',{row:row[0],imgR:result[0],link:'/auth/register',val1:'회원가입',val2:'로그인',seq:seq});
         }
     })
     });
 });
-
+router.post('/read/:seq',function (req,res,next){
+    let seq = req.params.seq;
+    res.redirect('/charge/donation/'+seq);
+})
 module.exports=router;
 

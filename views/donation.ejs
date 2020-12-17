@@ -6,18 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/donation.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/donation.css">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="/index"><img src="/image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
     <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="/image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
          <div class="SignUp"><a id="mypage" href="<%= link%>"><%=val1%></a></div>
@@ -33,15 +33,15 @@
             <div class="title">후원하기</div>
             <div class="subtitle">기부하는 당신이 아름답습니다</div>
         </div>
-        <form action="" class="coin_data">
+        <form action="/charge/donation" method="post" class="coin_data">
             <div class="coin_detail">
                 <div class="coin_have">
                     보유 코인
-                    <div></div>
+                    <div><%=coinAvailable%></div>
                 </div>
                 <div class="coin_donate">
                     기부할 코인
-                    <input type="text">
+                    <input type="text" name="donate_coin">
                 </div>
             </div>
             <div>
@@ -49,7 +49,7 @@
             </div>
         </form>
         <div class="donate_box">
-            <input type="button" value="기부하기" class="donate_btn" onclick="location.href='/donation/complete'" style='cursor:pointer'>
+            <button type="submit" class="donate_btn" onclick="location.href='/donation/complete'" style='cursor:pointer'>기부하기</button>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
     <hr>
     <div class="Down_footer">
         <div class="Left_footer">
-            <img src="../image/LOGO.svg" alt="LOGO" class="Footer_logo">
+            <img src="/image/LOGO.svg" alt="LOGO" class="Footer_logo">
             <div class="Customer_Service">기브코인 고객센터</div>
             <div class="Service_Num">1900-2470</div>
         </div>
