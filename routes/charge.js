@@ -14,7 +14,7 @@ router.get('/', function (req,res,next) {
         var userInfo = req.userInfo;
         if(userInfo){
             let userSeq = userInfo.userSeq;
-            let userType=userinfo.userType;
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             var sql = "select * from UserInfo where userSeq=?";

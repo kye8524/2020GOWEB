@@ -27,8 +27,8 @@
 <section>
     <div class="page_Box">
         <div class="Profile">
-            <div class="Profile_Img">재웅</div>
-            <div class="Profile_Name"><span>윤재웅</span>님</div>
+            <div class="Profile_Img"><%= name[0]%></div>
+            <div class="Profile_Name"><span><%= name%></span>님</div>
             <a href="/auth/logout" class="Profile_Btn">로그아웃</a>
             <a href="/auth/signout" class="Profile_Btn">탈퇴</a>
         </div>
@@ -37,8 +37,8 @@
             <div class="Content_Box">
                 <table>
                     <tr>
-                        <td class="donate_detail">프로젝트 갯수 <br> <span>0</span>개</td>
-                        <td class="donate_detail">받은 코인 <br><span>0</span>코인</td>
+                        <td class="donate_detail">프로젝트 갯수 <br> <span><%= projectNum%></span>개</td>
+                        <td class="donate_detail">받은 코인 <br><span><%= totalCoin%></span>코인</td>
                     </tr>
                     <tr>
                         <td colspan="2" class="charge_btn"><a href="/charity/add">내 프로젝트 추가하기</a></td>

@@ -14,9 +14,11 @@ router.get('/donor',function (req,res,next){
         var userinfo = req.userInfo;
         if(userinfo){
             let userType=userinfo.userType;
+            let name=userinfo.name;
+            let donateNum=userinfo.donateNum;
+            let donateCoin=userinfo.donateCoin;
             userType='/mypage/'+userType;
-            console.log(userType);
-            res.render('Mypage_Donor',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Mypage_Donor',{name:name,donateCoin:donateCoin,donateNum:donateNum,link:userType,val1:'마이메이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
@@ -28,9 +30,11 @@ router.get('/charity',function (req,res,next){
         var userinfo = req.userInfo;
         if(userinfo){
             let userType=userinfo.userType;
+            let name=userinfo.name;
+            let projectNum=userinfo.projectNum;
+            let totalCoin=userinfo.totalCoin;
             userType='/mypage/'+userType;
-            console.log(userType);
-            res.render('Mypage_charity',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Mypage_charity',{name:name,projectNum:projectNum,totalCoin:totalCoin, link:userType,val1:'마이메이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
