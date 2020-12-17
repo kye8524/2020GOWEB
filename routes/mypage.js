@@ -11,12 +11,12 @@ var fs = require('fs');
 
 router.get('/donor',function (req,res,next){
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
-            let name=userinfo.name;
-            let donateNum=userinfo.donateNum;
-            let donateCoin=userinfo.donateCoin;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
+            let name=userInfo.name;
+            let donateNum=userInfo.donateNum;
+            let donateCoin=userInfo.donateCoin;
             userType='/mypage/'+userType;
             res.render('Mypage_Donor',{name:name,donateCoin:donateCoin,donateNum:donateNum,link:userType,val1:'마이메이지',val2:'로그아웃'});
         }
@@ -27,12 +27,12 @@ router.get('/donor',function (req,res,next){
 })
 router.get('/charity',function (req,res,next){
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
-            let name=userinfo.name;
-            let projectNum=userinfo.projectNum;
-            let totalCoin=userinfo.totalCoin;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
+            let name=userInfo.name;
+            let projectNum=userInfo.projectNum;
+            let totalCoin=userInfo.totalCoin;
             userType='/mypage/'+userType;
             res.render('Mypage_charity',{name:name,projectNum:projectNum,totalCoin:totalCoin, link:userType,val1:'마이메이지',val2:'로그아웃'});
         }

@@ -30,9 +30,9 @@ router.get('/list/:page', function(req, res, next) {                            
     conn.query(sql, function (err, rows) {
         if (err) console.error("err : " + err);
         if(req.cookies.accessToken){
-            var userinfo = req.userInfo;
-            if(userinfo){
-                let userType=userinfo.userType;
+            var userInfo = req.userInfo;
+            if(userInfo){
+                let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
                 res.render('Charity',{rows: rows, field:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이메이지',val2:'로그아웃'});
@@ -47,9 +47,9 @@ router.get('/list/:page', function(req, res, next) {                            
 });
 router.get('/add', function (req,res,next) {
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('Project_add',{link:userType,val1:'마이메이지',val2:'로그아웃'});
@@ -78,7 +78,7 @@ router.post('/add', upload.single('file'),function(req,res,next){
 
 
         var sql = "insert into Project(title,field,intro,content, userSeq,image) values(?,?,?,?,?,?)";
-        var sql2 = "update UserInfo set projectNum=projectNum+1 where userSeq=?";
+        var sql2 = "update userInfo set projectNum=projectNum+1 where userSeq=?";
         conn.query(sql2,[userSeq],function (err){
             if(err) console.error(err);
         })
@@ -99,15 +99,15 @@ router.get('/read/:seq',function(req,res,next)
     let seq = req.params.seq;
     console.log(seq);
     var sql_img="select image from project where projectSeq=?"
-    var sql="SELECT pro.*, U.name, U.email, date_format(B.startdate,'%Y-%m-%d') startdate ,date_format(B.enddate,'%Y-%m-%d') enddate,B.client,B.contents,B.price FROM Project AS pro JOIN UserInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
+    var sql="SELECT pro.*, U.name, U.email, date_format(B.startdate,'%Y-%m-%d') startdate ,date_format(B.enddate,'%Y-%m-%d') enddate,B.client,B.contents,B.price FROM Project AS pro JOIN userInfo U on U.userSeq = pro.userSeq join Budget B on pro.projectSeq = B.projectSeq and pro.projectSeq = ? ";
     conn.query(sql,[seq],function (err,row){
     if(err) console.error(err);
     console.log(row);
     conn.query(sql_img,[seq],function (err,result){
         if(req.cookies.accessToken){
-            var userinfo = req.userInfo;
-            if(userinfo){
-                let userType=userinfo.userType;
+            var userInfo = req.userInfo;
+            if(userInfo){
+                let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
                 res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이메이지',val2:'로그아웃',seq:seq});
