@@ -4,6 +4,7 @@ var mysql_odbc = require('../database/db_conn')();
 var conn = mysql_odbc.init();
 var path = require('path');
 var multer = require('multer');
+var cUtil = require('../customUtil');
 var fs = require('fs');
 
 var storage = multer.diskStorage({

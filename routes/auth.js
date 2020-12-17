@@ -21,14 +21,13 @@ router.get('/out', function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
     let session = req.session;
-    res.sendFile(path.join(__dirname+'/../html/Login.html'),{session:session});
+    res.sendFile(path.join(__dirname+'/../html/Login.html'),);
 });
 router.post('/login', obtainToken2);
 
 router.get('/logout',function (req,res,next){
-    req.session.destroy();
     res.clearCookie('accessToken');
-    res.redirect('/auth/login')
+    res.redirect('/auth/login');
 })
 
 router.post('/donor_register2',function (req,res,next) {

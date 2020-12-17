@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
         console.log('cookie none');
         res.render('index',{val1:'회원가입',val2:'로그인'});
     }
-
 });
 router.get('/introduce',function (req,res,next){
     res.sendFile(path.join(__dirname+'/../html/introduce.html'));
