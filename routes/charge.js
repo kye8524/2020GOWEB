@@ -10,7 +10,12 @@ const cUtil = require('../customUtil');
 var fs = require('fs');
 
 router.get('/', function (req,res,next) {
-    res.render('charge');
+    if(req.cookies.accessToken){
+        res.render('charge',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('charge',{val1:'회원가입',val2:'로그인'});
+    }
 });
 
 function getUserInfo(req, res) {
@@ -48,6 +53,11 @@ function getUserInfo(req, res) {
     })
 }
 router.get('/donation',function (req,res,next){
-    res.render('donation');
+    if(req.cookies.accessToken){
+        res.render('donation',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('donation',{val1:'회원가입',val2:'로그인'});
+    }
 })
 module.exports = router;

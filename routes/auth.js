@@ -12,16 +12,31 @@ const session = require('express-session');
 
 
 router.get('/register', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/Sign_up.html'));
+    if(req.cookies.accessToken){
+        res.render('Sign_up',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Sign_up',{val1:'회원가입',val2:'로그인'});
+    }
 });
 
 router.get('/out', function(req, res, next) {
-    res.sendFile(path.join(__dirname+'/../html/Sign_out.html'));
+    if(req.cookies.accessToken){
+        res.render('Sign_out',{val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Sign_out',{val1:'회원가입',val2:'로그인'});
+    }
 });
 
 router.get('/login', function(req, res, next) {
     let session = req.session;
-    res.sendFile(path.join(__dirname+'/../html/Login.html'),{session:session});
+    if(req.cookies.accessToken){
+        res.render('Login',{session:session,val1:'마이메이지',val2:'로그아웃'});
+    }else {
+        console.log('cookie none');
+        res.render('Login',{session:session,val1:'회원가입',val2:'로그인'});
+    }
 });
 router.post('/login', obtainToken2);
 
