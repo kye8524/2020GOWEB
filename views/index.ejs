@@ -66,6 +66,7 @@
     <div class="Suggest_list">
         <span class="Suggest_title">추천후원목록</span>
         <div class="List_row_box">
+            <% if(length>8)length=8;%>
             <%for(var i=0;i<length;i++){%>
             <a href="/charity/read/<%= projects[i].projectSeq%>">
                 <div class="List_box">
