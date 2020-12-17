@@ -8,13 +8,30 @@ var session = require('express-session');
 
 router.get('/', function(req, res, next) {
     if(req.cookies.accessToken){
-        res.render('index',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('index',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('index',{val1:'회원가입',val2:'로그인'});
+        res.render('index',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 router.get('/introduce',function (req,res,next){
-    res.sendFile(path.join(__dirname+'/../html/introduce.html'));
+    if(req.cookies.accessToken){
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('introduce',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
+    }else {
+        console.log('cookie none');
+        res.render('introduce',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
+    }
 });
 module.exports=router;

@@ -11,19 +11,31 @@ var fs = require('fs');
 
 router.get('/', function (req,res,next) {
     if(req.cookies.accessToken){
-        res.render('charge',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('charge',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('charge',{val1:'회원가입',val2:'로그인'});
+        res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
 router.get('/donation',function (req,res,next){
     if(req.cookies.accessToken){
-        res.render('donation',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('donation',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('donation',{val1:'회원가입',val2:'로그인'});
+        res.render('donation',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 })
 module.exports = router;

@@ -7,10 +7,16 @@ var multer = require('multer');
 
 router.get('/', function(req, res, next) {
     if(req.cookies.accessToken){
-        res.render('Budget_regist',{val1:'마이메이지',val2:'로그아웃'});
+        var userinfo = req.userInfo;
+        if(userinfo){
+            let userType=userinfo.userType;
+            userType='/mypage/'+userType;
+            console.log(userType);
+            res.render('Budget_regist',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+        }
     }else {
         console.log('cookie none');
-        res.render('Budget_regist',{val1:'회원가입',val2:'로그인'});
+        res.render('Budget_regist',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
     }
 });
 
