@@ -13,9 +13,9 @@ const session = require('express-session');
 
 router.get('/register', function(req, res, next) {
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('Sign_up',{link:userType,val1:'마이메이지',val2:'로그아웃'});
@@ -31,10 +31,10 @@ router.get('/signout', function(req, res, next) {
         var userInfo = req.userInfo;
         if(userInfo){
             let userSeq = userInfo.userSeq;
-            let userType=userinfo.userType;
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            var sql = "select * from UserInfo where userSeq=?";
+            var sql = "select * from userInfo where userSeq=?";
             conn.query(sql,[userSeq],function (err,rows){
                 if(err) console.log('error'+err);
                 res.render('Sign_out',{link:userType,val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
@@ -48,9 +48,9 @@ router.get('/signout', function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('Login',{link:userType,val1:'마이메이지',val2:'로그아웃'});
@@ -82,7 +82,7 @@ router.post('/donor_register2',function (req,res,next) {
     } else {
         console.log("All contents are delivered");
     }
-    var sql1 = "SELECT userSeq FROM UserInfo WHERE email = ?";
+    var sql1 = "SELECT userSeq FROM userInfo WHERE email = ?";
     conn.query(sql1, array.email, function (err, rows, field) {
         if (err) {
             console.log("check info before insert");
@@ -113,7 +113,7 @@ router.post('/donor_register2',function (req,res,next) {
                         salt: salt,
                         signTime : Date.now()
                     };
-                    const sql2 = "INSERT INTO UserInfo SET ?;";
+                    const sql2 = "INSERT INTO userInfo SET ?;";
                     conn.query(sql2,param2, function (err, rows, fields) {
                         if (err) {
                             console.log("insert query error")
@@ -143,7 +143,7 @@ router.post('/charity_register2',function (req,res,next) {
     } else {
         console.log("All contents are delivered");
     }
-    var sql1 = "SELECT userSeq FROM UserInfo WHERE email = ?";
+    var sql1 = "SELECT userSeq FROM userInfo WHERE email = ?";
     conn.query(sql1, array.email, function (err, rows, field) {
         if (err) {
             console.log("check info before insert");
@@ -174,7 +174,7 @@ router.post('/charity_register2',function (req,res,next) {
                         salt: salt,
                         signTime : Date.now()
                     };
-                    const sql2 = "INSERT INTO UserInfo SET ?;";
+                    const sql2 = "INSERT INTO userInfo SET ?;";
                     conn.query(sql2,param2, function (err, rows, fields) {
                         if (err) {
                             console.log("insert query error")
@@ -196,8 +196,8 @@ router.post('/signout',function(req,res,next)
     const reqPw = req.body.passwd;
     if(userInfo){
         let userSeq = userInfo.userSeq;
-        var sql1 = "select * from UserInfo where userSeq=?";
-        var sql2 = " delete from UserInfo where userSeq=?";
+        var sql1 = "select * from userInfo where userSeq=?";
+        var sql2 = " delete from userInfo where userSeq=?";
         conn.query(sql1,[userSeq],function (err,rows){
             if(err){
                 console.log("select error:" +err);
@@ -231,8 +231,8 @@ function obtainToken2(req, res) {
     const email = req.body.email;
     const reqPw = req.body.passwd;
 
-    const sql = "SELECT * FROM UserInfo WHERE email = ?";
-    const sql2 = "update UserInfo set accessToken=? where email=?";
+    const sql = "SELECT * FROM userInfo WHERE email = ?";
+    const sql2 = "update userInfo set accessToken=? where email=?";
     const sql3 = mysql.format(sql, [email]);
     conn.query(sql3, function (err, rows) {
         if (err) {

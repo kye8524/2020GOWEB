@@ -7,9 +7,9 @@ var multer = require('multer');
 
 router.get('/', function(req, res, next) {
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('Budget_regist',{link:userType,val1:'마이메이지',val2:'로그아웃'});

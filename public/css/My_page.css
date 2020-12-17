@@ -122,7 +122,6 @@ table{
 .Charity_list_small_row_box{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 600px;
     margin-top: 50px;
 }
@@ -139,7 +138,10 @@ table{
     height: 150px;
     background-color: #4D4D4D;
 }
-
+.Charity_list_img img{
+    width: 200px;
+    height: 150px;
+}
 .Charity_list_title_box{
     width: 200px;
     height: 56px;
@@ -149,8 +151,10 @@ table{
 }
 
 .Charity_list_title_t{
+    height: 22px;
     font-weight: bold;
     font-size: 17px;
+    overflow: hidden;
 }
 
 .Charity_list_title_l{

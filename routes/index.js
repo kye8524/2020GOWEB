@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
         conn.query(sql,function (err,rows){
             if(err) console.log(err);
             if(req.cookies.accessToken){
-                var userinfo = req.userInfo;
-                if(userinfo){
-                    let userType=userinfo.userType;
+                var userInfo = req.userInfo;
+                if(userInfo){
+                    let userType=userInfo.userType;
                     userType='/mypage/'+userType;
                     res.render('index',{projects:result,length:result.length, rows:rows,link:userType,val1:'마이메이지',val2:'로그아웃'});
                 }
@@ -29,9 +29,9 @@ router.get('/', function(req, res, next) {
 });
 router.get('/introduce',function (req,res,next){
     if(req.cookies.accessToken){
-        var userinfo = req.userInfo;
-        if(userinfo){
-            let userType=userinfo.userType;
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
             res.render('introduce',{link:userType,val1:'마이메이지',val2:'로그아웃'});

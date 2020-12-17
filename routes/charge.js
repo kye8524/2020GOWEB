@@ -35,7 +35,7 @@ router.post('/',function (req,res,next){
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            var sql = "update UserInfo set coinAvailable=? where userSeq=?";
+            var sql = "update userInfo set coinAvailable=? where userSeq=?";
             conn.query(sql,[tocoin,userSeq],function (err,rows){
                 if(err) console.log('error'+err);
                 console.log("update success");

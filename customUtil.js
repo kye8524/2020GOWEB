@@ -6,7 +6,7 @@ util.tokenMiddleWare = function(req, res, next){
     var token = req.cookies.accessToken;
     console.log(token);
     if(token){
-        conn.query("select * from UserInfo where accessToken = ?", token, function (err ,userInfo) {
+        conn.query("select * from userInfo where accessToken = ?", token, function (err ,userInfo) {
             if(err){
                 console.log(err);
                 next();
@@ -35,7 +35,7 @@ util.isDelivered = function(arr){
 
 util.checkAuth = function(req, res){
     var token = req.headers['accessToken'];
-    conn.query("select * from UserInfo where accessToken = ?", token, function(err, userInfos){
+    conn.query("select * from userInfo where accessToken = ?", token, function(err, userInfos){
         if(err){
             res.send(500)
         }
