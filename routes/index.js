@@ -8,6 +8,7 @@ var session = require('express-session');
 
 router.get('/', function(req, res, next) {
     var sql="select * from notice";
+<<<<<<< HEAD
     conn.query(sql,function (err,rows){
         if(err) console.log(err);
         if(req.cookies.accessToken){
@@ -16,12 +17,26 @@ router.get('/', function(req, res, next) {
                 let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 res.render('index',{rows:rows,link:userType,val1:'마이메이지',val2:'로그아웃'});
+=======
+    var sql2="select * from project";
+    conn.query(sql2,function(err,result){
+        conn.query(sql,function (err,rows){
+            if(err) console.log(err);
+            if(req.cookies.accessToken){
+                var userinfo = req.userInfo;
+                if(userinfo){
+                    let userType=userinfo.userType;
+                    userType='/mypage/'+userType;
+                    res.render('index',{projects:result,length:result.length, rows:rows,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                }
+            }else {
+                console.log('cookie none');
+                res.render('index',{projects:result,length:result.length,rows:rows,link:'/auth/register',val1:'회원가입',val2:'로그인'});
+>>>>>>> 368af65ef8189a88c78282bca82620924f1e0e25
             }
-        }else {
-            console.log('cookie none');
-            res.render('index',{rows:rows,link:'/auth/register',val1:'회원가입',val2:'로그인'});
-        }
+        })
     })
+
 });
 router.get('/introduce',function (req,res,next){
     if(req.cookies.accessToken){

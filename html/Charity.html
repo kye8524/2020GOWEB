@@ -59,14 +59,14 @@
             <span class="Charity_search_m">전체보기</span>
             <input type="text" class="Charity_search">
             <a href=""><div class="Charity_search_btn"></div></a>
-            <select class="Select_box">
-                <option class="Select_option">전체</option>
-                <option class="Select_option">아동/청소년</option>
-                <option class="Select_option">장애인</option>
-                <option class="Select_option">지구촌</option>
-                <option class="Select_option">동물</option>
-                <option class="Select_option">환경</option>
-                <option class="Select_option">기타</option>
+            <select class="Select_box" onchange="if(this.value) location.href=(this.value);">
+                <option class="Select_option" value="1">전체</option>
+                <option class="Select_option" value="아동">아동/청소년</option>
+                <option class="Select_option" value="장애인">장애인</option>
+                <option class="Select_option" value="지구촌">지구촌</option>
+                <option class="Select_option" value="동물">동물</option>
+                <option class="Select_option" value="환경">환경</option>
+                <option class="Select_option" value="기타">기타</option>
             </select>
         </div>
         <hr class="Charity_hr">
