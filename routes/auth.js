@@ -20,9 +20,17 @@ router.get('/register', function(req, res, next) {
     }
 });
 
-router.get('/out', function(req, res, next) {
+router.get('/signout', function(req, res, next) {
     if(req.cookies.accessToken){
-        res.render('Sign_out',{val1:'마이메이지',val2:'로그아웃'});
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userSeq = userInfo.userSeq;
+            var sql = "select * from UserInfo where userSeq=?";
+            conn.query(sql,[userSeq],function (err,rows){
+                if(err) console.log('error'+err);
+                res.render('Sign_out',{val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
+            })
+        }
     }else {
         console.log('cookie none');
         res.render('Sign_out',{val1:'회원가입',val2:'로그인'});
@@ -169,18 +177,40 @@ router.post('/charity_register2',function (req,res,next) {
 
 router.post('/signout',function(req,res,next)
 {
-    var passwd = req.body.passwd;
-    var data = [email,passwd];
-
-    var sql1 = "delete from UserInfo where email=?";
-    var sql2= "select totalcoin from UserInfo where email=?";
-    conn.query(sql1,data, function(err,row)
-    {
-        if(err) console.error(err);
-        console.log('delete');
-        res.redirect('/index');
-    });
-});
+    var userInfo = req.userInfo;
+    const reqPw = req.body.passwd;
+    if(userInfo){
+        let userSeq = userInfo.userSeq;
+        var sql1 = "select * from UserInfo where userSeq=?";
+        var sql2 = " delete from UserInfo where userSeq=?";
+        conn.query(sql1,[userSeq],function (err,rows){
+            if(err){
+                console.log("select error:" +err);
+            }else if (rows.length === 0) {
+                console.log("NO ACCOUNT");
+            } else {
+                const dbPw = rows[0].passwd;
+                const salt = rows[0].salt;
+                pwBySalt(reqPw, salt).then(function (resolve) {
+                    const crypReqPw = resolve;
+                    if (dbPw !== crypReqPw) {
+                        console.log("uncorrect pw : " + resolve);
+                    } else {
+                        conn.query(sql2, [userSeq], function (errors, result, field) {
+                            if (errors) {
+                                console.log("delete error");
+                                res.status(400);
+                            } else {
+                                console.log("delete success");
+                                res.clearCookie('accessToken');
+                                res.redirect('/index');
+                            }
+                        })}
+                    })
+                    }
+                })
+            }
+        });
 
 function obtainToken2(req, res) {
     const email = req.body.email;

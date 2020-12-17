@@ -11,13 +11,23 @@ var fs = require('fs');
 
 router.get('/', function (req,res,next) {
     if(req.cookies.accessToken){
-        res.render('charge',{val1:'마이메이지',val2:'로그아웃'});
+        var userInfo = req.userInfo;
+        if(userInfo){
+            let userSeq = userInfo.userSeq;
+            var sql = "select * from UserInfo where userSeq=?";
+            conn.query(sql,[userSeq],function (err,rows){
+                if(err) console.log('error'+err);
+                res.render('charge',{val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
+            })
+        }
     }else {
         console.log('cookie none');
         res.render('charge',{val1:'회원가입',val2:'로그인'});
     }
 });
-
+router.post('/',function (req,res,next{
+    
+}))
 router.get('/donation',function (req,res,next){
     if(req.cookies.accessToken){
         res.render('donation',{val1:'마이메이지',val2:'로그아웃'});
