@@ -51,11 +51,11 @@
                 </div>
                 <div class="subtitle">
                     후원단체 소개<br>
-                    <textarea class="Introduce" name="intro" required></textarea>
+                    <textarea class="Introduce" name="intro" id="intro" required></textarea>
                 </div>
                 <div class="subtitle">
                     프로젝트 소개<br>
-                    <textarea class="Content" name="content" required></textarea>
+                    <textarea class="Content" name="content" id="content" required></textarea>
                 </div>
                 <div class="btn">
                     <input type="button" value="취소" class="cancle_btn" onclick="location.href='/mypage';" style="cursor: pointer">
@@ -89,5 +89,11 @@
 </footer>
 <script src="../javascripts/project_name_set.js"></script>
 <script src="../javascripts/index.js"></script>
+<script>
+    $("#intro").val().replace(/\n/g, '<br>')
+</script>
+<script>
+    $("#content").val().replace(/\n/g, '<br>')
+</script>
 </body>
 </html>
