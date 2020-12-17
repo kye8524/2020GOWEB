@@ -142,6 +142,8 @@ section{
     cursor: pointer;
 }
 .box_btn{
+    display: flex;
+    align-items: center;
     margin: 10px auto 50px auto;
 }
 .home_btn{

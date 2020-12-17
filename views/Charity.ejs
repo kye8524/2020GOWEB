@@ -71,12 +71,14 @@
         <div class="Charity_list_small_box">
             <% for(var i=0;i<length;i++){%>
             <div class="Charity_box">
-                <div class="Charity_list_img"><img src="<%= rows[i].image%>" alt="picture"></div>
-                <div class="Charity_list_title_box">
-                    <span class="Charity_list_title_t"><%= rows[i].title%></span>
-                    <span class="Charity_list_title_l"><%= rows[i].field%></span>
-                    <div class="Charity_list_title_h"></div>
-                </div>
+                <a href="/charity/read/<%= rows[i].projectSeq%>">
+                    <div class="Charity_list_img"><img src="<%= rows[i].image%>" alt="picture"></div>
+                    <div class="Charity_list_title_box">
+                        <span class="Charity_list_title_t"><%= rows[i].title%></span>
+                        <span class="Charity_list_title_l"><%= rows[i].field%></span>
+                        <div class="Charity_list_title_h"></div>
+                    </div>
+                </a>
             </div>
             <%}%>
         </div>

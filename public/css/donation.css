@@ -46,9 +46,8 @@ section{
 .coin_data{
     display: flex;
     margin-top: 100px;
-    margin-left: 250px;
-    width: 800px;
-
+    width: 700px;
+    flex-direction: column;
     font-family: Leelawadee UI;
     font-style: normal;
     font-weight: normal;
@@ -69,10 +68,15 @@ section{
 .coin_have div{
     width: 300px;
     height: 50px;
+    padding: 0 0 0 15px;
     left: 570px;
     top: 383px;
     margin-left: 20px;
-
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: center;
     background: #FFFFFF;
     border: 1px solid #9E9E9E;
     box-sizing: border-box;
@@ -84,7 +88,7 @@ section{
     top: 383px;
     margin-top: 25px;
     margin-left: 20px;
-
+    padding: 0 0 0 15px;
     background: #FFFFFF;
     border: 1px solid #9E9E9E;
     box-sizing: border-box;
@@ -108,8 +112,7 @@ section{
 }
 .donate_box{
     margin-top: 50px;
-    margin-left: 385px;
-    align-items: center;
+    text-align: right;
 }
 .donate_btn{
     width: 300px;
@@ -180,6 +183,7 @@ section{
     align-items: center;
 }
 .krw{
+    width: 300px;
     font-family: Leelawadee UI;
     font-style: normal;
     font-weight: bold;
@@ -187,7 +191,7 @@ section{
     line-height: 27px;
     letter-spacing: -0.02em;
     color: #414141;
-
-    margin-left: 385px;
+    text-align: right;
+    margin: 0 0 0 400px;
 
 }
