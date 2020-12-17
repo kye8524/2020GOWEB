@@ -6,21 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GiveCoin</title>
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/Login.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/Login.css">
 </head>
 <body>
 <header>
-    <div class="Header_logo"><a href="/index"><img src="/images/LOGO.svg" alt="logo"></a></div>
+    <div class="Header_logo"><a href="/index"><img src="../image/LOGO.svg" alt="logo"></a></div>
     <div class="Header_Charity"><a href="/charity">후원단체보기</a></div>
     <div class="Header_Notice"><a href="/notice/list">공지사항</a></div>
     <div class="Header_search">
         <input type="text" class="Search_text">
-        <img src="/images/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
+        <img src="../image/Search_Btn.svg" alt="Btn" class="Search_Btn" onclick="location.href='../html/#'">
     </div>
     <div class="Header_Sign">
-         <div class="SignUp"><a id="mypage" href="/auth/register"><%=val1%></a></div>
-         <div class="LogIn"><a id="logout" href="/auth/login"><%=val2%></a></div>
+        <div class="SignUp"><a href="/auth/register">회원가입</a></div>
+        <div class="LogIn"><a href="/auth/login">로그인</a></div>
     </div>
 </header>
 <section>
@@ -28,27 +28,24 @@
         로그인<br>
         <span>기브코인에 오신 것을 환영합니다.</span>
     </div>
-    <div class="Login_DownBox">
-        <form action="" class="Input_Login">
-            <div class="ID">
-                <span>*</span>아이디 또는 이메일
-                <input type="text" name="username">
+    <form action="/auth/login" method="post">
+        <div class="Login_DownBox">
+            <form action="" class="Input_Login">
+                <div class="ID">
+                    <span>*</span>이메일
+                    <input type="text" name="email" required>
+                </div>
+                <div class="Password">
+                    <span>*</span>비밀번호
+                    <input type="password" name="passwd" required>
+                </div>
+                <button type="submit" class="Login_Button" style='cursor:pointer' onclick="location.href='/index'">로그인</button>
+            </form>
+            <div class="auth">
+                <a href="/auth/register">회원가입 하기</a>
             </div>
-            <div class="Password">
-                <span>*</span>비밀번호
-                <input type="password" name="password">
-            </div>
-        </form>
-        <div class="Login_CheckBox">
-            <input type="checkbox">로그인 상태 유지
         </div>
-        <input type="button" value="로그인" class="Login_Button" style='cursor:pointer'>
-        <div class="auth">
-            <a href="">비밀번호 찾기</a>
-            <div class="line"></div>
-            <a href="/auth/signup">회원가입 하기</a>
-        </div>
-    </div>
+    </form>
 </section>
 <footer>
     <hr>

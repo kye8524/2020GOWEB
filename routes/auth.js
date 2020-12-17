@@ -194,10 +194,8 @@ function obtainToken2(req, res) {
     conn.query(sql3, function (err, rows) {
         if (err) {
             console.log("SELECT ERROR : " + err);
-            res.status(500).send('500 SERVER ERROR');
         } else if (rows.length === 0) {
             console.log("NO ACCOUNT");
-            res.status(204).send('NO ACCOUNT');
             res.send('<script type="text/javascript">alert("계정 정보가 없습니다. 회원가입후 이용 부탁드립니다.");history.back();</script>');
         } else {
             const dbPw = rows[0].passwd;
@@ -206,7 +204,6 @@ function obtainToken2(req, res) {
                 const crypReqPw = resolve;
                 if (dbPw !== crypReqPw) {
                     console.log("uncorrect pw : " + resolve);
-                    res.status(204).send('UNCORRECT PW');
                     res.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다.");history.back();</script>');
                 } else {
                     let timestamp = new Date().getTime();
