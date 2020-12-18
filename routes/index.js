@@ -17,11 +17,11 @@ router.get('/', function(req, res, next) {
                 if(userInfo){
                     let userType=userInfo.userType;
                     userType='/mypage/'+userType;
-                    res.render('index',{projects:result,length:result.length, rows:rows,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                    res.render('index',{projects:result,length:result.length, rows:rows,rows_length:rows.length,link:userType,val1:'마이메이지',val2:'로그아웃'});
                 }
             }else {
                 console.log('cookie none');
-                res.render('index',{projects:result,length:result.length,rows:rows,link:'/auth/register',val1:'회원가입',val2:'로그인'});
+                res.render('index',{projects:result,length:result.length,rows:rows,rows_length:rows.length,link:'/auth/register',val1:'회원가입',val2:'로그인'});
             }
         })
     })
