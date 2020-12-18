@@ -91,7 +91,9 @@
             <% for(var i=0;i<rows_length;i++){ %>
             <div class="Notice_line">
                 <div class="Notice_line_btn">공지</div>
-                <div class="Notice_line_title"><%= rows[i].title%></div>
+                <a href="/notice/read/<%= rows[i].idx%>">
+                    <div class="Notice_line_title"><%= rows[i].title%></div>
+                </a>
 
             </div>
                 <%}%>
