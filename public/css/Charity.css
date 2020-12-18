@@ -92,6 +92,7 @@
 .Charity_box {
     display: inline-block;
     margin-right: 15px;
+    margin-top: 15px;
 }
 
 .Charity_list_img{
@@ -106,15 +107,16 @@
 }
 .Charity_list_title_box{
     width: 330px;
-    height: 56px;
     display: flex;
     flex-direction: column;
     justify-content: left;
 }
 
 .Charity_list_title_t{
+    height: 23px;
     font-weight: bold;
     font-size: 17px;
+    overflow: hidden;
 }
 
 .Charity_list_title_l{

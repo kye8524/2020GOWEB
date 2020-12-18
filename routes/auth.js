@@ -268,7 +268,7 @@ function obtainToken2(req, res) {
                                 } else {
                                     console.log("login success");
                                     res.cookie('accessToken',result[0].accessToken,{
-                                        expires :new Date(Date.now()+900000),
+                                        expires :new Date(Date.now()+9999900),
                                         httpOnly:true
                                     });
                                     res.redirect('/index');
