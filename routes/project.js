@@ -35,7 +35,7 @@ router.get('/list/:field', function(req, res, next) {                           
             if(userInfo){
                 let userType=userInfo.userType;
                 userType='/mypage/'+userType;
-                res.render('Charity',{rows: rows, field:field, length:rows.length,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Charity',{rows: rows, field:field, length:rows.length,link:userType,val1:'마이페이지',val2:'로그아웃'});
             }
         }else {
             console.log('cookie none');
@@ -51,7 +51,7 @@ router.get('/add', function (req,res,next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Project_add',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Project_add',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
@@ -85,7 +85,15 @@ router.post('/add', upload.single('file'),function(req,res,next){
             if (err) console.error("err : " + err);
             res.status(200)
             console.log('complete')
-            res.sendFile(path.join(__dirname+'/../html/Budget_regist.html'));
+            if(req.cookies.accessToken){
+                var userInfo = req.userInfo;
+                if(userInfo){
+                    let userType=userInfo.userType;
+                    userType='/mypage/'+userType;
+                    console.log(userType);
+                    res.render('budget_regist',{link:userType,val1:'마이페이지',val2:'로그아웃'});
+                }
+            }
         });
     }else{
         res.status(403).send({"msg": "토큰이 만료되었습니다."})
@@ -109,7 +117,7 @@ router.get('/read/:seq',function(req,res,next)
                 let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
-                res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이메이지',val2:'로그아웃',seq:seq});
+                res.render('Charity_explanation',{row:row[0],imgR:result[0],link:userType,val1:'마이페이지',val2:'로그아웃',seq:seq});
             }
         }else {
             console.log('cookie none');

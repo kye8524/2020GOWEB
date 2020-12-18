@@ -18,7 +18,7 @@ router.get('/', function (req,res,next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('charge',{link:userType,val1:'마이메이지',val2:'로그아웃',coinAvailable:coinAvailable});
+            res.render('charge',{link:userType,val1:'마이페이지',val2:'로그아웃',coinAvailable:coinAvailable});
     }else {
         console.log('cookie none');
         res.render('charge',{link:'/auth/register',val1:'회원가입',val2:'로그인'});
@@ -56,7 +56,7 @@ router.get('/donation/:seq',function (req,res,next){
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('donation',{link:userType,val1:'마이메이지',val2:'로그아웃',seq:seq,coinAvailable:coinAvailable});
+            res.render('donation',{link:userType,val1:'마이페이지',val2:'로그아웃',seq:seq,coinAvailable:coinAvailable});
         }
     }else {
         console.log('cookie none');
@@ -122,7 +122,7 @@ router.get('/complete',function (req,res,next){
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('donation_complete',{link:userType,val1:'마이메이지',val2:'로그아웃',coinAvailable:coinAvailable});
+            res.render('donation_complete',{link:userType,val1:'마이페이지',val2:'로그아웃',coinAvailable:coinAvailable});
         }
     }else {
         console.log('cookie none');

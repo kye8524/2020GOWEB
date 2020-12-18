@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
                 if(userInfo){
                     let userType=userInfo.userType;
                     userType='/mypage/'+userType;
-                    res.render('index',{projects:result,length:result.length, rows:rows,rows_length:rows.length,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                    res.render('index',{projects:result,length:result.length, rows:rows,rows_length:rows.length,link:userType,val1:'마이페이지',val2:'로그아웃'});
                 }
             }else {
                 console.log('cookie none');
@@ -34,7 +34,7 @@ router.get('/introduce',function (req,res,next){
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('introduce',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('introduce',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');

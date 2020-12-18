@@ -18,7 +18,7 @@ router.get('/donor',function (req,res,next){
             let donateNum=userInfo.donateNum;
             let donateCoin=userInfo.donateCoin;
             userType='/mypage/'+userType;
-            res.render('Mypage_Donor',{name:name,donateCoin:donateCoin,donateNum:donateNum,link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Mypage_Donor',{name:name,donateCoin:donateCoin,donateNum:donateNum,link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
@@ -37,7 +37,7 @@ router.get('/charity',function (req,res,next){
                 let projectNum=userInfo.projectNum;
                 let totalCoin=userInfo.totalCoin;
                 userType='/mypage/'+userType;
-                res.render('Mypage_charity',{rows:rows,length:rows.length, name:name,projectNum:projectNum,totalCoin:totalCoin, link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Mypage_charity',{rows:rows,length:rows.length, name:name,projectNum:projectNum,totalCoin:totalCoin, link:userType,val1:'마이페이지',val2:'로그아웃'});
             }
         })
     }else {

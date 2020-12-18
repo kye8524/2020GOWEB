@@ -18,7 +18,7 @@ router.get('/register', function(req, res, next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Sign_up',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Sign_up',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
@@ -37,7 +37,7 @@ router.get('/signout', function(req, res, next) {
             var sql = "select * from userInfo where userSeq=?";
             conn.query(sql,[userSeq],function (err,rows){
                 if(err) console.log('error'+err);
-                res.render('Sign_out',{link:userType,val1:'마이메이지',val2:'로그아웃',rows:rows[0]});
+                res.render('Sign_out',{link:userType,val1:'마이페이지',val2:'로그아웃',rows:rows[0]});
             })
         }
     }else {
@@ -53,7 +53,7 @@ router.get('/login', function(req, res, next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Login',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Login',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');

@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Budget_regist',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Budget_regist',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');

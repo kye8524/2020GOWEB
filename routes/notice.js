@@ -20,7 +20,7 @@ router.get('/Notice_list/:page', function(req, res, next) {                     
                 let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
-                res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Notice_list',{title: 'GiveCoin', rows: rows, page:page, length:rows.length-1, page_num:5, pass:true,link:userType,val1:'마이페이지',val2:'로그아웃'});
             }
         }else {
             console.log('cookie none');
@@ -37,7 +37,7 @@ router.get('/write', function (req,res,next) {
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('Notice_write',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('Notice_write',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
@@ -76,7 +76,7 @@ router.get('/read/:idx',function(req,res,next)
                 let userType=userInfo.userType;
                 userType='/mypage/'+userType;
                 console.log(userType);
-                res.render('Notice_read',{row:row[0],link:userType,val1:'마이메이지',val2:'로그아웃'});
+                res.render('Notice_read',{row:row[0],link:userType,val1:'마이페이지',val2:'로그아웃'});
             }
         }else {
             console.log('cookie none');
@@ -121,7 +121,7 @@ router.get('/map',function(req,res,next){
             let userType=userInfo.userType;
             userType='/mypage/'+userType;
             console.log(userType);
-            res.render('map',{link:userType,val1:'마이메이지',val2:'로그아웃'});
+            res.render('map',{link:userType,val1:'마이페이지',val2:'로그아웃'});
         }
     }else {
         console.log('cookie none');
