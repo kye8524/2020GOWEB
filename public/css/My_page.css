@@ -2,6 +2,16 @@ section{
     background-image: url("../image/My_page_Background.svg");
     background-repeat: repeat-x;
 }
+.page_Box_donor{
+     width: 1000px;
+    height: 700px;
+     background-color: white;
+     box-shadow: 4px 5px 10px gray;
+     margin:  0 auto 300px auto;
+     position: relative;
+     top: 100px;
+     display: flex;
+ }
 .page_Box{
     width: 1000px;
     background-color: white;
