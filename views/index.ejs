@@ -87,7 +87,8 @@
     <div class="Notice">
         <div class="Notice_story"><span class="BlueCoin">기브</span><span class="GiveCoin">코인</span>이야기</div>
         <div class="Notice_box">
-            <% for(var i=0;i<2;i++){ %>
+            <% if(rows_length>2) rows_length=2;%>
+            <% for(var i=0;i<rows_length;i++){ %>
             <div class="Notice_line">
                 <div class="Notice_line_btn">공지</div>
                 <div class="Notice_line_title"><%= rows[i].title%></div>
